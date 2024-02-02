@@ -606,7 +606,7 @@ def get_loaders(train_csv_path, test_csv_path):
 
     return train_loader, test_loader, train_eval_loader
 
-def dynamic_threshold(model, loader, iou_thresh, anchors, desired_num_bboxes=6):
+def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes=6, ):
     print("Starting dynamic thresholding")
     model.eval()
     x, y = next(iter(loader))
@@ -625,7 +625,7 @@ def dynamic_threshold(model, loader, iou_thresh, anchors, desired_num_bboxes=6):
     confidence_threshold = 1.0
     num_bboxes = 0
     while num_bboxes < desired_num_bboxes:
-        confidence_threshold -= 0.05  # Adjust this increment based on your needs
+        confidence_threshold -= confidence_step  # Adjust this increment based on your needs
         nms_boxes = non_max_suppression(
             bboxes[0], iou_threshold=iou_thresh, threshold=confidence_threshold, box_format="midpoint",
         )
@@ -637,7 +637,7 @@ def dynamic_threshold(model, loader, iou_thresh, anchors, desired_num_bboxes=6):
     return confidence_threshold
 
 
-def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=True):
+def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=True, confidence_step = 0.05):
     print("Starting plotting of examples")
     model.eval()
     x, y = next(iter(loader))
@@ -655,7 +655,7 @@ def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optima
         model.train()
 
     if find_optimal_confidence_threshold:
-        threshold = dynamic_threshold(model, loader, iou_thresh, anchors)
+        threshold = dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step)
     else:
         threshold = thresh  # Set a default threshold if not using dynamic thresholding
 

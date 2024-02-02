@@ -1,0 +1,2520 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+Currently epoch 4
+Currently epoch 5
+Currently epoch 6
+Currently epoch 7
+Currently epoch 8
+Currently epoch 9
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 10
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 11
+Currently epoch 12
+Currently epoch 13
+Currently epoch 14
+Currently epoch 15
+Currently epoch 16
+Currently epoch 17
+Currently epoch 18
+Currently epoch 19
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 20
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 21
+Currently epoch 22
+Currently epoch 23
+Currently epoch 24
+Currently epoch 25
+Currently epoch 26
+Currently epoch 27
+Currently epoch 28
+Currently epoch 29
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 30
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 31
+Currently epoch 32
+Currently epoch 33
+Currently epoch 34
+Currently epoch 35
+Currently epoch 36
+Currently epoch 37
+Currently epoch 38
+Currently epoch 39
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 40
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 41
+Currently epoch 42
+Currently epoch 43
+Currently epoch 44
+Currently epoch 45
+Currently epoch 46
+Currently epoch 47
+Currently epoch 48
+Currently epoch 49
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 50
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7496708035469055, 0.7022702693939209]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7614835500717163, 0.7254598140716553]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7104448676109314]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.716762900352478]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7271011471748352]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7197781801223755]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7126420736312866]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7049208283424377]
+Running mean_average_precision...
+MAP: 0.018638918176293373
+Currently epoch 51
+Currently epoch 52
+Currently epoch 53
+Currently epoch 54
+Currently epoch 55
+Currently epoch 56
+Currently epoch 57
+Currently epoch 58
+Currently epoch 59
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 60
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7362834215164185]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7270386815071106, 0.70234215259552]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7471368312835693, 0.7314828038215637, 0.715109646320343]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.745368480682373]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7078521847724915, 0.7030589580535889]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7348251938819885]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7926464080810547, 0.7143970131874084]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.701228678226471]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7701659798622131]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7521297335624695, 0.7283487915992737]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7288447618484497]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7229446172714233, 0.7208762168884277]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7534883618354797, 0.7445422410964966]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7193628549575806]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7383779883384705]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7475468516349792, 0.7335855960845947, 0.706399142742157, 0.7000110745429993]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7324725389480591]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.710512101650238]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7488856911659241]
+Running mean_average_precision...
+MAP: 0.03224079683423042
+Currently epoch 61
+Currently epoch 62
+Currently epoch 63
+Currently epoch 64
+Currently epoch 65
+Currently epoch 66
+Currently epoch 67
+Currently epoch 68
+Currently epoch 69
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 70
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.718357503414154]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7507103085517883, 0.7356137633323669, 0.7088507413864136]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7758647203445435, 0.7037698030471802]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7991858720779419, 0.7425956130027771, 0.7312050461769104, 0.7304053902626038, 0.7057034373283386]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7253352403640747, 0.7235079407691956]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7359086871147156, 0.7290568947792053, 0.7081972360610962]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7619758248329163, 0.7147903442382812, 0.7015568614006042, 0.7014700174331665]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7691500186920166, 0.7511165738105774, 0.7135207056999207, 0.7123827338218689, 0.7122248411178589]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.774631679058075, 0.7092140316963196, 0.7088744640350342, 0.7004820704460144]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7869518995285034, 0.7199481725692749]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7066352963447571]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7257542610168457, 0.7021137475967407, 0.7008734941482544]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7244382500648499, 0.7190256118774414]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7549097537994385, 0.7407990097999573, 0.7301813364028931, 0.7006824612617493]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7304314374923706, 0.7030718922615051, 0.7010858654975891]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7752629518508911, 0.7562796473503113, 0.738696277141571, 0.7087847590446472]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7829697728157043, 0.7349255681037903]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7374486923217773, 0.7337572574615479]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.762428879737854, 0.7572891116142273, 0.7326995134353638, 0.7124614119529724]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7226011753082275, 0.7214022278785706, 0.7156922221183777]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7045714259147644]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7987703680992126, 0.762112557888031, 0.7031112313270569]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7148945927619934, 0.7011216878890991]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7457968592643738, 0.7114712595939636, 0.7026616334915161]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7774932384490967, 0.7049486637115479, 0.7015353441238403]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7009219527244568]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.787140965461731, 0.7366200685501099, 0.7293695211410522, 0.7119969725608826]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7656632661819458, 0.7260132431983948, 0.7255544066429138, 0.7197800874710083]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.724335253238678, 0.712988018989563]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7416533827781677, 0.72096848487854]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7877905964851379, 0.7699065208435059, 0.7619777321815491, 0.7363848686218262]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7484683394432068]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.767413318157196, 0.7555239796638489, 0.7526232600212097, 0.7411724925041199]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.753425121307373, 0.7013338208198547]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7879748940467834, 0.7113999128341675, 0.7088791131973267]
+Running mean_average_precision...
+MAP: 0.24181564152240753
+Currently epoch 71
+Currently epoch 72
+Currently epoch 73
+Currently epoch 74
+Currently epoch 75
+Currently epoch 76
+Currently epoch 77
+Currently epoch 78
+Currently epoch 79
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 80
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7814095616340637, 0.7213654518127441, 0.7007084488868713]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.781548023223877, 0.7613515853881836, 0.7414620518684387, 0.7235875129699707, 0.7100749015808105]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7545876502990723, 0.7405334115028381, 0.7110300660133362]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8100211024284363, 0.7907100915908813, 0.7453765273094177, 0.7362514138221741, 0.7219566702842712]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7417960166931152, 0.7396405935287476, 0.7332426309585571, 0.7302135825157166, 0.7284032106399536]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7777259349822998, 0.7294178009033203, 0.726049542427063, 0.7111637592315674, 0.70197993516922]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7755235433578491, 0.7495816946029663, 0.747306227684021, 0.7273457646369934, 0.7194864749908447]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8061696290969849, 0.7697736620903015, 0.7449789047241211, 0.7293697595596313, 0.7246453762054443]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7486337423324585, 0.7474489808082581, 0.7262468338012695, 0.7246997356414795, 0.7088103890419006]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.752479612827301, 0.7409129738807678, 0.7350009083747864, 0.7182396650314331, 0.7003533840179443]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7390246391296387, 0.7048216462135315]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7451522350311279, 0.7351149916648865, 0.7310702204704285, 0.707415759563446, 0.705481231212616]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7418608665466309, 0.7273686528205872, 0.7217509746551514]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7515294551849365, 0.7455508708953857, 0.7074714303016663]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7749106884002686, 0.7707385420799255, 0.7577953338623047, 0.7338528037071228]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7597017884254456, 0.7265865206718445, 0.7261053323745728, 0.7044499516487122]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7955850958824158, 0.7697104811668396, 0.7477685213088989, 0.7412381172180176, 0.7186008095741272]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.839100182056427, 0.7249048352241516, 0.7019559144973755]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7691519260406494, 0.7470770478248596]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7670095562934875, 0.7520601749420166, 0.7317745685577393, 0.7125115990638733]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7368812561035156, 0.7337180376052856, 0.7337052226066589, 0.7167336344718933]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7524762153625488, 0.7455689311027527, 0.717127799987793, 0.7129393815994263, 0.7041580080986023]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7458745837211609, 0.713499903678894]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8393635153770447, 0.7819384932518005, 0.7259085774421692, 0.7247673869132996, 0.7102066874504089]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7561235427856445, 0.7268384099006653, 0.7152712941169739, 0.7083081603050232]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7683385610580444, 0.7621699571609497, 0.7613143920898438, 0.732351541519165, 0.7210429310798645]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7736956477165222, 0.7543343901634216, 0.7314257621765137, 0.711847722530365, 0.7035700678825378]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7716525197029114, 0.7538710236549377, 0.7463057637214661, 0.7332891821861267, 0.7047417163848877]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7744832038879395, 0.7697219252586365, 0.7352525591850281, 0.7192918062210083, 0.7026568055152893]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7974324822425842, 0.7741076350212097, 0.7583627104759216, 0.7545614838600159]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7805308699607849, 0.7791483998298645, 0.7026481032371521]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.780574381351471, 0.7077159285545349, 0.706183910369873]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7855513691902161, 0.7794154286384583, 0.7562181949615479, 0.7281697988510132, 0.7164240479469299]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.8001911044120789, 0.7294222116470337]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8062220215797424, 0.8014194369316101, 0.7598884701728821, 0.7451043128967285, 0.7027729153633118]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7696884870529175, 0.7613575458526611, 0.7603715658187866, 0.7274512052536011]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7908235192298889, 0.7460746765136719, 0.722029983997345, 0.7204684615135193, 0.7020320892333984]
+Running mean_average_precision...
+MAP: 0.49180108308792114
+Currently epoch 81
+Currently epoch 82
+Currently epoch 83
+Currently epoch 84
+Currently epoch 85
+Currently epoch 86
+Currently epoch 87
+Currently epoch 88
+Currently epoch 89
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 90
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7578113675117493, 0.7112247943878174, 0.7049974203109741]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7860672473907471, 0.749373197555542, 0.7206970453262329, 0.7049266695976257]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7366526126861572, 0.7260335087776184]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7757863998413086, 0.773392379283905, 0.757544755935669, 0.7527764439582825]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7197892069816589, 0.7163388729095459]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7349056005477905, 0.7091448903083801]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7416585683822632, 0.7202508449554443, 0.7100827693939209, 0.7006582021713257]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7655150294303894, 0.731538712978363, 0.7300494313240051, 0.7197979092597961]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.732938289642334, 0.7169418931007385, 0.7021455764770508]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7527790665626526, 0.7246377468109131, 0.7057455778121948]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7488866448402405, 0.7217531204223633, 0.7142765522003174]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7493928670883179, 0.7040148973464966]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7110071778297424, 0.7053021788597107]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7205296754837036, 0.719487726688385, 0.7168055772781372]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7431957125663757, 0.7391464114189148, 0.7229102253913879, 0.7134568691253662]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7380416989326477, 0.7308443784713745, 0.7011721730232239]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7566604018211365, 0.7340686321258545, 0.7179189324378967, 0.703921377658844]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.8191630244255066, 0.7286613583564758]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7594911456108093, 0.7378389835357666, 0.7180266976356506]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7648764848709106, 0.7300381660461426, 0.7141374349594116, 0.7028395533561707]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7351078391075134, 0.7306374907493591, 0.7021727561950684]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7482922673225403]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7872260212898254, 0.7479140758514404, 0.7328180074691772, 0.7017937302589417]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.782590925693512, 0.7286288738250732, 0.706687331199646]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7978348731994629, 0.7472372055053711, 0.7454715967178345]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7021995186805725]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7617994546890259, 0.7313151955604553, 0.7242555022239685, 0.7102317214012146, 0.70721834897995]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7322399020195007, 0.7111926078796387, 0.703256368637085]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7491251826286316, 0.7390691041946411, 0.7182241678237915]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7688236832618713, 0.7261736392974854, 0.7109654545783997, 0.7029879689216614]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7553817629814148, 0.7527764439582825, 0.7202442288398743, 0.7170652747154236]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7839797735214233, 0.7689417004585266, 0.7287291288375854, 0.7249658107757568]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7574693560600281]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7795423269271851, 0.7527299523353577, 0.7522417306900024, 0.7275007367134094, 0.7141364216804504]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.8022461533546448, 0.7642144560813904, 0.7136931419372559, 0.7022046446800232]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7641852498054504, 0.7585194110870361, 0.7197734117507935, 0.7080729603767395, 0.7038172483444214]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7470546364784241, 0.7336442470550537, 0.7162136435508728]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7494204640388489, 0.7389860153198242, 0.7066004872322083, 0.701363205909729]
+Running mean_average_precision...
+MAP: 0.3649488389492035
+Currently epoch 91
+Currently epoch 92
+Currently epoch 93
+Currently epoch 94
+Currently epoch 95
+Currently epoch 96
+Currently epoch 97
+Currently epoch 98
+Currently epoch 99
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 100
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7823417782783508, 0.7612523436546326, 0.747477650642395, 0.7340076565742493, 0.7146518230438232]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8532395958900452, 0.8062918782234192, 0.7606875896453857, 0.7455518245697021, 0.7230468988418579]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7828322649002075, 0.7618519067764282, 0.7579724788665771, 0.7430485486984253, 0.7333914637565613]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8365723490715027, 0.7993720769882202, 0.7851972579956055, 0.7810412645339966, 0.7083812952041626]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7927473187446594, 0.7918767929077148, 0.7643190026283264, 0.7442798614501953, 0.7361567616462708]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7755938768386841, 0.7664319276809692, 0.7601400017738342, 0.7261458039283752]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8006482720375061, 0.7678664922714233, 0.7602772116661072, 0.7538574934005737, 0.7346090078353882]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.798687219619751, 0.7959975004196167, 0.7800817489624023, 0.7539321780204773, 0.7501599192619324]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.8036838173866272, 0.7880430817604065, 0.7527245283126831, 0.7300534844398499]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.8396269679069519, 0.7892311215400696, 0.7344371676445007, 0.700458288192749]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8146883249282837, 0.7709087133407593, 0.7596843838691711, 0.730099081993103, 0.7050559520721436]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7771855592727661, 0.770085871219635, 0.7642966508865356, 0.7624760866165161, 0.7440913319587708]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7706087827682495, 0.7649146914482117, 0.7240240573883057, 0.7234530448913574, 0.7167490124702454]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7699623107910156, 0.7658694386482239, 0.7412976622581482, 0.7321748733520508, 0.7222812175750732]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7954261302947998, 0.7880146503448486, 0.7780450582504272, 0.7682190537452698, 0.73692387342453]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8047524094581604, 0.8043209910392761, 0.7593445181846619, 0.7388279438018799, 0.7330172657966614]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8063122034072876, 0.7829896211624146, 0.7695522308349609, 0.7439097166061401, 0.7364482283592224]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8228151798248291, 0.7686573266983032, 0.7659473419189453, 0.7253459095954895, 0.7072474956512451]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7838619351387024, 0.7681722044944763, 0.7510836124420166, 0.7484515905380249, 0.7384361028671265]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7799327969551086, 0.761436402797699, 0.753357470035553, 0.7447898983955383, 0.7412804365158081]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7839285135269165, 0.7803298234939575, 0.7755054831504822, 0.7640841007232666, 0.7290124893188477]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7473908066749573, 0.7266468405723572, 0.7221472859382629, 0.7186614274978638]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7936164140701294, 0.7705473899841309, 0.7456252574920654, 0.737477719783783, 0.7353879809379578]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7944881319999695, 0.7473666667938232, 0.7272100448608398, 0.7115908861160278, 0.7039787769317627]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8229386806488037, 0.7813934683799744, 0.7695390582084656, 0.7187468409538269, 0.7170883417129517]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7858702540397644, 0.7648608088493347, 0.7578641176223755, 0.7577663660049438, 0.7289727330207825]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7931771278381348, 0.7819729447364807, 0.7799811363220215, 0.776180624961853, 0.7593585848808289]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7690586447715759, 0.7619232535362244, 0.7583034634590149, 0.7551210522651672, 0.7061160802841187]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7919380068778992, 0.7884858846664429, 0.7838395833969116, 0.7497159838676453, 0.7415029406547546]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8456515669822693, 0.7581052184104919, 0.7379825711250305, 0.7255240678787231, 0.7092193961143494]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8027332425117493, 0.7892242670059204, 0.7861334085464478, 0.7579905986785889, 0.7333709001541138]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8152579665184021, 0.8105437755584717, 0.7874694466590881, 0.7527948021888733, 0.7487930655479431]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7945709228515625, 0.7717404961585999, 0.7529121041297913, 0.7341404557228088, 0.7120925784111023]
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7384517192840576]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.7973964214324951, 0.78570556640625, 0.7698608040809631, 0.7455608248710632, 0.7451318502426147]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8330062031745911, 0.7923826575279236, 0.7817306518554688, 0.758620023727417, 0.7434821724891663]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8022599220275879, 0.7823512554168701, 0.7585586905479431, 0.7477474212646484, 0.7465591430664062]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8031975626945496, 0.799297034740448, 0.7879893183708191, 0.765771746635437, 0.747801661491394]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.793573796749115, 0.7839289307594299, 0.7393450140953064, 0.7322868704795837, 0.7312058806419373]
+Running mean_average_precision...
+MAP: 0.6659176349639893
+Currently epoch 101
+Currently epoch 102
+Currently epoch 103
+Currently epoch 104
+Currently epoch 105
+Currently epoch 106
+Currently epoch 107
+Currently epoch 108
+Currently epoch 109
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 110
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8233653903007507, 0.7795878052711487, 0.7777230143547058, 0.7395035028457642, 0.7106134295463562]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8330190777778625, 0.806721568107605, 0.806266725063324, 0.7455422878265381, 0.7317804098129272]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8155550360679626, 0.7977606654167175, 0.7839204668998718, 0.7610930800437927, 0.7564927935600281]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8237627148628235, 0.8013781309127808, 0.7937695980072021, 0.7320075631141663, 0.7220883369445801]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8068053722381592, 0.8062288761138916, 0.7777643203735352, 0.7717395424842834, 0.741014301776886]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8046843409538269, 0.8029955625534058, 0.7686209678649902, 0.7484533190727234, 0.7443630695343018]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7950719594955444, 0.7754638195037842, 0.76932293176651, 0.7614926099777222, 0.7571247220039368]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8300899267196655, 0.8049436807632446, 0.798854649066925, 0.7987331748008728, 0.7318735122680664]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7966517210006714, 0.7955231666564941, 0.7753113508224487, 0.7359871864318848, 0.7325121760368347]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8185287117958069, 0.7926141619682312, 0.7372786998748779, 0.7176583409309387, 0.7070658206939697]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7981331944465637, 0.7695913910865784, 0.7686325311660767, 0.7298513650894165, 0.7268345952033997]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8105884194374084, 0.7985802292823792, 0.7512210011482239, 0.7470809817314148, 0.7374041080474854]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8049564361572266, 0.7988591194152832, 0.7826793193817139, 0.7479305267333984, 0.7430219054222107]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7920078635215759, 0.7891672253608704, 0.7571682333946228, 0.7504783272743225, 0.7303347587585449]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8109899759292603, 0.7959373593330383, 0.7807461023330688, 0.7605080604553223, 0.7524837851524353]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8104355335235596, 0.7978340983390808, 0.7910333275794983, 0.7831107974052429, 0.763655424118042]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8078746795654297, 0.7872695326805115, 0.7688272595405579, 0.7542746067047119, 0.7537677884101868]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8619586825370789, 0.7807996869087219, 0.7721127271652222, 0.7703206539154053, 0.734447717666626]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8161159753799438, 0.798865795135498, 0.786909818649292, 0.7525755763053894, 0.7503771781921387]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7888187766075134, 0.7543405890464783, 0.7478563189506531, 0.7429277896881104, 0.7284331917762756]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7541661858558655, 0.7534346580505371, 0.7518147826194763, 0.742250382900238, 0.7340145707130432]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.723215639591217, 0.7012755274772644]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8235037922859192, 0.8230594396591187, 0.7597710490226746, 0.751067578792572, 0.7496256828308105]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.780376136302948, 0.7789947390556335, 0.7757608890533447, 0.7665651440620422, 0.7621951103210449]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8434714674949646, 0.7894330620765686, 0.7807793021202087, 0.7556546330451965, 0.7251335978507996]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7966263890266418, 0.7799219489097595, 0.767022430896759, 0.7547017335891724, 0.7432966232299805]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8183900713920593, 0.8136400580406189, 0.77888423204422, 0.7701719999313354, 0.7608092427253723]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.8035722970962524, 0.776691198348999, 0.747443437576294, 0.7414910793304443, 0.7403422594070435]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8167862296104431, 0.7817296385765076, 0.778331458568573, 0.7521454691886902, 0.7365669012069702]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8317328691482544, 0.7759072780609131, 0.7655571699142456, 0.7652627229690552, 0.7113062143325806]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.826922595500946, 0.8208171129226685, 0.8034345507621765, 0.7708633542060852, 0.7402423024177551]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8452895879745483, 0.8320772647857666, 0.8079497218132019, 0.7914295792579651, 0.7470813989639282]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8180379867553711, 0.7717158794403076, 0.7467506527900696, 0.7337987422943115, 0.7318013906478882]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.756564736366272, 0.7299423813819885, 0.7281890511512756, 0.727969229221344, 0.7093873620033264]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8119837045669556, 0.8104143738746643, 0.7786538600921631, 0.759417712688446, 0.7581337094306946]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8499624729156494, 0.8002849817276001, 0.7757431268692017, 0.739098072052002, 0.7301657199859619]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.817672610282898, 0.7999193072319031, 0.7814992070198059, 0.7733163833618164, 0.7274233102798462]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.824141800403595, 0.7975493669509888, 0.7881366610527039, 0.7694172263145447, 0.734326958656311]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.7738921642303467, 0.7738454341888428, 0.7690567970275879, 0.7583997249603271, 0.7581174373626709]
+Running mean_average_precision...
+MAP: 0.6435918211936951
+Currently epoch 111
+Currently epoch 112
+Currently epoch 113
+Currently epoch 114
+Currently epoch 115
+Currently epoch 116
+Currently epoch 117
+Currently epoch 118
+Currently epoch 119
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 120
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7847837209701538, 0.7610689997673035, 0.7601413726806641, 0.7066104412078857]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8332028388977051, 0.7906351685523987, 0.7812848091125488, 0.7508667707443237, 0.731288731098175]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7626710534095764, 0.7618854641914368, 0.7578468918800354, 0.7462827563285828, 0.7425008416175842]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.8137441277503967, 0.782932698726654, 0.7618153691291809]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7878435254096985, 0.7756761312484741, 0.7662904858589172, 0.7469374537467957, 0.7378456592559814]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7702130079269409, 0.7497931122779846, 0.7440084218978882, 0.7380311489105225, 0.7195069789886475]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7760043144226074, 0.7695595026016235, 0.7553343176841736, 0.7261063456535339, 0.7204583287239075]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7931073904037476, 0.7794994711875916, 0.7661853432655334, 0.7448483109474182, 0.7366902232170105]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.8022213578224182, 0.7604489922523499, 0.7520243525505066, 0.7468119859695435]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.822027325630188, 0.7643002271652222, 0.748900830745697, 0.7440891265869141]
+Starting NMS
+Num boxes above confidence threshold: 3
+Highest Box confidence scores: [0.7792975306510925, 0.7754364013671875, 0.7529585361480713]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7896827459335327, 0.7464408278465271, 0.7372327446937561, 0.7333642840385437, 0.7310858964920044]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7833651304244995, 0.7469539642333984, 0.746566891670227, 0.740708589553833, 0.7312284708023071]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7564495801925659, 0.7492080330848694, 0.7341457605361938, 0.7058853507041931, 0.7030578851699829]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7707902789115906, 0.761733889579773, 0.7607766389846802, 0.749830424785614, 0.7400462031364441]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.787280261516571, 0.7850132584571838, 0.765949547290802, 0.7623778581619263, 0.7363920211791992]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7740886211395264, 0.7735010981559753, 0.7623285055160522, 0.7531232237815857, 0.71412593126297]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7974491119384766, 0.7616761922836304, 0.7276948094367981, 0.7105031609535217]
+Starting NMS
+Num boxes above confidence threshold: 4
+Highest Box confidence scores: [0.7673404216766357, 0.7597293853759766, 0.7537375688552856, 0.7197381258010864]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7590919137001038, 0.7449125647544861, 0.7327272891998291, 0.7297556400299072, 0.7176640629768372]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.745848536491394, 0.7452923059463501, 0.7207534313201904, 0.7011340856552124, 0.7009511590003967]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7042954564094543, 0.7029988765716553]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7670904994010925, 0.7650327086448669, 0.7531917691230774, 0.7509341835975647, 0.7165425419807434]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7695646286010742, 0.7549523115158081, 0.7539294362068176, 0.7435505390167236, 0.7409504055976868]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7773224115371704, 0.7721011638641357, 0.7610092759132385, 0.7229331731796265, 0.7091716527938843]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7701684236526489, 0.7558847665786743, 0.7463154196739197, 0.7204539179801941, 0.7202989459037781]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7989481687545776, 0.7667732834815979, 0.7659388780593872, 0.7614275813102722, 0.7479028105735779]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.77731853723526, 0.75038081407547, 0.7484935522079468, 0.7323647141456604, 0.7229598164558411]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8038974404335022, 0.7615838646888733, 0.756572425365448, 0.750353991985321, 0.7415937781333923]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8291414380073547, 0.7529745697975159, 0.7502636909484863, 0.7327577471733093, 0.7236611843109131]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7953782677650452, 0.7608680129051208, 0.752312183380127, 0.7432057857513428, 0.7414401173591614]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8212540745735168, 0.8015681505203247, 0.8001895546913147, 0.7634311318397522, 0.7618024945259094]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7932223081588745, 0.740936815738678, 0.7404280304908752, 0.7390006184577942, 0.7140854001045227]
+Starting NMS
+Num boxes above confidence threshold: 2
+Highest Box confidence scores: [0.7464356422424316, 0.7098104953765869]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7885913848876953, 0.7848607897758484, 0.7709195017814636, 0.7598845958709717, 0.7321866750717163]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8289955854415894, 0.7653427124023438, 0.7539094090461731, 0.7129145860671997, 0.7089548707008362]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7705535888671875, 0.7644292712211609, 0.7640454173088074, 0.7604591846466064, 0.7324405908584595]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7948961853981018, 0.7831031680107117, 0.7532859444618225, 0.7421411275863647, 0.7385401725769043]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7810885906219482, 0.7699252963066101, 0.7486898899078369, 0.7450293898582458, 0.7392956614494324]
+Running mean_average_precision...
+MAP: 0.6751971244812012
+Currently epoch 121
+Currently epoch 122
+Currently epoch 123
+Currently epoch 124
+Currently epoch 125
+Currently epoch 126
+Currently epoch 127
+Currently epoch 128
+Currently epoch 129
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 130
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8406396508216858, 0.8091212511062622, 0.8069847226142883, 0.7928709387779236, 0.7750819325447083]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.865413248538971, 0.8321220874786377, 0.8090922236442566, 0.8088754415512085, 0.7919135689735413]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8099278211593628, 0.8065424561500549, 0.7998124361038208, 0.7997695207595825, 0.785459041595459]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8300344347953796, 0.8297871351242065, 0.8114622831344604, 0.7321479916572571, 0.7318753004074097]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8367910981178284, 0.8219475150108337, 0.8168168067932129, 0.7991884350776672, 0.7744266390800476]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8136760592460632, 0.8036583065986633, 0.8013787269592285, 0.7957470417022705, 0.7891719341278076]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8342543244361877, 0.8201512098312378, 0.816891074180603, 0.783882737159729, 0.7738180160522461]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8403088450431824, 0.8251293897628784, 0.8093503713607788, 0.804898738861084, 0.8011932373046875]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8338151574134827, 0.8178198337554932, 0.8032903671264648, 0.8020796775817871, 0.7775256037712097]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8567391633987427, 0.8062734603881836, 0.8035708069801331, 0.801741361618042, 0.7692571878433228]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8224349617958069, 0.8150518536567688, 0.8135330677032471, 0.7620636224746704, 0.744080126285553]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8430787920951843, 0.80765300989151, 0.8033655881881714, 0.7959640622138977, 0.7881980538368225]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.834021806716919, 0.8003911972045898, 0.7991825938224792, 0.7954447865486145, 0.7835473418235779]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8068534135818481, 0.8021520972251892, 0.7834028601646423, 0.7565507292747498, 0.7473718523979187]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8191970586776733, 0.8150768280029297, 0.8141454458236694, 0.8062658309936523, 0.7837034463882446]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8340216279029846, 0.8289006352424622, 0.8213372230529785, 0.8114304542541504, 0.7963931560516357]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8208467960357666, 0.8202086091041565, 0.8129448294639587, 0.7991414070129395, 0.7908565998077393]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8348210453987122, 0.8256275057792664, 0.779668927192688, 0.7762263417243958, 0.7553861141204834]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8136960864067078, 0.8106060028076172, 0.7947094440460205, 0.7403443455696106, 0.7396029829978943]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.7979896664619446, 0.7938741445541382, 0.792292594909668, 0.7692649364471436, 0.7688338160514832]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7915006279945374, 0.7667490243911743, 0.7651984095573425, 0.7488439679145813, 0.7476819157600403]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7843433022499084, 0.7709255814552307, 0.7527481913566589, 0.7450419068336487, 0.7378351092338562]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8144434094429016, 0.8049634099006653, 0.8015719652175903, 0.7805520296096802, 0.7611960172653198]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8245123624801636, 0.783301830291748, 0.7812715768814087, 0.7794256806373596, 0.7786628603935242]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8302048444747925, 0.8106423616409302, 0.8018676042556763, 0.7843971848487854, 0.7756535410881042]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8225888609886169, 0.8201472759246826, 0.8010355830192566, 0.7847011685371399, 0.7806342244148254]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8405934572219849, 0.8213276863098145, 0.8171032071113586, 0.8155915141105652, 0.7831655740737915]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8209742903709412, 0.8058375716209412, 0.8001225590705872, 0.7824631929397583, 0.7703619003295898]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8498965501785278, 0.8020724654197693, 0.799313485622406, 0.7982105016708374, 0.7744506001472473]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8566288948059082, 0.8100277781486511, 0.798914909362793, 0.7920883893966675, 0.788797914981842]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8383047580718994, 0.8154619932174683, 0.8019512295722961, 0.797809898853302, 0.7971451282501221]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8501594066619873, 0.84726482629776, 0.8337264060974121, 0.8165518045425415, 0.8148903846740723]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8275749683380127, 0.8003721833229065, 0.7929932475090027, 0.7893239855766296, 0.7569067478179932]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7784782648086548, 0.776389479637146, 0.773080050945282, 0.7692925333976746, 0.758721649646759]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8393619656562805, 0.8373761177062988, 0.8026005029678345, 0.7959522008895874, 0.7895556092262268]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8743512630462646, 0.8242083787918091, 0.8213478326797485, 0.7936817407608032, 0.7867745161056519]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8181485533714294, 0.8138760328292847, 0.8074040412902832, 0.7953031659126282, 0.7943933606147766]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8431168794631958, 0.8331226110458374, 0.7979245781898499, 0.7916786670684814, 0.7871294021606445]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8167726397514343, 0.7972277998924255, 0.7961741089820862, 0.7939069271087646, 0.7932892441749573]
+Running mean_average_precision...
+MAP: 0.8422965407371521
+Currently epoch 131
+Currently epoch 132
+Currently epoch 133
+Currently epoch 134
+Currently epoch 135
+Currently epoch 136
+Currently epoch 137
+Currently epoch 138
+Currently epoch 139
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 140
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8524191975593567, 0.8242030143737793, 0.8186513185501099, 0.7751599550247192, 0.7732718586921692]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8754090666770935, 0.8190099596977234, 0.8043888807296753, 0.7898911833763123, 0.7875521183013916]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8307535648345947, 0.8240320682525635, 0.8213106989860535, 0.8099638223648071, 0.8067495226860046]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8122900724411011, 0.810912549495697, 0.8014126420021057, 0.7237586975097656, 0.70622718334198]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8334485292434692, 0.8309836387634277, 0.8281763195991516, 0.7914368510246277, 0.784845232963562]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8217412233352661, 0.7948880791664124, 0.7879844307899475, 0.7871364951133728, 0.7805042266845703]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8212570548057556, 0.8137313723564148, 0.8048985004425049, 0.7839847803115845, 0.7764191031455994]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8409916162490845, 0.8258030414581299, 0.8215369582176208, 0.7972029447555542, 0.7741932272911072]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8493478894233704, 0.829425573348999, 0.8063397407531738, 0.7948341369628906, 0.7879152894020081]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8608881831169128, 0.807774007320404, 0.7909846901893616, 0.7893489003181458, 0.7852882146835327]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8123953342437744, 0.8081540465354919, 0.7961375713348389, 0.7911770939826965, 0.7559462785720825]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8350508213043213, 0.8182734251022339, 0.8112901449203491, 0.797528862953186, 0.7970829606056213]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8311792016029358, 0.8162090182304382, 0.79469895362854, 0.7910609245300293, 0.7908384799957275]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8265097737312317, 0.7964211702346802, 0.780580461025238, 0.7571532130241394, 0.7554842233657837]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8210682272911072, 0.8157988786697388, 0.8085897564888, 0.8069734573364258, 0.7908145189285278]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8425453305244446, 0.8407315015792847, 0.827318549156189, 0.8241319060325623, 0.7784095406532288]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.825510561466217, 0.8133596181869507, 0.8125261068344116, 0.8099043965339661, 0.7903487086296082]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.829759418964386, 0.8105635643005371, 0.7961543798446655, 0.772835910320282, 0.7675726413726807]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8323600888252258, 0.8191023468971252, 0.8058028221130371, 0.7540016174316406, 0.7522121071815491]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.7966241240501404, 0.7866063714027405, 0.7850996255874634, 0.7660831212997437, 0.7633119821548462]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.797662615776062, 0.7763595581054688, 0.7649115324020386, 0.7620750069618225, 0.760089099407196]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8101409673690796, 0.7960028052330017, 0.7809830904006958, 0.758100152015686, 0.7575483322143555]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8087643384933472, 0.807806134223938, 0.793637216091156, 0.7918583154678345, 0.7903839945793152]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8418042659759521, 0.8022428750991821, 0.7900989651679993, 0.7878246307373047, 0.7807157635688782]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8360591530799866, 0.8282153606414795, 0.7922268509864807, 0.757025420665741, 0.7567660212516785]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8235644698143005, 0.8196173310279846, 0.8027197122573853, 0.7793266177177429, 0.771324098110199]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8363965153694153, 0.8233358860015869, 0.811041533946991, 0.7973162531852722, 0.7793589234352112]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8128231763839722, 0.810052752494812, 0.8068963885307312, 0.7977543473243713, 0.7774508595466614]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8463001251220703, 0.8104603886604309, 0.7933434247970581, 0.7895638346672058, 0.7818713784217834]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8698329329490662, 0.8271604776382446, 0.808907151222229, 0.8008289337158203, 0.792132556438446]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8331406116485596, 0.8246026635169983, 0.8220096230506897, 0.8032452464103699, 0.7969807982444763]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8579509854316711, 0.8316509127616882, 0.8305448293685913, 0.8190756440162659, 0.8052887916564941]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8299868106842041, 0.800690233707428, 0.7989612817764282, 0.7901017069816589, 0.7574189901351929]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8044594526290894, 0.7968488335609436, 0.7797411680221558, 0.772262454032898, 0.7597979307174683]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.831315279006958, 0.8129809498786926, 0.8125092387199402, 0.8086729645729065, 0.7899842858314514]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8644261956214905, 0.8150521516799927, 0.7964210510253906, 0.7918821573257446, 0.776804506778717]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8136283159255981, 0.8103057742118835, 0.8068503737449646, 0.7859755158424377, 0.7714728713035583]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8399774432182312, 0.8223167657852173, 0.8104580640792847, 0.8053204417228699, 0.7666763663291931]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8292534947395325, 0.8187071681022644, 0.8039392828941345, 0.8015826344490051, 0.7967298626899719]
+Running mean_average_precision...
+MAP: 0.9157529473304749
+Currently epoch 141
+Currently epoch 142
+Currently epoch 143
+Currently epoch 144
+Currently epoch 145
+Currently epoch 146
+Currently epoch 147
+Currently epoch 148
+Currently epoch 149
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 150
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8382953405380249, 0.8170183897018433, 0.7880502939224243, 0.7622610330581665, 0.7358847856521606]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8693884015083313, 0.8129166960716248, 0.7961860299110413, 0.7887833118438721, 0.7859925031661987]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8311768770217896, 0.7974247932434082, 0.7969297170639038, 0.7956563234329224, 0.7951689958572388]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7898092269897461, 0.7806051969528198, 0.7744746804237366, 0.7132327556610107, 0.7064392566680908]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8415423035621643, 0.8359496593475342, 0.8224785923957825, 0.779111921787262, 0.7771836519241333]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8218496441841125, 0.8007495999336243, 0.7904607057571411, 0.7824181914329529, 0.762547492980957]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8311591744422913, 0.8250166177749634, 0.8026464581489563, 0.7752644419670105, 0.7711950540542603]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8347069025039673, 0.8324408531188965, 0.821323573589325, 0.7967325448989868, 0.7896544933319092]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8496824502944946, 0.8233699202537537, 0.8086386322975159, 0.7978340983390808, 0.7886145114898682]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.866174578666687, 0.7946152091026306, 0.7833797335624695, 0.7815799117088318, 0.7814924716949463]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.773217499256134, 0.7707265019416809, 0.7627213597297668, 0.7488618493080139, 0.7443996071815491]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8240197896957397, 0.8112602829933167, 0.8044127821922302, 0.7946116328239441, 0.7882379293441772]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8386688828468323, 0.8137208223342896, 0.790084183216095, 0.7814165353775024, 0.7749786972999573]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.7986815571784973, 0.7858498692512512, 0.7562834620475769, 0.7504270076751709, 0.7319077253341675]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8207514882087708, 0.81690514087677, 0.8141041994094849, 0.8064802885055542, 0.769413411617279]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8361994028091431, 0.8281956315040588, 0.8190738558769226, 0.8099267482757568, 0.7822343707084656]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.829037070274353, 0.8260499238967896, 0.8026593923568726, 0.7882985472679138, 0.7852204442024231]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8192126154899597, 0.810154378414154, 0.7968261241912842, 0.775160014629364, 0.7671700119972229]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8080245852470398, 0.7923848032951355, 0.7722460031509399, 0.7571354508399963, 0.7503553628921509]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.7769291400909424, 0.7749626636505127, 0.7694088220596313, 0.7681846618652344, 0.7647941708564758]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7491715550422668, 0.746764063835144, 0.7462446689605713, 0.7461161613464355, 0.7428408265113831]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.7738791108131409, 0.7594431042671204, 0.7470256090164185, 0.741414487361908, 0.7373852133750916]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8079175353050232, 0.805708110332489, 0.7930560111999512, 0.7877058982849121, 0.7546660900115967]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.823560357093811, 0.7940878868103027, 0.7938263416290283, 0.7841628789901733, 0.7755804657936096]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8170849084854126, 0.7984949350357056, 0.78984534740448, 0.745934247970581, 0.735291063785553]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8392912745475769, 0.8265513777732849, 0.79240483045578, 0.766394317150116, 0.7652783393859863]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8325133919715881, 0.8273512125015259, 0.813154935836792, 0.7837716937065125, 0.7783167362213135]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8138391375541687, 0.807758092880249, 0.8031753301620483, 0.7993412017822266, 0.7603602409362793]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8446183800697327, 0.8124218583106995, 0.7974317669868469, 0.7854438424110413, 0.7638207674026489]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8622285723686218, 0.8095666170120239, 0.8034299612045288, 0.7980436086654663, 0.7943947315216064]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8385723233222961, 0.8127425909042358, 0.8097160458564758, 0.7863225340843201, 0.7850093841552734]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.841222882270813, 0.8262224793434143, 0.8167832493782043, 0.8156228065490723, 0.7925423979759216]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8304888010025024, 0.810409665107727, 0.8055113554000854, 0.7855120301246643, 0.7504119277000427]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7913484573364258, 0.7863500714302063, 0.7468954920768738, 0.7400392293930054, 0.7373294830322266]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8346779942512512, 0.8288500308990479, 0.805185079574585, 0.7828819751739502, 0.7703059315681458]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8334224820137024, 0.8048765063285828, 0.7737208604812622, 0.7721760869026184, 0.7563087344169617]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.811330258846283, 0.8082879781723022, 0.8030290603637695, 0.7843616008758545, 0.7788538932800293]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8405445218086243, 0.8124032020568848, 0.8060595989227295, 0.8004433512687683, 0.7785177230834961]
+Starting NMS
+Num boxes above confidence threshold: 20
+Highest Box confidence scores: [0.8264103531837463, 0.8132241368293762, 0.8027341365814209, 0.7888849377632141, 0.7840381860733032]
+Running mean_average_precision...
+MAP: 0.8894780874252319
+Currently epoch 151
+Currently epoch 152
+Currently epoch 153
+Currently epoch 154
+Currently epoch 155
+Currently epoch 156
+Currently epoch 157
+Currently epoch 158
+Currently epoch 159
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 160
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8410389423370361, 0.8211575746536255, 0.8143395781517029, 0.7767201066017151, 0.76585853099823]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8677584528923035, 0.8180248141288757, 0.8130387663841248, 0.7883399724960327, 0.7867459058761597]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8203780651092529, 0.8175860047340393, 0.8149991035461426, 0.8121880292892456, 0.7974348664283752]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8175574541091919, 0.8168815970420837, 0.8055360317230225, 0.7758126258850098, 0.7345845699310303]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8393903970718384, 0.8308972120285034, 0.8283721208572388, 0.7928014993667603, 0.7787564992904663]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8210780024528503, 0.8099165558815002, 0.7941820025444031, 0.7896933555603027, 0.7787448167800903]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8308658599853516, 0.8193515539169312, 0.7970941662788391, 0.7932239174842834, 0.786054253578186]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8365171551704407, 0.8301529288291931, 0.8213320970535278, 0.7858103513717651, 0.7852925658226013]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8441237211227417, 0.8359359502792358, 0.8220924735069275, 0.799651026725769, 0.7893494367599487]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.856554388999939, 0.822130024433136, 0.7979271411895752, 0.7825028896331787, 0.778468906879425]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8131663799285889, 0.7980097532272339, 0.7943761944770813, 0.7908146977424622, 0.7666885256767273]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8226703405380249, 0.8195464611053467, 0.818343997001648, 0.8024494647979736, 0.7881675362586975]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8313116431236267, 0.8151284456253052, 0.7934523224830627, 0.7929527759552002, 0.7858918309211731]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8305901885032654, 0.7997313737869263, 0.7730798721313477, 0.768091082572937, 0.7640612125396729]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8234350681304932, 0.8212789297103882, 0.8110056519508362, 0.7940317988395691, 0.7895966172218323]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8398818373680115, 0.8336390256881714, 0.8326002359390259, 0.8196020126342773, 0.7798681259155273]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.825009822845459, 0.8174338936805725, 0.816263735294342, 0.803065836429596, 0.7998338937759399]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8254325985908508, 0.8069785237312317, 0.7934607267379761, 0.7928501963615417, 0.7902096509933472]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8345944285392761, 0.8299184441566467, 0.7805365324020386, 0.7664231061935425, 0.7609115242958069]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8171858191490173, 0.8049948215484619, 0.7859918475151062, 0.7751863598823547, 0.7744879126548767]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7884417772293091, 0.7849373817443848, 0.7640699744224548, 0.7557973265647888, 0.7493800520896912]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8184869289398193, 0.7982884049415588, 0.7904642820358276, 0.7662287354469299, 0.7561363577842712]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8239119052886963, 0.7976277470588684, 0.7878298163414001, 0.7869056463241577, 0.7824047207832336]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8556960225105286, 0.7963269352912903, 0.7875282764434814, 0.7874882221221924, 0.7836549878120422]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8256903886795044, 0.8169113993644714, 0.7461951375007629, 0.740867018699646, 0.7395118474960327]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8309623599052429, 0.8234732747077942, 0.8025357723236084, 0.781204104423523, 0.778258740901947]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8205279111862183, 0.8204702138900757, 0.8185060024261475, 0.7929122447967529, 0.7854559421539307]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8153754472732544, 0.8065583109855652, 0.8000507950782776, 0.7881410717964172, 0.783167839050293]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8429243564605713, 0.8180341124534607, 0.8045255541801453, 0.7958526611328125, 0.7836079597473145]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8571462035179138, 0.8275575041770935, 0.8187963366508484, 0.8143988847732544, 0.7999305725097656]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8326996564865112, 0.8244358897209167, 0.8121635913848877, 0.8108239769935608, 0.809528112411499]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8500611782073975, 0.8443958163261414, 0.8265367150306702, 0.8045555949211121, 0.792113184928894]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8296589851379395, 0.8117618560791016, 0.7984652519226074, 0.7845298051834106, 0.7839533090591431]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.812688410282135, 0.8022074103355408, 0.7997925281524658, 0.7712944149971008, 0.7420089840888977]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8388853669166565, 0.8364760279655457, 0.804016649723053, 0.7911809086799622, 0.7840736508369446]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8501933813095093, 0.8132229447364807, 0.8049805164337158, 0.7926685214042664, 0.7850558161735535]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8189778327941895, 0.8166401982307434, 0.8078605532646179, 0.7791922092437744, 0.7723714113235474]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8339897990226746, 0.8111639022827148, 0.8046389222145081, 0.8045209646224976, 0.7872344851493835]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8290704488754272, 0.8180378675460815, 0.8073512315750122, 0.7882347702980042, 0.7856501936912537]
+Running mean_average_precision...
+MAP: 0.942695677280426
+Currently epoch 161
+Currently epoch 162
+Currently epoch 163
+Currently epoch 164
+Currently epoch 165
+Currently epoch 166
+Currently epoch 167
+Currently epoch 168
+Currently epoch 169
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 170
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8161467909812927, 0.7963613271713257, 0.7920840382575989, 0.7406942844390869, 0.7301723957061768]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8526403903961182, 0.8044018149375916, 0.7782303094863892, 0.7680724859237671, 0.7661879062652588]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8115368485450745, 0.8075851202011108, 0.8031949400901794, 0.7982324361801147, 0.7800420522689819]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.7886068224906921, 0.7791702747344971, 0.7619833946228027, 0.7069845795631409, 0.7035301327705383]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8227426409721375, 0.8169419765472412, 0.8066850900650024, 0.7723972797393799, 0.7698389887809753]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8066850900650024, 0.7942012548446655, 0.7719820141792297, 0.7685039639472961, 0.7641658782958984]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8162424564361572, 0.8003191947937012, 0.7861142754554749, 0.7771856784820557, 0.772321879863739]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8317628502845764, 0.8064584136009216, 0.8046354651451111, 0.7822607755661011, 0.7758046388626099]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8275001049041748, 0.8177674412727356, 0.7955265045166016, 0.7780036330223083, 0.7632206678390503]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.838974118232727, 0.8050516843795776, 0.7769951820373535, 0.7695111036300659, 0.7655578851699829]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.7794492244720459, 0.7561652064323425, 0.7533100843429565, 0.727090060710907, 0.7262314558029175]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8081877827644348, 0.8038252592086792, 0.7962760925292969, 0.7940467596054077, 0.7803415060043335]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8196142315864563, 0.8003485798835754, 0.7912210822105408, 0.778411328792572, 0.7742054462432861]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7918356657028198, 0.7859500646591187, 0.772415041923523, 0.7506528496742249, 0.7140178084373474]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8051713109016418, 0.7934662699699402, 0.7887423038482666, 0.7868590354919434, 0.777937650680542]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8264824748039246, 0.8182491064071655, 0.8145816922187805, 0.7974008321762085, 0.768231987953186]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.811940610408783, 0.810488760471344, 0.8091898560523987, 0.7990570664405823, 0.7823652029037476]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8198858499526978, 0.7782670855522156, 0.760835587978363, 0.7604093551635742, 0.7578344941139221]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.7932662963867188, 0.7732246518135071, 0.749918520450592, 0.7309962511062622, 0.7238019108772278]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.7725371718406677, 0.7696999311447144, 0.7660685181617737, 0.7488064765930176, 0.7418186664581299]
+Starting NMS
+Num boxes above confidence threshold: 6
+Highest Box confidence scores: [0.7533409595489502, 0.7502354979515076, 0.7453994750976562, 0.7346076369285583, 0.7317060232162476]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.7846697568893433, 0.7669196724891663, 0.7587661147117615, 0.7409909963607788, 0.7336934208869934]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.7949599623680115, 0.78622967004776, 0.7550845742225647, 0.7518206834793091, 0.7511106729507446]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8291434645652771, 0.7739940881729126, 0.7722956538200378, 0.7707880139350891, 0.7667474150657654]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.804315984249115, 0.784243643283844, 0.7206977605819702, 0.717822790145874, 0.7166383266448975]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8117157220840454, 0.8094710111618042, 0.7876964211463928, 0.7636836171150208, 0.7566752433776855]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8042190670967102, 0.8022112846374512, 0.7917965650558472, 0.7766649127006531, 0.759086012840271]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8004687428474426, 0.7933898568153381, 0.7806248664855957, 0.775780200958252, 0.7661371231079102]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8241708874702454, 0.8002340793609619, 0.7818131446838379, 0.7809478044509888, 0.7606450319290161]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8404965996742249, 0.8101271986961365, 0.7978923916816711, 0.7916584610939026, 0.7858653664588928]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8169459700584412, 0.8008005619049072, 0.7970641255378723, 0.7942954897880554, 0.7899162173271179]
+Starting NMS
+Num boxes above confidence threshold: 8
+Highest Box confidence scores: [0.8299005031585693, 0.8194531202316284, 0.8115019798278809, 0.7672163248062134, 0.7651199698448181]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8187952637672424, 0.7905473113059998, 0.7831096649169922, 0.7732412219047546, 0.755304217338562]
+Starting NMS
+Num boxes above confidence threshold: 5
+Highest Box confidence scores: [0.8060296177864075, 0.7716079354286194, 0.7603434324264526, 0.7299664616584778, 0.7111665606498718]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8233965039253235, 0.8112373352050781, 0.7893947958946228, 0.7760522365570068, 0.7521900534629822]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8218204975128174, 0.7839912176132202, 0.7703157067298889, 0.7685365080833435, 0.7475934028625488]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8020468354225159, 0.7890998721122742, 0.7881804704666138, 0.7635265588760376, 0.7609937191009521]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8151071071624756, 0.7953218817710876, 0.7906408905982971, 0.7857059240341187, 0.7698646187782288]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8023887276649475, 0.7990037202835083, 0.7983008027076721, 0.7870363593101501, 0.7863975167274475]
+Running mean_average_precision...
+MAP: 0.8859097957611084
+Currently epoch 171
+Currently epoch 172
+Currently epoch 173
+Currently epoch 174
+Currently epoch 175
+Currently epoch 176
+Currently epoch 177
+Currently epoch 178
+Currently epoch 179
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 180
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8617010712623596, 0.8312797546386719, 0.8298633098602295, 0.7713251709938049, 0.7707171440124512]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.885711133480072, 0.8280026316642761, 0.8267839550971985, 0.8219594359397888, 0.8156551718711853]
+Starting NMS
+Num boxes above confidence threshold: 21
+Highest Box confidence scores: [0.8518939018249512, 0.8360648155212402, 0.8233662247657776, 0.8222392201423645, 0.8147989511489868]
+Starting NMS
+Num boxes above confidence threshold: 7
+Highest Box confidence scores: [0.8343834280967712, 0.8241408467292786, 0.8165056109428406, 0.7812538743019104, 0.763105571269989]
+Starting NMS
+Num boxes above confidence threshold: 19
+Highest Box confidence scores: [0.8517747521400452, 0.8487311005592346, 0.8464735746383667, 0.812434196472168, 0.8030444383621216]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8343181014060974, 0.8231306672096252, 0.8190796375274658, 0.8179213404655457, 0.8055300116539001]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8463572263717651, 0.8362454175949097, 0.8304387331008911, 0.8263848423957825, 0.8144797682762146]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8554999232292175, 0.8485972881317139, 0.837745189666748, 0.8225504755973816, 0.8205372095108032]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8653137683868408, 0.8418456315994263, 0.8321316838264465, 0.8284716010093689, 0.8232156038284302]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8733974695205688, 0.8226090669631958, 0.8148370385169983, 0.8144447803497314, 0.8122677206993103]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.829519510269165, 0.8121394515037537, 0.8011295199394226, 0.794754147529602, 0.7843440771102905]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8405863642692566, 0.8390083909034729, 0.838173508644104, 0.8263702988624573, 0.8200265169143677]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8476479649543762, 0.8382188677787781, 0.8243038654327393, 0.8187069296836853, 0.8116321563720703]
+Starting NMS
+Num boxes above confidence threshold: 9
+Highest Box confidence scores: [0.8412334322929382, 0.8246344327926636, 0.8173438906669617, 0.7908461689949036, 0.7694954872131348]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8488516211509705, 0.8441427946090698, 0.8358649611473083, 0.8278750777244568, 0.7935042381286621]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8511165380477905, 0.8477894067764282, 0.8357288837432861, 0.8342685103416443, 0.8112342953681946]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8411219716072083, 0.8387526869773865, 0.8357869386672974, 0.8189630508422852, 0.814585268497467]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8499769568443298, 0.8237828016281128, 0.817410945892334, 0.8003186583518982, 0.7998208403587341]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8298829793930054, 0.8288986086845398, 0.7815394997596741, 0.7794861197471619, 0.7752591371536255]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8191540837287903, 0.8033918738365173, 0.7998326420783997, 0.7927084565162659, 0.7881635427474976]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.7987889051437378, 0.7910235524177551, 0.7826148867607117, 0.7788307070732117, 0.7694451808929443]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8189237713813782, 0.8081313371658325, 0.7936678528785706, 0.7906769514083862, 0.7758099436759949]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.835973858833313, 0.8277817964553833, 0.812494158744812, 0.80699622631073, 0.8063141107559204]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8657075762748718, 0.8136965036392212, 0.8098971247673035, 0.8060855865478516, 0.799225926399231]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8342456817626953, 0.8326199650764465, 0.7821738719940186, 0.7775096297264099, 0.7739173173904419]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8473225235939026, 0.8362071514129639, 0.829491913318634, 0.8059913516044617, 0.8011155128479004]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8389923572540283, 0.834251880645752, 0.8267666101455688, 0.8144569993019104, 0.8120424747467041]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8415232300758362, 0.8383352756500244, 0.8332557678222656, 0.8169792294502258, 0.8103129863739014]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8511343002319336, 0.8346209526062012, 0.8250169157981873, 0.815335750579834, 0.8117799758911133]
+Starting NMS
+Num boxes above confidence threshold: 11
+Highest Box confidence scores: [0.8769766688346863, 0.8372873067855835, 0.834057629108429, 0.8331458568572998, 0.8288997411727905]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.848183274269104, 0.8428700566291809, 0.8239247798919678, 0.8152763247489929, 0.8099929094314575]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8634229302406311, 0.8522751927375793, 0.8521705865859985, 0.8169684410095215, 0.8079099059104919]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8447844386100769, 0.8363859057426453, 0.8263567686080933, 0.8225938677787781, 0.8003458976745605]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8129529356956482, 0.7947946190834045, 0.7905092835426331, 0.7880749106407166, 0.7875550985336304]
+Starting NMS
+Num boxes above confidence threshold: 19
+Highest Box confidence scores: [0.8493704795837402, 0.8445565104484558, 0.8231567144393921, 0.8175564408302307, 0.7992931008338928]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8457697033882141, 0.8395666480064392, 0.8360164761543274, 0.8060287237167358, 0.8023324012756348]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8396040201187134, 0.8336408734321594, 0.8204178214073181, 0.8158676624298096, 0.8050409555435181]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8423007726669312, 0.8389615416526794, 0.8334556818008423, 0.824683666229248, 0.8057622909545898]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8411473631858826, 0.8381235003471375, 0.8314865231513977, 0.8243734240531921, 0.8145037293434143]
+Running mean_average_precision...
+MAP: 0.9520182609558105
+Currently epoch 181
+Currently epoch 182
+Currently epoch 183
+Currently epoch 184
+Currently epoch 185
+Currently epoch 186
+Currently epoch 187
+Currently epoch 188
+Currently epoch 189
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar
+Currently epoch 190
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8634902834892273, 0.8411829471588135, 0.836622416973114, 0.7900717258453369, 0.7677783370018005]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8789078593254089, 0.8422101140022278, 0.8252773284912109, 0.8240867257118225, 0.8188416957855225]
+Starting NMS
+Num boxes above confidence threshold: 18
+Highest Box confidence scores: [0.8559216260910034, 0.8331329822540283, 0.831221878528595, 0.8207436800003052, 0.8183027505874634]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8395426869392395, 0.8382344841957092, 0.7747634649276733, 0.7738978862762451, 0.7725202441215515]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.858769416809082, 0.8533394932746887, 0.8483284711837769, 0.8015713691711426, 0.8012006282806396]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8455252051353455, 0.8378392457962036, 0.824781596660614, 0.8180168867111206, 0.8033773899078369]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8565171957015991, 0.8514149188995361, 0.8346108198165894, 0.8232138752937317, 0.8083553314208984]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8575090765953064, 0.8456228971481323, 0.8432664275169373, 0.8254743218421936, 0.81122887134552]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8675824403762817, 0.8490184545516968, 0.8443771004676819, 0.8291628956794739, 0.8272433280944824]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8753811717033386, 0.8274267315864563, 0.821373701095581, 0.8194073438644409, 0.8085709810256958]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8225820660591125, 0.8198647499084473, 0.8144130706787109, 0.7915329933166504, 0.7805210947990417]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8569123148918152, 0.8498632907867432, 0.8363986015319824, 0.8314379453659058, 0.8202378153800964]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.863429069519043, 0.8452699184417725, 0.8233259320259094, 0.8170360326766968, 0.8117087483406067]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8452435731887817, 0.844860851764679, 0.8188074827194214, 0.7951856851577759, 0.7687149047851562]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8470109701156616, 0.845467209815979, 0.8427243828773499, 0.8282773494720459, 0.8054111003875732]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.864025354385376, 0.8538821935653687, 0.8411744236946106, 0.8350750803947449, 0.815126895904541]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8525840044021606, 0.8466792702674866, 0.8391665816307068, 0.8302751183509827, 0.8068737983703613]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8533719778060913, 0.816787600517273, 0.810173511505127, 0.8074512481689453, 0.8064941167831421]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.838886022567749, 0.8341599106788635, 0.8012553453445435, 0.7820145487785339, 0.7773597240447998]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8236446976661682, 0.8191691040992737, 0.8094095587730408, 0.805156409740448, 0.800199031829834]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.7952946424484253, 0.7949398756027222, 0.7876561880111694, 0.7866380214691162, 0.7846401333808899]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8320462703704834, 0.8190050721168518, 0.8090503811836243, 0.7840037941932678, 0.7820146679878235]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8457146286964417, 0.8380334973335266, 0.8133772015571594, 0.7995470762252808, 0.7881501317024231]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8629410862922668, 0.8164190053939819, 0.8098134398460388, 0.8059085011482239, 0.8026480674743652]
+Starting NMS
+Num boxes above confidence threshold: 12
+Highest Box confidence scores: [0.8337698578834534, 0.8296962380409241, 0.8036643266677856, 0.7939417958259583, 0.7883647680282593]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8547638654708862, 0.8483142256736755, 0.8325009346008301, 0.8153923153877258, 0.7932375073432922]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8472693562507629, 0.8434156775474548, 0.8377779126167297, 0.8159068822860718, 0.7992266416549683]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8479560613632202, 0.8371545076370239, 0.8284286260604858, 0.8274402022361755, 0.8062772154808044]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8559433817863464, 0.8442797064781189, 0.8223037123680115, 0.8115001916885376, 0.8112311363220215]
+Starting NMS
+Num boxes above confidence threshold: 10
+Highest Box confidence scores: [0.8728100657463074, 0.8471298813819885, 0.8421022295951843, 0.8415924310684204, 0.8300914764404297]
+Starting NMS
+Num boxes above confidence threshold: 16
+Highest Box confidence scores: [0.8561511039733887, 0.8438937664031982, 0.837744951248169, 0.8192108273506165, 0.8149017691612244]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8682504892349243, 0.8682427406311035, 0.8286959528923035, 0.8137223124504089, 0.8073980808258057]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8572624325752258, 0.8388097286224365, 0.8346083164215088, 0.8212567567825317, 0.7874854207038879]
+Starting NMS
+Num boxes above confidence threshold: 14
+Highest Box confidence scores: [0.8222463130950928, 0.7924468517303467, 0.7909852266311646, 0.7901648283004761, 0.7896926403045654]
+Starting NMS
+Num boxes above confidence threshold: 19
+Highest Box confidence scores: [0.8597114086151123, 0.8464373350143433, 0.8176091909408569, 0.8149415254592896, 0.8085129261016846]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8561647534370422, 0.8503140807151794, 0.8295112252235413, 0.8029760122299194, 0.7911329865455627]
+Starting NMS
+Num boxes above confidence threshold: 13
+Highest Box confidence scores: [0.8478713631629944, 0.8395642042160034, 0.8311820030212402, 0.8062519431114197, 0.8009239435195923]
+Starting NMS
+Num boxes above confidence threshold: 15
+Highest Box confidence scores: [0.8509787321090698, 0.8374704122543335, 0.835096001625061, 0.8343877196311951, 0.8055440783500671]
+Starting NMS
+Num boxes above confidence threshold: 17
+Highest Box confidence scores: [0.8500500917434692, 0.8459667563438416, 0.8404016494750977, 0.8203741312026978, 0.8147281408309937]
+Running mean_average_precision...
+MAP: 0.9700198173522949
+Currently epoch 191
+Currently epoch 192
+Currently epoch 193
+Currently epoch 194
+Currently epoch 195
+Currently epoch 196
+Currently epoch 197
+Currently epoch 198
+=> Saving Model Results
+Model Results saved at: model_results\First_Tests_2024-02-02_21-42-40\checkpoint_200.pth.tar and configuration saved at: model_results\First_Tests_2024-02-02_21-42-40\config_values_First_Tests_2024-02-02_21-42-40.json
+Currently epoch 199

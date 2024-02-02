@@ -106,7 +106,7 @@ def main():
         mean_loss = train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
         training_losses.append(mean_loss)
 
-        if config.SAVE_CHECKPOINTS:
+        if config.SAVE_CHECKPOINTS and (epoch > 0 and epoch % 10 == 0):
             save_checkpoint(model, optimizer, config.NUM_EPOCHS, run_id)
 
         if config.SAVE_MODEL_RESULTS and epoch == config.NUM_EPOCHS-1:
@@ -118,7 +118,7 @@ def main():
         #check_class_accuracy(model, train_loader, threshold=config.CONF_THRESHOLD)
 
         if epoch > 0 and epoch % 10 == 0:
-            #plot_couple_examples(model, test_loader, 0.7, 0.5, scaled_anchors, find_optimal_confidence_threshold = True)
+            #plot_couple_examples(model, test_loader, 0.7, 0.5, scaled_anchors, find_optimal_confidence_threshold = True, confidence_step = 0.05)
             #check_class_accuracy(model, test_loader, threshold=config.CONF_THRESHOLD)
 
             print("Running get_evaluation_bboxes...")
