@@ -493,7 +493,6 @@ def save_checkpoint(model, optimizer, epochs, run_id):
     print(f"Checkpoint saved at: {checkpoint_path}")
 
 def save_plot(training_losses, folder_path, filename):
-    print(f"Training Losses in 'save_plot()': {training_losses}")
     plt.plot(range(1, len(training_losses) + 1), training_losses, label='Training Loss')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')

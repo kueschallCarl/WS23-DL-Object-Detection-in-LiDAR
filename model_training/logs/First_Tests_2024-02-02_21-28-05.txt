@@ -1,0 +1,8 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+=> Saving Model Results
+Training Losses in 'save_plot()': [1.2725900888442994, 1.2569288253784179, 1.254909133911133, 1.2028830528259278, 1.2347978591918944]
+Model Results saved at: model_results\First_Tests_2024-02-02_21-28-05\checkpoint_5.pth.tar and configuration saved at: model_results\First_Tests_2024-02-02_21-28-05\config_values_First_Tests_2024-02-02_21-28-05.json
+Currently epoch 4

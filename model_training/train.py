@@ -5,6 +5,7 @@ Main file for training Yolo model on Pascal VOC
 import config
 import torch
 import os
+import sys
 from datetime import datetime
 import torch.optim as optim
 import matplotlib.pyplot as plt
@@ -27,7 +28,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 torch.backends.cudnn.benchmark = True
-
+logs_folder = 'logs'
+os.makedirs(logs_folder, exist_ok=True)
 
 def train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors):
     loop = tqdm(train_loader, leave=True)
@@ -87,6 +89,9 @@ def main():
     training_losses = []
     current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     run_id = f"{config.RUN_TITLE}_{current_datetime}"
+    log_filename = f"{run_id}.txt"
+    log_filepath = os.path.join(logs_folder, log_filename)
+    sys.stdout = open(log_filepath, 'w')
     
     for epoch in range(config.NUM_EPOCHS):
         mean_loss = train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
