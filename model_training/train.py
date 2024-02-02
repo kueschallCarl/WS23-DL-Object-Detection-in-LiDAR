@@ -84,7 +84,7 @@ def main():
     for epoch in range(config.NUM_EPOCHS):
         train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
 
-        if config.SAVE_MODEL:
+        if config.SAVE_MODEL and epoch == config.NUM_EPOCHS-1:
             save_checkpoint(model, optimizer, config.NUM_EPOCHS, filename=f"checkpoint.pth.tar")
 
         print(f"Currently epoch {epoch}")
@@ -92,12 +92,11 @@ def main():
         #print("On Train loader:")
         #check_class_accuracy(model, train_loader, threshold=config.CONF_THRESHOLD)
 
-        if epoch > 0 and epoch % 30 == 0:
-            plot_loader = get_loaders(
-                train_csv_path=config.DATASET + "/train.csv", test_csv_path=config.DATASET + "/test.csv"
-            )[1]
-            plot_couple_examples(model, plot_loader, 0.7, 0.5, scaled_anchors)
+        if epoch > 0 and epoch % 10 == 0:
+            #plot_couple_examples(model, test_loader, 0.7, 0.5, scaled_anchors, find_optimal_confidence_threshold = True)
             #check_class_accuracy(model, test_loader, threshold=config.CONF_THRESHOLD)
+
+            print("Running get_evaluation_bboxes...")
             pred_boxes, true_boxes = get_evaluation_bboxes(
                 test_loader,
                 model,
@@ -105,6 +104,7 @@ def main():
                 anchors=config.ANCHORS,
                 threshold=config.CONF_THRESHOLD,
             )
+            print("Running mean_average_precision...")
             mapval = mean_average_precision(
                 pred_boxes,
                 true_boxes,

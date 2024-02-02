@@ -34,7 +34,24 @@ def main():
     device_name = "CPU" if config.DEVICE == "cpu" else f"GPU ({torch.cuda.get_device_name(0)})"
     print(f"Using {device_name} for plotting.")
 
-    plot_couple_examples(model, test_loader, 0.4, 0.2, scaled_anchors)
-
+    #plot_couple_examples(model, test_loader, 0.7, 0.2, scaled_anchors, find_optimal_confidence_threshold = True)
+    print("Running get_evaluation_bboxes...")
+    pred_boxes, true_boxes = get_evaluation_bboxes(
+        test_loader,
+        model,
+        iou_threshold=config.NMS_IOU_THRESH,
+        anchors=config.ANCHORS,
+        threshold=config.CONF_THRESHOLD,
+    )
+    print("Running mean_average_precision...")
+    mapval = mean_average_precision(
+        pred_boxes,
+        true_boxes,
+        iou_threshold=config.MAP_IOU_THRESH,
+        box_format="midpoint",
+        num_classes=config.NUM_CLASSES,
+    )
+    print(f"MAP: {mapval.item()}")
+    
 if __name__ == "__main__":
     main()

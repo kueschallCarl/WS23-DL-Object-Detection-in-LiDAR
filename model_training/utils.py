@@ -97,7 +97,6 @@ def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     """
     print("Starting NMS")
     assert type(bboxes) == list
-    print(f"Example Box confidence scores: {[box[1] for box in bboxes[:5]]}")
     bboxes = [box for box in bboxes if box[1] > threshold]
     print(f"Num boxes above confidence threshold: {len(bboxes)}")
     bboxes = sorted(bboxes, key=lambda x: x[1], reverse=True)
@@ -495,7 +494,7 @@ def save_checkpoint(model, optimizer, epochs, filename="my_checkpoint.pth.tar"):
 
 
 def load_checkpoint(checkpoint_file, model, optimizer, lr):
-    print("=> Loading checkpoint")
+    print(f"=> Loading checkpoint: {checkpoint_file}")
     checkpoint = torch.load(checkpoint_file, map_location=config.DEVICE)
     model.load_state_dict(checkpoint["state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer"])
@@ -562,7 +561,38 @@ def get_loaders(train_csv_path, test_csv_path):
 
     return train_loader, test_loader, train_eval_loader
 
-def plot_couple_examples(model, loader, thresh, iou_thresh, anchors):
+def dynamic_threshold(model, loader, iou_thresh, anchors, desired_num_bboxes=6):
+    print("Starting dynamic thresholding")
+    model.eval()
+    x, y = next(iter(loader))
+    x = x.to("cuda")
+    with torch.no_grad():
+        out = model(x)
+        bboxes = [[] for _ in range(x.shape[0])]
+        for i in range(3):
+            batch_size, A, S, _, _ = out[i].shape
+            anchor = anchors[i]
+            boxes_scale_i = cells_to_bboxes(out[i], anchor, S=S, is_preds=True)
+            for idx, (box) in enumerate(boxes_scale_i):
+                bboxes[idx] += box
+        model.train()
+
+    confidence_threshold = 1.0
+    num_bboxes = 0
+    while num_bboxes < desired_num_bboxes:
+        confidence_threshold -= 0.05  # Adjust this increment based on your needs
+        nms_boxes = non_max_suppression(
+            bboxes[0], iou_threshold=iou_thresh, threshold=confidence_threshold, box_format="midpoint",
+        )
+        num_bboxes = len(nms_boxes)
+        print(f"Current Thresh: {confidence_threshold}")
+        print(f"Current num Boxes: {num_bboxes}")
+
+    print(f"Confidence Threshold: {confidence_threshold}")
+    return confidence_threshold
+
+
+def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=True):
     print("Starting plotting of examples")
     model.eval()
     x, y = next(iter(loader))
@@ -573,22 +603,25 @@ def plot_couple_examples(model, loader, thresh, iou_thresh, anchors):
         for i in range(3):
             batch_size, A, S, _, _ = out[i].shape
             anchor = anchors[i]
-            boxes_scale_i = cells_to_bboxes(
-                out[i], anchor, S=S, is_preds=True
-            )
+            boxes_scale_i = cells_to_bboxes(out[i], anchor, S=S, is_preds=True)
             for idx, (box) in enumerate(boxes_scale_i):
                 bboxes[idx] += box
 
         model.train()
 
+    if find_optimal_confidence_threshold:
+        threshold = dynamic_threshold(model, loader, iou_thresh, anchors)
+    else:
+        threshold = thresh  # Set a default threshold if not using dynamic thresholding
+
     for i in range(batch_size):
         print(f"Bboxes at {i}: {len(bboxes[i])}")
         nms_boxes = non_max_suppression(
-            bboxes[i], iou_threshold=iou_thresh, threshold=thresh, box_format="midpoint",
+            bboxes[i], iou_threshold=iou_thresh, threshold=threshold, box_format="midpoint",
         )
         print(f"nms_boxes at {i}: {len(nms_boxes)}")
 
-        plot_image(x[i].permute(1,2,0).detach().cpu(), nms_boxes)
+        plot_image(x[i].permute(1, 2, 0).detach().cpu(), nms_boxes)
 
 
 
