@@ -4,7 +4,10 @@ Main file for training Yolo model on Pascal VOC
 
 import config
 import torch
+import os
+from datetime import datetime
 import torch.optim as optim
+import matplotlib.pyplot as plt
 
 from model import YOLOv3
 from tqdm import tqdm
@@ -16,7 +19,8 @@ from utils import (
     load_checkpoint,
     check_class_accuracy,
     get_loaders,
-    plot_couple_examples
+    plot_couple_examples,
+    save_training_results
 )
 from loss import YoloLoss
 import warnings
@@ -54,7 +58,7 @@ def train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors):
         mean_loss = sum(losses) / len(losses)
         loop.set_postfix(loss=mean_loss)
 
-
+    return mean_loss
 
 def main():
     model = YOLOv3(num_classes=config.NUM_CLASSES).to(config.DEVICE)
@@ -80,12 +84,19 @@ def main():
 
     device_name = "CPU" if config.DEVICE == "cpu" else f"GPU ({torch.cuda.get_device_name(0)})"
     print(f"Using {device_name} for training.")
-
+    training_losses = []
+    current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    run_id = f"{config.RUN_TITLE}_{current_datetime}"
+    
     for epoch in range(config.NUM_EPOCHS):
-        train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
+        mean_loss = train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
+        training_losses.append(mean_loss)
 
-        if config.SAVE_MODEL and epoch == config.NUM_EPOCHS-1:
-            save_checkpoint(model, optimizer, config.NUM_EPOCHS, filename=f"checkpoint.pth.tar")
+        if config.SAVE_CHECKPOINTS:
+            save_checkpoint(model, optimizer, config.NUM_EPOCHS, run_id)
+
+        if config.SAVE_MODEL_RESULTS and epoch == config.NUM_EPOCHS-1:
+            save_training_results(model, optimizer, config.NUM_EPOCHS, run_id, training_losses)
 
         print(f"Currently epoch {epoch}")
         #print("On Train Eval loader:")

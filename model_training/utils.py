@@ -5,6 +5,7 @@ import numpy as np
 import os
 import random
 import torch
+import json
 
 from collections import Counter
 from torch.utils.data import DataLoader
@@ -476,21 +477,66 @@ def get_mean_std(loader):
     return mean, std
 
 
-def save_checkpoint(model, optimizer, epochs, filename="my_checkpoint.pth.tar"):
+def save_checkpoint(model, optimizer, epochs, run_id):
     print("=> Saving checkpoint")
-    current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename_with_datetime = f"{current_datetime}_epochs_{epochs}_{filename}"
-    
+    folder_name = f"{run_id}"
+    os.makedirs(os.path.join('checkpoint_storage', folder_name), exist_ok=True)
+
     checkpoint = {
         "state_dict": model.state_dict(),
         "optimizer": optimizer.state_dict(),
     }
 
-    checkpoint_path = os.path.join('checkpoint_storage', filename_with_datetime)
+    checkpoint_path = os.path.join('checkpoint_storage', folder_name, f"checkpoint_{epochs}.pth.tar")
     torch.save(checkpoint, checkpoint_path)
-    torch.save(checkpoint, filename)
 
-    print(f"Checkpoint saved at: {checkpoint_path} and root")
+    print(f"Checkpoint saved at: {checkpoint_path}")
+
+def save_plot(training_losses, folder_path, filename):
+    print(f"Training Losses in 'save_plot()': {training_losses}")
+    plt.plot(range(1, len(training_losses) + 1), training_losses, label='Training Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title('Training Curve')
+    plt.legend()
+    plt.savefig(os.path.join(folder_path, filename))
+    plt.close()
+
+def save_training_results(model, optimizer, epochs, run_id, training_losses):
+    print("=> Saving Model Results")
+    folder_name = f"{run_id}"
+    os.makedirs(os.path.join('model_results', folder_name), exist_ok=True)
+
+    checkpoint = {
+        "state_dict": model.state_dict(),
+        "optimizer": optimizer.state_dict(),
+    }
+
+    checkpoint_path = os.path.join('model_results', folder_name, f"checkpoint_{epochs}.pth.tar")
+    torch.save(checkpoint, checkpoint_path)
+    torch.save(checkpoint, f"my_checkpoint.pth.tar")
+
+    # Save configuration values in a JSON file
+    config_values = {
+        "NUM_EPOCHS": config.NUM_EPOCHS,
+        "BATCH_SIZE": config.BATCH_SIZE,
+        "LEARNING_RATE": config.LEARNING_RATE,
+        "WEIGHT_DECAY": config.WEIGHT_DECAY,
+        "LOAD_MODEL": config.LOAD_MODEL,
+        "DATASET": config.DATASET,
+        "NUM_CLASSES": config.NUM_CLASSES,
+    }
+
+    json_filename = f"config_values_{run_id}.json"
+    json_path = os.path.join('model_results', folder_name, json_filename)
+
+    with open(json_path, 'w') as json_file:
+        json.dump(config_values, json_file, indent=4)
+
+    plot_filename = f"{run_id}_learning_curve_loss.png"
+    save_plot(training_losses, os.path.join('model_results', folder_name), plot_filename)
+
+    print(f"Model Results saved at: {checkpoint_path} and configuration saved at: {json_path}")
 
 
 def load_checkpoint(checkpoint_file, model, optimizer, lr):
