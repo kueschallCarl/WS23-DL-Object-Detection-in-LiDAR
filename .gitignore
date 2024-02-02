@@ -1,0 +1,11 @@
+# Ignore specific files and directories
+label_cloud_project/
+checkpoint_storage/
+labels/
+
+
+# Ignore image files
+*.png
+*.jpeg
+*.jpg
+*.tar
