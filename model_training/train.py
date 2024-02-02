@@ -6,12 +6,13 @@ import config
 import torch
 import os
 import sys
-from datetime import datetime
 import torch.optim as optim
 import matplotlib.pyplot as plt
 
 from model import YOLOv3
 from tqdm import tqdm
+from datetime import datetime
+from logger import Tee
 from utils import (
     mean_average_precision,
     cells_to_bboxes,
@@ -28,8 +29,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 torch.backends.cudnn.benchmark = True
-logs_folder = 'logs'
-os.makedirs(logs_folder, exist_ok=True)
+
 
 def train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors):
     loop = tqdm(train_loader, leave=True)
@@ -89,10 +89,19 @@ def main():
     training_losses = []
     current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     run_id = f"{config.RUN_TITLE}_{current_datetime}"
-    log_filename = f"{run_id}.txt"
-    log_filepath = os.path.join(logs_folder, log_filename)
-    sys.stdout = open(log_filepath, 'w')
     
+    #******************************************************************************************************
+    # Set up the log file
+    current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    log_file_path = f"logs/{config.RUN_TITLE}_{current_datetime}.txt"
+    log_file = open(log_file_path, "w")
+
+    # Redirect stdout to console and log file
+    original_stdout = sys.stdout
+    sys.stdout = Tee(sys.stdout, log_file)
+    #******************************************************************************************************
+
+
     for epoch in range(config.NUM_EPOCHS):
         mean_loss = train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
         training_losses.append(mean_loss)
@@ -131,6 +140,8 @@ def main():
             print(f"MAP: {mapval.item()}")
             model.train()
 
+    sys.stdout = original_stdout
+    log_file.close()
 
 if __name__ == "__main__":
     main()
