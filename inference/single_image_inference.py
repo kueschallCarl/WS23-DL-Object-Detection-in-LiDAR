@@ -13,7 +13,7 @@ from torch.utils.data import Dataset
 from PIL import Image, ImageFile
 from torch.utils.data import Dataset, DataLoader
 
-from utils import (
+from model_training.utils import (
     cells_to_bboxes,
     iou_width_height as iou,
     non_max_suppression as nms,
@@ -32,17 +32,19 @@ class YOLOInferenceDatasetSingleImage(Dataset):
         img = Image.fromarray(self.image_array).convert("RGB")
 
         if self.transform:
-            img = self.transform(img)
+            img_np = np.array(img)
+            transformed = self.transform(image=img_np)
+            img = transformed["image"]
 
         return img
 
 def post_process_output(dataloader, model, confidence_threshold, iou_threshold, anchors):
-    bboxes_pred, bboxes_gtruth = utils.get_evaluation_bboxes(dataloader, model, iou_threshold, anchors, confidence_threshold, box_format="midpoint", device="cuda")
-    return bboxes_pred[2], bboxes_pred[3], bboxes_pred[4], bboxes_pred[5], bboxes_pred[6]
+    bboxes_pred = utils.get_inference_bboxes(dataloader, model, iou_threshold, anchors, confidence_threshold, box_format="midpoint", device="cuda") 
+    return bboxes_pred
 
 def inference_single_image(model, image, confidence_threshold = config.INFERENCE_CONFIDENCE_THRESHOLD, nms_threshold = config.INFERENCE_IOU_THRESHOLD):
-    # Load and preprocess the image
-    dataset = YOLOInferenceDatasetSingleImage(image, transform=config.test_transforms)
+    # Load and preprocess  image
+    dataset = YOLOInferenceDatasetSingleImage(image, transform=config.inference_transforms)
     dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=config.NUM_WORKERS)
 
     # Move the model to the device (CPU or GPU)
@@ -50,8 +52,8 @@ def inference_single_image(model, image, confidence_threshold = config.INFERENCE
     model.to(device)
 
     # Post-process the output
-    confidence_score, x, y, w, h = post_process_output(dataloader, model, confidence_threshold, nms_threshold, anchors = config.ANCHORS)
-    return confidence_score, x, y, w, h
+    bboxes_pred = post_process_output(dataloader, model, confidence_threshold, nms_threshold, anchors = config.ANCHORS)
+    return bboxes_pred
 
 
     

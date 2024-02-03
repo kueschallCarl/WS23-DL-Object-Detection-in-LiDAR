@@ -1,4 +1,4 @@
-import config
+import model_training.config as config
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
@@ -389,6 +389,45 @@ def get_evaluation_bboxes(
     model.train()
     return all_pred_boxes, all_true_boxes
 
+def get_inference_bboxes(loader, model, iou_threshold, anchors, confidence_threshold, box_format="midpoint", device="cuda"):
+    # Make sure the model is in evaluation mode
+    model.eval()
+    
+    all_pred_boxes = []
+    train_idx = 0
+
+    for batch_idx, x in enumerate(tqdm(loader)):
+        x = x.to(device)
+
+        with torch.no_grad():
+            predictions = model(x)
+
+        batch_size = x.shape[0]
+        bboxes = [[] for _ in range(batch_size)]
+
+        for i in range(3):
+            S = predictions[i].shape[2]
+            anchor = torch.tensor([*anchors[i]]).to(device) * S
+            boxes_scale_i = cells_to_bboxes(predictions[i], anchor, S=S, is_preds=True)
+
+            for idx, box in enumerate(boxes_scale_i):
+                bboxes[idx] += box
+
+        for idx in range(batch_size):
+            nms_boxes = non_max_suppression(
+                bboxes[idx],
+                iou_threshold=iou_threshold,  
+                threshold=confidence_threshold, 
+                box_format=box_format,
+            )
+
+            for nms_box in nms_boxes:
+                all_pred_boxes.append([train_idx] + nms_box)
+
+            train_idx += 1
+
+    model.train()
+    return all_pred_boxes
 
 def cells_to_bboxes(predictions, anchors, S, is_preds=True):
     """
@@ -669,7 +708,6 @@ def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optima
         print(f"nms_boxes at {i}: {len(nms_boxes)}")
 
         plot_image(x[i].permute(1, 2, 0).detach().cpu(), nms_boxes)
-
 
 
 def seed_everything(seed=42):

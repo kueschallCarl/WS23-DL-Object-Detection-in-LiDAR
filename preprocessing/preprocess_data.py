@@ -1,57 +1,29 @@
-import torch
-import sys
+import io
 import torch.optim as optim
 import matplotlib.pyplot as plt
 import open3d as o3d
 import os
 import matplotlib.pyplot as plt
 import numpy as np
-import plotly.graph_objects as go
-import plotly.express as px
-import re
 import os
-import random
-import csv
 
-from mpl_toolkits.mplot3d import Axes3D
-from model_training.model import YOLOv3
-from tqdm import tqdm
-from datetime import datetime
+from PIL import Image
 
 import model_training.config as config
 
-from model_training.logger import Tee
-from model_training.loss import YoloLoss
-from model_training.utils import (
-    mean_average_precision,
-    cells_to_bboxes,
-    get_evaluation_bboxes,
-    save_checkpoint,
-    load_checkpoint,
-    check_class_accuracy,
-    get_loaders,
-    plot_couple_examples,
-    save_training_results
-)
-
-def crop_point_cloud(pcd_path, distance_threshold = config.PCD_CROP_DISTANCE_THRESHOLD):
-    # Load PCD file
+def crop_point_cloud(pcd_path, distance_threshold=config.PCD_CROP_DISTANCE_THRESHOLD):
+    # Load pcd file
     point_cloud = o3d.io.read_point_cloud(pcd_path)
-    
+
     # Convert point cloud to NumPy array
     points = np.asarray(point_cloud.points)
-    
+
     # Calculate Euclidean distance from the origin
     distances = np.linalg.norm(points, axis=1)
-    
-    # Filter points within the distance threshold
+
     cropped_points = points[distances <= distance_threshold]
-    
-    # Create a new Open3D point cloud
-    cropped_pcd = o3d.geometry.PointCloud()
-    cropped_pcd.points = o3d.utility.Vector3dVector(cropped_points)
-    
-    return cropped_pcd
+
+    return cropped_points
 
 def generate_and_save_birds_eye_view(points, filename, dpi=200, output_folder=None):
     x_bins = np.linspace(-5, 5, 250)
@@ -89,13 +61,19 @@ def generate_and_save_birds_eye_view(points, filename, dpi=200, output_folder=No
     
     # Load the saved image and return
     if output_path:
-        saved_image = plt.imread(output_path)
-        return saved_image
+        saved_image = Image.open(output_path).convert("RGB")
+        return np.array(saved_image)
     else:
-        return hist_normalized
+        print("Output folder not provided, image not saved.")
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', bbox_inches='tight', pad_inches=0)
+        buf.seek(0)
+        img = Image.open(buf)
+        plt.close(fig) 
+        return np.array(img)
 
 def transform_to_bev(filename):
-    cropped_pcd = crop_point_cloud(os.path.join(config.INFERENCE_PCD_FOLDER), filename)
+    cropped_pcd = crop_point_cloud(os.path.join(config.INFERENCE_PCD_FOLDER, filename))
     bev_image = generate_and_save_birds_eye_view(cropped_pcd, filename, dpi = 200, output_folder= config.INFERENCE_TEMP_BEV_FOLDER)
     return bev_image
 

@@ -3,7 +3,7 @@ import cv2
 import torch
 
 from albumentations.pytorch import ToTensorV2
-from utils import seed_everything
+from .utils import seed_everything
 
 
 #***********************************************************************************************************
@@ -54,11 +54,15 @@ BEV_IMAGE_FOLDER = 'label_cloud_project/datastore/images/birds_eye_view_images'
 #***********************************************************************************************************
 #Inference Settings
 INFERENCE_RUN_TITLE = 'First_Test_Inference'
+
 INFERENCE_CHECKPOINT_FILE = 'inference/model/inference_model_checkpoint.pth.tar'
+
 INFERENCE_PCD_FOLDER = 'inference/pcd/'
 INFERENCE_TEMP_BEV_FOLDER = 'inference/temp/bev_images'
 INFERENCE_RESULTS_FOLDER = 'inference/inference_results/'
 INFERENCE_PROCESSED_PCD_FOLDER = 'inference/processed_pcds/'
+
+INFERENCE_STORE_BEV_IMAGES = True
 INFERENCE_CONFIDENCE_THRESHOLD = 0.8
 INFERENCE_IOU_THRESHOLD = 0.2
 #***********************************************************************************************************
@@ -103,7 +107,16 @@ test_transforms = A.Compose(
     ],
     bbox_params=A.BboxParams(format="yolo", min_visibility=0.4, label_fields=[]),
 )
-
+inference_transforms = A.Compose(
+    [
+        A.LongestMaxSize(max_size=IMAGE_SIZE),
+        A.PadIfNeeded(
+            min_height=IMAGE_SIZE, min_width=IMAGE_SIZE, border_mode=cv2.BORDER_CONSTANT
+        ),
+        A.Normalize(mean=[0, 0, 0], std=[1, 1, 1], max_pixel_value=255,),
+        ToTensorV2(),
+    ],
+)
 
 #***********************************************************************************************************
 #Classes
