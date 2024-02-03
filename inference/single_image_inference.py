@@ -50,6 +50,7 @@ def inference_single_image(model, image, confidence_threshold = config.INFERENCE
 
     # Move the model to the device (CPU or GPU)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
     model.to(device)
 
     # Post-process the output
