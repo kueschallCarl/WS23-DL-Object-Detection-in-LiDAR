@@ -5,7 +5,78 @@ import cv2
 import numpy as np
 from matplotlib.patches import Rectangle
 from PIL import Image, ImageDraw
+import tkinter as tk
+from PIL import Image, ImageTk
 
+
+class ImageDisplayApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Image Display App")
+        
+        # Initialize an empty image
+        self.current_image = None
+        self.canvas = tk.Canvas(root)
+        self.canvas.pack()
+
+        # Add a button to trigger the function that changes the image
+        self.change_image_button = tk.Button(root, text="Change Image", command=self.change_image)
+        self.change_image_button.pack()
+
+    def change_image(self):
+        # Replace this with your own image loading logic
+        # For example, you can use the Image.open() from the PIL library
+        new_image_path = "path_to_your_image.jpg"
+        new_image = Image.open(new_image_path)
+
+        # Convert the image to a format compatible with tkinter
+        self.current_image = ImageTk.PhotoImage(new_image)
+
+        # Update the canvas size to match the image dimensions
+        self.canvas.config(width=self.current_image.width(), height=self.current_image.height())
+
+        # Clear previous drawings on the canvas
+        self.canvas.delete("all")
+
+        # Display the new image on the canvas
+        self.canvas.create_image(0, 0, anchor="nw", image=self.current_image)
+
+    def draw_rectangles(self, bboxes_data):
+        # Draw bounding boxes on the canvas
+        for idx, bbox_info in bboxes_data.items():
+            x = bbox_info["x"] * self.current_image.width()
+            y = bbox_info["y"] * self.current_image.height()
+            w = bbox_info["w"] * self.current_image.width()
+            h = bbox_info["h"] * self.current_image.height()
+
+            self.canvas.create_rectangle(x - w/2, y - h/2, x + w/2, y + h/2, outline="red", width=2)
+
+            # Add confidence score as text
+            self.canvas.create_text(x - w/2, y - h/2 - 15, text=f"Conf: {bbox_info['confidence']:.2f}", fill="red")
+
+def plot_bounding_box_single_image(bboxes_data, image_folder, filename, app):
+    # Load the image
+    image_path = f"{image_folder}/{filename.split('.')[0]}.png"
+    img = Image.open(image_path)
+
+    # Update the displayed image in the tkinter window
+    new_image_tk = ImageTk.PhotoImage(img)
+    app.current_image = new_image_tk
+
+    # Update the canvas size to match the image dimensions
+    app.canvas.config(width=app.current_image.width(), height=app.current_image.height())
+
+    # Clear previous drawings on the canvas
+    app.canvas.delete("all")
+
+    # Display the new image on the canvas
+    app.canvas.create_image(0, 0, anchor="nw", image=app.current_image)
+
+    # Draw rectangles on the canvas
+    app.draw_rectangles(bboxes_data)
+
+    # Update the tkinter window
+    app.root.update()
 
 def plot_bounding_boxes(json_file_path, image_folder):
     with open(json_file_path, 'r') as json_file:
@@ -36,35 +107,6 @@ def plot_bounding_boxes(json_file_path, image_folder):
         plt.title(f"Bounding Boxes for {file_name}")
         plt.show()
 
-
-def plot_bounding_box_single_image(bboxes_data, image_folder, filename):
-    # Load the image
-    image_path = f"{image_folder}/{filename.split('.')[0]}.png"
-    img = Image.open(image_path)
-
-    # Create a drawing object for bounding boxes
-    draw = ImageDraw.Draw(img)
-
-    # Plot bounding boxes
-    for idx, bbox_info in bboxes_data.items():
-        x = int(bbox_info["x"] * img.width)
-        y = int(bbox_info["y"] * img.height)
-        w = int(bbox_info["w"] * img.width)
-        h = int(bbox_info["h"] * img.height)
-
-        draw.rectangle([(x - w//2, y - h//2), (x + w//2, y + h//2)], outline=(255, 0, 0), width=2)
-
-        # Add confidence score as text
-        draw.text((x - w//2, y - h//2 - 15), f"Conf: {bbox_info['confidence']:.2f}", fill=(255, 0, 0))
-
-    # Save the image with bounding boxes
-    output_folder = 'temp/'
-    os.makedirs(output_folder, exist_ok=True)
-    output_path = os.path.join(output_folder, 'live_result.png')
-    img.save(output_path)
-
-    # Open the image in the default image viewer
-    img.show()
 
 
 
