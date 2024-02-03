@@ -63,7 +63,7 @@ INFERENCE_RESULTS_FOLDER = 'inference/inference_results/'
 INFERENCE_PROCESSED_PCD_FOLDER = 'inference/processed_pcds/'
 
 INFERENCE_STORE_BEV_IMAGES = True
-INFERENCE_CONFIDENCE_THRESHOLD = 0.8
+INFERENCE_CONFIDENCE_THRESHOLD = 0.7
 INFERENCE_IOU_THRESHOLD = 0.2
 #***********************************************************************************************************
 

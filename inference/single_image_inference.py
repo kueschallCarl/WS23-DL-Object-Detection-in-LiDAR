@@ -13,6 +13,7 @@ from torch.utils.data import Dataset
 from PIL import Image, ImageFile
 from torch.utils.data import Dataset, DataLoader
 
+
 from model_training.utils import (
     cells_to_bboxes,
     iou_width_height as iou,
@@ -45,7 +46,7 @@ def post_process_output(dataloader, model, confidence_threshold, iou_threshold, 
 def inference_single_image(model, image, confidence_threshold = config.INFERENCE_CONFIDENCE_THRESHOLD, nms_threshold = config.INFERENCE_IOU_THRESHOLD):
     # Load and preprocess  image
     dataset = YOLOInferenceDatasetSingleImage(image, transform=config.inference_transforms)
-    dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=config.NUM_WORKERS)
+    dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=config.NUM_WORKERS, pin_memory = config.PIN_MEMORY)
 
     # Move the model to the device (CPU or GPU)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
