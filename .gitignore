@@ -9,3 +9,5 @@ labels/
 *.jpeg
 *.jpg
 *.tar
+*.pcd
+*.pcap

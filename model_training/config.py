@@ -5,6 +5,9 @@ import torch
 from albumentations.pytorch import ToTensorV2
 from utils import seed_everything
 
+
+#***********************************************************************************************************
+#Training Settings
 DATASET = 'BEV_BATCH1'
 RUN_TITLE = 'First_Tests'
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -33,7 +36,32 @@ ANCHORS = [
     [(0.07, 0.15), (0.15, 0.11), (0.14, 0.29)],
     [(0.02, 0.03), (0.04, 0.07), (0.08, 0.06)],
 ]  # Note these have been rescaled to be between [0, 1]
+#***********************************************************************************************************
 
+
+#***********************************************************************************************************
+#Preprocessing Settings
+PCD_CROP_DISTANCE_THRESHOLD = 5.0
+
+RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds'
+CROPPED_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/cropped_pcds'  
+LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels'
+YOLO_LABEL_FOLDER = 'label_cloud_project/datastore/labels/yolo_labels'  
+BEV_IMAGE_FOLDER = 'label_cloud_project/datastore/images/birds_eye_view_images'
+#***********************************************************************************************************
+
+
+#***********************************************************************************************************
+#Inference Settings
+INFERENCE_RUN_TITLE = 'First_Test_Inference'
+INFERENCE_CHECKPOINT_FILE = 'inference/model/inference_model_checkpoint.pth.tar'
+INFERENCE_PCD_FOLDER = 'inference/pcd/'
+INFERENCE_TEMP_BEV_FOLDER = 'inference/temp/bev_images'
+INFERENCE_RESULTS_FOLDER = 'inference/inference_results/'
+INFERENCE_PROCESSED_PCD_FOLDER = 'inference/processed_pcds/'
+INFERENCE_CONFIDENCE_THRESHOLD = 0.8
+INFERENCE_IOU_THRESHOLD = 0.2
+#***********************************************************************************************************
 
 scale = 1.1
 train_transforms = A.Compose(
@@ -75,6 +103,10 @@ test_transforms = A.Compose(
     ],
     bbox_params=A.BboxParams(format="yolo", min_visibility=0.4, label_fields=[]),
 )
+
+
+#***********************************************************************************************************
+#Classes
 """
 PASCAL_CLASSES = [
     "aeroplane",
@@ -100,3 +132,4 @@ PASCAL_CLASSES = [
 ]"""
 
 BEV_BATCH1_CLASSES = ["cone"]
+#***********************************************************************************************************

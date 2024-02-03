@@ -542,12 +542,14 @@ def load_checkpoint(checkpoint_file, model, optimizer, lr):
     print(f"=> Loading checkpoint: {checkpoint_file}")
     checkpoint = torch.load(checkpoint_file, map_location=config.DEVICE)
     model.load_state_dict(checkpoint["state_dict"])
-    optimizer.load_state_dict(checkpoint["optimizer"])
 
-    # If we don't do this then it will just have learning rate of old checkpoint
-    # and it will lead to many hours of debugging \:
-    for param_group in optimizer.param_groups:
-        param_group["lr"] = lr
+    if optimizer is not None:
+        optimizer.load_state_dict(checkpoint["optimizer"])
+
+        # If we don't do this then it will just have learning rate of old checkpoint
+        # and it will lead to many hours of debugging \:
+        for param_group in optimizer.param_groups:
+            param_group["lr"] = lr
 
 
 def get_loaders(train_csv_path, test_csv_path):
