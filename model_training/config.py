@@ -44,7 +44,6 @@ ANCHORS = [
 PCD_CROP_DISTANCE_THRESHOLD = 5.0
 
 RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds'
-CROPPED_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/cropped_pcds'  
 LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels'
 YOLO_LABEL_FOLDER = 'label_cloud_project/datastore/labels/yolo_labels'  
 BEV_IMAGE_FOLDER = 'label_cloud_project/datastore/images/birds_eye_view_images'
