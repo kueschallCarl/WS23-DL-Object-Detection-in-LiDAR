@@ -4,14 +4,23 @@ import numpy as np
 import time
 import threading
 import torch
+import tkinter as tk
 import model_training.config as config
 import model_training.utils as utils
 import inference.single_image_inference as inference
 import preprocessing.preprocess_data as preprocessing
 from datetime import datetime
 from mpl_toolkits.mplot3d import Axes3D
+from PIL import Image, ImageTk
 from model_training.model import YOLOv3
-from inference.plot_results import plot_bounding_boxes, plot_bounding_box_single_image
+from inference.plot_results import plot_bounding_boxes, plot_bounding_box_single_image, ImageDisplayApp
+global_app = None
+
+def run_tkinter():
+    global global_app
+    root = tk.Tk()
+    global_app = ImageDisplayApp(root)
+    root.mainloop()
 
 def main():
     current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -24,6 +33,10 @@ def main():
     os.makedirs(results_folder, exist_ok=True)
     os.makedirs(processed_pcd_folder, exist_ok=True)
 
+    if config.INFERENCE_SHOW_LIVE_RESULTS:
+        tkinter_thread = threading.Thread(target=run_tkinter)
+        tkinter_thread.start()
+        
     model = YOLOv3(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     utils.load_checkpoint(config.INFERENCE_CHECKPOINT_FILE, model, None, None)
 
@@ -66,7 +79,8 @@ def main():
                 # Add new results to the dictionary
                 results[file_name] = result_dict
 
-                plot_bounding_box_single_image(result_dict, config.INFERENCE_TEMP_BEV_FOLDER, file_name)
+                if config.INFERENCE_SHOW_LIVE_RESULTS:
+                    plot_bounding_box_single_image(result_dict, config.INFERENCE_TEMP_BEV_FOLDER, file_name, global_app)
 
                 # Write all results back to the file
                 with open(results_file_path, "w") as json_file:
