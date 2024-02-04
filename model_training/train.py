@@ -2,7 +2,7 @@
 Main file for training Yolo model on Pascal VOC
 """
 
-import config
+import config as config
 import torch
 import os
 import sys
@@ -106,8 +106,8 @@ def main():
         mean_loss = train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
         training_losses.append(mean_loss)
 
-        if config.SAVE_CHECKPOINTS and (epoch > 0 and epoch % 10 == 0):
-            save_checkpoint(model, optimizer, config.NUM_EPOCHS, run_id)
+        if config.SAVE_CHECKPOINTS and (epoch > 0 and epoch % config.CHECKPOINT_SAVING_INTERVAL == 0):
+            save_checkpoint(model, optimizer, epoch, run_id)
 
         if config.SAVE_MODEL_RESULTS and epoch == config.NUM_EPOCHS-1:
             save_training_results(model, optimizer, config.NUM_EPOCHS, run_id, training_losses)
@@ -117,7 +117,7 @@ def main():
         #print("On Train loader:")
         #check_class_accuracy(model, train_loader, threshold=config.CONF_THRESHOLD)
 
-        if epoch > 0 and epoch % 10 == 0:
+        if epoch > 0 and epoch % config.EVALUATION_INTERVAL == 0:
             #plot_couple_examples(model, test_loader, 0.7, 0.5, scaled_anchors, find_optimal_confidence_threshold = True, confidence_step = 0.05)
             #check_class_accuracy(model, test_loader, threshold=config.CONF_THRESHOLD)
 

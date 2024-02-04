@@ -3,7 +3,7 @@ import cv2
 import torch
 
 from albumentations.pytorch import ToTensorV2
-from .utils import seed_everything
+#from utils import seed_everything
 
 
 #***********************************************************************************************************
@@ -16,17 +16,21 @@ NUM_WORKERS = 4
 BATCH_SIZE = 32
 IMAGE_SIZE = 416
 NUM_CLASSES = 1
-LEARNING_RATE = 1e-4
+LEARNING_RATE = 1e-6
 WEIGHT_DECAY = 1e-4
-NUM_EPOCHS = 200
+NUM_EPOCHS = 20
 CONF_THRESHOLD = 0.7
 MAP_IOU_THRESH = 0.2
 NMS_IOU_THRESH = 0.2
 S = [IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8]
+
 PIN_MEMORY = True
 LOAD_MODEL = True
 SAVE_MODEL_RESULTS = True
 SAVE_CHECKPOINTS = True
+CHECKPOINT_SAVING_INTERVAL = 10
+EVALUATION_INTERVAL = 10
+
 CHECKPOINT_FILE = "my_checkpoint.pth.tar"
 IMG_DIR = DATASET + "/images/"
 LABEL_DIR = DATASET + "/labels/"
@@ -54,7 +58,7 @@ BEV_IMAGE_FOLDER = 'label_cloud_project/datastore/images/birds_eye_view_images'
 #Inference Settings
 INFERENCE_RUN_TITLE = 'First_Test_Inference'
 
-INFERENCE_CHECKPOINT_FILE = 'inference/model/inference_model_checkpoint.pth.tar'
+INFERENCE_CHECKPOINT_FILE = 'inference/model/my_checkpoint.pth.tar'
 
 INFERENCE_PCD_FOLDER = 'inference/pcd/'
 INFERENCE_TEMP_BEV_FOLDER = 'inference/temp/bev_images'

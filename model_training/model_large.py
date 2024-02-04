@@ -14,17 +14,22 @@ List is structured by "B" indicating a residual block followed by the number of 
 "U" is for upsampling the feature map and concatenating with a previous layer
 """
 config = [
-    (16, 3, 1),  # Reduced filters
-    (32, 3, 2),
-    ["B", 1],  # Less repeats
+    (32, 3, 1),
     (64, 3, 2),
-    ["B", 1],  # Less repeats
+    ["B", 1],
     (128, 3, 2),
-    ["B", 2],  # Significantly reduced the complexity here
+    ["B", 2],
     (256, 3, 2),
-    ["B", 2],  # And here
+    ["B", 8],
     (512, 3, 2),
-    ["B", 1],  # Reduced repeats for complexity
+    ["B", 8],
+    (1024, 3, 2),
+    ["B", 4],  # To this point is Darknet-53
+    (512, 1, 1),
+    (1024, 3, 1),
+    "S",
+    (256, 1, 1),
+    "U",
     (256, 1, 1),
     (512, 3, 1),
     "S",
@@ -32,11 +37,6 @@ config = [
     "U",
     (128, 1, 1),
     (256, 3, 1),
-    "S",
-    (64, 1, 1),
-    "U",
-    (64, 1, 1),
-    (128, 3, 1),
     "S",
 ]
 
@@ -117,14 +117,10 @@ class YOLOv3(nn.Module):
 
             x = layer(x)
 
-            #print(f"Layer: {type(layer)}, x shape: {x.shape}, route_connections: {len(route_connections)}")  # Debugging line
-
-            if isinstance(layer, ResidualBlock) and layer.num_repeats in [2, 8]:  # Adjust based on your config changes
+            if isinstance(layer, ResidualBlock) and layer.num_repeats == 8:
                 route_connections.append(x)
 
             elif isinstance(layer, nn.Upsample):
-                if len(route_connections) == 0:
-                    raise ValueError("Trying to concatenate with an empty route_connections list.")
                 x = torch.cat([x, route_connections[-1]], dim=1)
                 route_connections.pop()
 
@@ -166,20 +162,15 @@ class YOLOv3(nn.Module):
                     in_channels = in_channels * 3
 
         return layers
-    
-    def count_parameters(self):
-        return sum(p.numel() for p in self.parameters() if p.requires_grad)
 
 
 if __name__ == "__main__":
-    num_classes = 1
+    num_classes = 20
     IMAGE_SIZE = 416
     model = YOLOv3(num_classes=num_classes)
     x = torch.randn((2, 3, IMAGE_SIZE, IMAGE_SIZE))
     out = model(x)
-
-    #print("Total number of parameters in the model:", model.count_parameters())
     assert model(x)[0].shape == (2, 3, IMAGE_SIZE//32, IMAGE_SIZE//32, num_classes + 5)
     assert model(x)[1].shape == (2, 3, IMAGE_SIZE//16, IMAGE_SIZE//16, num_classes + 5)
     assert model(x)[2].shape == (2, 3, IMAGE_SIZE//8, IMAGE_SIZE//8, num_classes + 5)
-    #print("Success!")
+    print("Success!")
