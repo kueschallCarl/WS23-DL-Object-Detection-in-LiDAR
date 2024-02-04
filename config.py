@@ -53,6 +53,13 @@ RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds'
 LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels'
 YOLO_LABEL_FOLDER = 'label_cloud_project/datastore/labels/yolo_labels'  
 BEV_IMAGE_FOLDER = 'label_cloud_project/datastore/images/birds_eye_view_images'
+
+PREPROCESSING_IMAGE_WIDTH = 250
+PREPROCESSING_IMAGE_HEIGHT = 250
+PREPROCESSING_X_RANGE = [-5, 5]
+PREPROCESSING_Y_RANGE = [-5, 5]
+PREPROCESSING_X_BINS = 250
+PREPROCESSING_Y_BINS = 250
 #***********************************************************************************************************
 
 
@@ -67,7 +74,6 @@ INFERENCE_TEMP_BEV_FOLDER = 'model_inference_data/temp/bev_images'
 INFERENCE_RESULTS_FOLDER = 'model_inference_data/inference_results/'
 INFERENCE_PROCESSED_PCD_FOLDER = 'model_inference_data/processed_pcds/'
 
-INFERENCE_STORE_BEV_IMAGES = True
 INFERENCE_SHOW_LIVE_RESULTS = True
 INFERENCE_CONFIDENCE_THRESHOLD = 0.7
 INFERENCE_IOU_THRESHOLD = 0.2

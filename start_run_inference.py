@@ -48,7 +48,7 @@ def main():
             print(file_name)
             if file_name.endswith(".pcd"):
                 # Transform point cloud to BEV image
-                bev_image = preprocessing.transform_to_bev(file_name)
+                bev_image = preprocessing.transform_to_bev_inference(file_name)
 
                 # Extract x, y coordinates from YOLO v3 output
                 bboxes_pred = inference.inference_single_image(model, bev_image)
