@@ -2,7 +2,7 @@
 label_cloud_project/
 checkpoint_storage/
 labels/
-
+__pycache__/
 
 # Ignore image files
 *.png
