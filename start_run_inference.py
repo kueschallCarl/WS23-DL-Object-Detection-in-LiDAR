@@ -5,15 +5,15 @@ import time
 import threading
 import torch
 import tkinter as tk
-import model_training.config as config
-import model_training.utils as utils
-import inference.single_image_inference as inference
-import preprocessing.preprocess_data as preprocessing
+import config
+import src.utils.utils as utils
+import src.inference.single_image_inference as inference
+import src.preprocessing.preprocess_data as preprocessing
 from datetime import datetime
 from mpl_toolkits.mplot3d import Axes3D
 from PIL import Image, ImageTk
-from model_training.model import YOLOv3
-from inference.plot_results import plot_bounding_boxes, plot_bounding_box_single_image, ImageDisplayApp
+from src.model.model import YOLOv3
+from src.inference.plot_results import plot_bounding_boxes, plot_bounding_box_single_image, ImageDisplayApp
 global_app = None
 
 def run_tkinter():

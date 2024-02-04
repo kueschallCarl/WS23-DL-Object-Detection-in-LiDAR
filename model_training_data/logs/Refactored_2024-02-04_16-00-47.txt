@@ -1,0 +1,282 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+Currently epoch 4
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\Refactored_2024-02-04_16-00-47\checkpoint_5.pth.tar
+Currently epoch 5
+Currently epoch 6
+Currently epoch 7
+Currently epoch 8
+Currently epoch 9
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\Refactored_2024-02-04_16-00-47\checkpoint_10.pth.tar
+Currently epoch 10
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 1
+Highest Box confidence scores: [0.7058959603309631]
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 11
+Currently epoch 12
+Currently epoch 13
+Currently epoch 14
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\Refactored_2024-02-04_16-00-47\checkpoint_15.pth.tar
+Currently epoch 15
+Currently epoch 16
+Currently epoch 17
+Currently epoch 18
+Currently epoch 19
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\Refactored_2024-02-04_16-00-47\checkpoint_20.pth.tar
+Currently epoch 20
+Running get_evaluation_bboxes...
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Starting NMS
+Num boxes above confidence threshold: 0
+Highest Box confidence scores: []
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 21
+Currently epoch 22
+Currently epoch 23
+Currently epoch 24
+=> Saving checkpoint
+Checkpoint saved at: checkpoint_storage\Refactored_2024-02-04_16-00-47\checkpoint_25.pth.tar
+Currently epoch 25
+Currently epoch 26
+Currently epoch 27
+Currently epoch 28
+=> Saving Model Results
+Model Results saved at: model_results\Refactored_2024-02-04_16-00-47\checkpoint_30.pth.tar and configuration saved at: model_results\Refactored_2024-02-04_16-00-47\config_values_Refactored_2024-02-04_16-00-47.json
+Currently epoch 29

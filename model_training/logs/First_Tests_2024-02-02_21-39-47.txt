@@ -1,7 +1,0 @@
-Currently epoch 0
-Currently epoch 1
-Currently epoch 2
-Currently epoch 3
-=> Saving Model Results
-Model Results saved at: model_results\First_Tests_2024-02-02_21-39-47\checkpoint_5.pth.tar and configuration saved at: model_results\First_Tests_2024-02-02_21-39-47\config_values_First_Tests_2024-02-02_21-39-47.json
-Currently epoch 4
