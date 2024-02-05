@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import config
+import random
+import csv
 import json
 
 from PIL import Image
@@ -146,6 +148,54 @@ def process_label_cloud_labels_to_yolo_format(image_width, image_height, x_range
             with open(output_file, 'w') as f:
                 for label in yolo_labels:
                     f.write(' '.join(map(str, label)) + '\n')
+
+#***********************************************************************************************************
+#Creating new dataset from YOLO labels and BEV Images
+
+def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
+    # Get the list of image and label filenames
+    image_filenames = os.listdir(image_folder)
+    label_filenames = os.listdir(label_folder)
+    
+    # Create a dictionary to map image base names to label files
+    label_file_map = {}
+    for label_file in label_filenames:
+        base_name = label_file.split('.')[0]  # Assumes the common part is before the first dot
+        label_file_map[base_name] = label_file
+
+    # Shuffle the image filenames
+    random.shuffle(image_filenames)
+    
+    # Calculate the split index
+    split_index = int(len(image_filenames) * split_ratio)
+    
+    # Split the image filenames into train and test sets
+    train_image_filenames = image_filenames[:split_index]
+    test_image_filenames = image_filenames[split_index:]
+    
+    # Function to find the corresponding label file
+    def find_label_file(image_file):
+        base_name = image_file.split('.')[0]  # Assumes the common part is before the first dot
+        return label_file_map.get(base_name, None)
+
+    # Create the train.csv file
+    train_csv_path = os.path.join(csv_dir, 'train.csv')
+    with open(train_csv_path, 'w', newline='') as train_file:
+        writer = csv.writer(train_file)
+        for image_filename in train_image_filenames:
+            label_filename = find_label_file(image_filename)
+            if label_filename:
+                writer.writerow([image_filename, label_filename])
+    
+    # Create the test.csv file
+    test_csv_path = os.path.join(csv_dir, 'test.csv')
+    with open(test_csv_path, 'w', newline='') as test_file:
+        writer = csv.writer(test_file)
+        for image_filename in test_image_filenames:
+            label_filename = find_label_file(image_filename)
+            if label_filename:
+                writer.writerow([image_filename, label_filename])
+
 #***********************************************************************************************************
 
 

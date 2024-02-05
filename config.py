@@ -49,10 +49,13 @@ ANCHORS = [
 #Preprocessing Settings
 PCD_CROP_DISTANCE_THRESHOLD = 5.0
 
+NEW_DATASET_NAME = 'BEV_DATASET_PREPROCESSED'
+
 RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds'
 LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels'
-YOLO_LABEL_FOLDER = 'label_cloud_project/datastore/labels/yolo_labels'  
-BEV_IMAGE_FOLDER = 'label_cloud_project/datastore/images/birds_eye_view_images'
+
+YOLO_LABEL_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/labels'  
+BEV_IMAGE_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/images'  
 
 PREPROCESSING_IMAGE_WIDTH = 250
 PREPROCESSING_IMAGE_HEIGHT = 250
@@ -60,6 +63,8 @@ PREPROCESSING_X_RANGE = [-5, 5]
 PREPROCESSING_Y_RANGE = [-5, 5]
 PREPROCESSING_X_BINS = 250
 PREPROCESSING_Y_BINS = 250
+
+PREPROCESSING_TRAIN_SPLIT_RATIO = 0.7
 #***********************************************************************************************************
 
 

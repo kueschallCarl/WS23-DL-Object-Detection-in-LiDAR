@@ -14,14 +14,23 @@ from tqdm import tqdm
 from datetime import datetime
 from src.utils.logger import Tee
 from src.training.loss import YoloLoss
-from src.preprocessing import process_label_cloud_labels_to_yolo_format, transform_to_bev
+from src.preprocessing.preprocess_data import process_label_cloud_labels_to_yolo_format, transform_to_bev_training_data, create_new_dataset
 
 def main():
+    dataset_path = os.path.join("model_training_data", "datasets", config.NEW_DATASET_NAME)
+    dataset_path_labels = os.path.join(dataset_path, "labels")
+    dataset_path_images = os.path.join(dataset_path, "images")
+
+    os.makedirs(dataset_path, exist_ok=True)
+    os.makedirs(dataset_path_labels, exist_ok=True)
+    os.makedirs(dataset_path_images, exist_ok=True)
+
     process_label_cloud_labels_to_yolo_format(config.PREPROCESSING_IMAGE_WIDTH, config.PREPROCESSING_IMAGE_HEIGHT, 
                                               config.PREPROCESSING_X_RANGE, config.PREPROCESSING_Y_RANGE, config.PREPROCESSING_X_BINS,
                                               config.PREPROCESSING_Y_BINS, config.LABEL_CLOUD_LABEL_FOLDER, config.YOLO_LABEL_FOLDER)
+    create_new_dataset(config.BEV_IMAGE_FOLDER, config.YOLO_LABEL_FOLDER, config.PREPROCESSING_TRAIN_SPLIT_RATIO, dataset_path)
     for filename in os.listdir(config.RAW_PCD_FOLDER):
-        transform_to_bev(filename)
+        transform_to_bev_training_data(filename)
 
 if __name__ == "__main__":
     main()
