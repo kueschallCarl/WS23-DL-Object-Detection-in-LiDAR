@@ -370,7 +370,7 @@ def get_inference_bboxes(loader, model, iou_threshold, anchors, confidence_thres
     all_pred_boxes = []
     train_idx = 0
 
-    for batch_idx, x in enumerate(tqdm(loader)):
+    for batch_idx, x in enumerate(loader):
         x = x.to(device)
 
         with torch.no_grad():

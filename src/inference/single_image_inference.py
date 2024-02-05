@@ -90,7 +90,7 @@ def inference_single_image(model, image, confidence_threshold = config.INFERENCE
     """
     # Load and preprocess  image
     dataset = YOLOInferenceDatasetSingleImage(image, transform=config.inference_transforms)
-    dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=config.NUM_WORKERS, pin_memory=config.PIN_MEMORY)
+    dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=config.NUM_WORKERS, pin_memory=config.PIN_MEMORY, persistent_workers = True)
 
     # Move the model to the device (CPU or GPU)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
