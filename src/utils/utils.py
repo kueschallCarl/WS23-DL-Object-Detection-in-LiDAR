@@ -92,12 +92,9 @@ def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     Returns:
         list: Bounding boxes after performing NMS.
     """
-    print("Starting NMS")
     assert type(bboxes) == list
     bboxes = [box for box in bboxes if box[1] > threshold]
-    print(f"Num boxes above confidence threshold: {len(bboxes)}")
     bboxes = sorted(bboxes, key=lambda x: x[1], reverse=True)
-    print(f"Highest Box confidence scores: {[box[1] for box in bboxes[:5]]}")
     bboxes_after_nms = []
 
     while bboxes:

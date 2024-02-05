@@ -34,10 +34,6 @@ class ImageDisplayApp:
         self.canvas = tk.Canvas(root)
         self.canvas.pack()
 
-        # Add a button to trigger the function that changes the image
-        self.change_image_button = tk.Button(root, text="Change Image", command=self.change_image)
-        self.change_image_button.pack()
-
     def change_image(self):
         """
         Change the displayed image on the canvas.
