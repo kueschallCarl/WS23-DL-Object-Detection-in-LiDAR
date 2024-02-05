@@ -75,28 +75,35 @@ def post_process_output(dataloader, model, confidence_threshold, iou_threshold, 
     bboxes_pred = utils.get_inference_bboxes(dataloader, model, iou_threshold, anchors, confidence_threshold, box_format="midpoint", device="cuda") 
     return bboxes_pred
 
-def inference_single_image(model, image, confidence_threshold = config.INFERENCE_CONFIDENCE_THRESHOLD, nms_threshold = config.INFERENCE_IOU_THRESHOLD):
+def inference_single_image(model, image, device="cuda"):
     """
-    Perform inference on a single image using a YOLO model.
+    Perform inference on a single image using a YOLO model without using DataLoader.
 
     Args:
         model (torch.nn.Module): The YOLO model.
         image (numpy.ndarray): A numpy array representing the input image.
-        confidence_threshold (float, optional): Confidence threshold for filtering detections.
-        nms_threshold (float, optional): IoU threshold for non-maximum suppression.
+        confidence_threshold (float): Confidence threshold for filtering detections.
+        iou_threshold (float): IoU threshold for non-maximum suppression.
+        anchors (list of tuples): Anchor boxes for YOLO.
+        device (str, optional): Device to perform inference on.
 
     Returns:
         list: A list of bounding boxes with class predictions.
     """
-    # Load and preprocess  image
-    dataset = YOLOInferenceDatasetSingleImage(image, transform=config.inference_transforms)
-    dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=config.NUM_WORKERS, pin_memory=config.PIN_MEMORY, persistent_workers = True)
+    # Ensure model is in evaluation mode
+    model.eval()
 
-    # Move the model to the device (CPU or GPU)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Using device: {device}")
-    model.to(device)
+    # Convert image to PIL and apply transformations
+    img = Image.fromarray(image).convert("RGB")
+    img_transformed = config.inference_transforms(image=np.array(img))['image']
+    img_transformed = torch.tensor(img_transformed).unsqueeze(0).to(device)  # Add batch dimension and move to device
 
-    # Post-process the output
-    bboxes_pred = post_process_output(dataloader, model, confidence_threshold, nms_threshold, anchors=config.ANCHORS)
+    # Perform inference
+    with torch.no_grad():
+        predictions = model(img_transformed.to(device))
+
+    bboxes_pred = utils.get_inference_bboxes(predictions, model, iou_threshold=config.INFERENCE_IOU_THRESHOLD, anchors=config.ANCHORS, confidence_threshold=config.INFERENCE_CONFIDENCE_THRESHOLD, device=device)
+
+    # Return to training mode if needed elsewhere
+    model.train()
     return bboxes_pred

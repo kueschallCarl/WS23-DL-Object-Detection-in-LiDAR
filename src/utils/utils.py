@@ -348,59 +348,45 @@ def get_evaluation_bboxes(
     model.train()
     return all_pred_boxes, all_true_boxes
 
-def get_inference_bboxes(loader, model, iou_threshold, anchors, confidence_threshold, box_format="midpoint", device="cuda"):
+def get_inference_bboxes(predictions, model, iou_threshold, anchors, confidence_threshold, device="cuda"):
     """
-    Get inference bounding boxes using a trained model.
+    Process model predictions to obtain inference bounding boxes.
 
     Parameters:
-        loader (DataLoader): DataLoader for the dataset.
-        model (nn.Module): Trained YOLO model.
+        predictions (torch.Tensor): Model predictions for a single image.
+        model (torch.nn.Module): Trained YOLO model, not used in this function but kept for interface compatibility.
         iou_threshold (float): IoU threshold for NMS.
         anchors (list): List of anchor boxes.
         confidence_threshold (float): Confidence score threshold for filtering predictions.
-        box_format (str): "midpoint" or "corners" specifying the format of the boxes.
         device (str): Device on which to run inference (default: "cuda").
 
     Returns:
-        list: List of predicted bounding boxes.
+        list: List of predicted bounding boxes after applying NMS.
     """
-    # Make sure the model is in evaluation mode
-    model.eval()
-    
+    # Ensure model is not explicitly used inside this function as predictions are directly passed
+    # model.eval()  # Assuming model is already in evaluation mode outside this function
+
     all_pred_boxes = []
-    train_idx = 0
 
-    for batch_idx, x in enumerate(loader):
-        x = x.to(device)
+    # Assuming predictions is a list of tensors for each scale
+    for i in range(len(predictions)):
+        S = predictions[i].shape[2]
+        anchor = torch.tensor(anchors[i], device=device) * S
+        boxes_scale_i = cells_to_bboxes(predictions[i], anchor, S=S, is_preds=True)
 
-        with torch.no_grad():
-            predictions = model(x)
+        # Flatten the list of bboxes from different scales into a single list
+        bboxes = [box for sublist in boxes_scale_i for box in sublist]
 
-        batch_size = x.shape[0]
-        bboxes = [[] for _ in range(batch_size)]
+        nms_boxes = non_max_suppression(
+            bboxes,
+            iou_threshold=iou_threshold,
+            threshold=confidence_threshold
+        )
 
-        for i in range(3):
-            S = predictions[i].shape[2]
-            anchor = torch.tensor([*anchors[i]]).to(device) * S
-            boxes_scale_i = cells_to_bboxes(predictions[i], anchor, S=S, is_preds=True)
+        all_pred_boxes.extend(nms_boxes)
 
-            for idx, box in enumerate(boxes_scale_i):
-                bboxes[idx] += box
+    # model.train()  # No need to toggle back to train mode here if the model state is managed outside
 
-        for idx in range(batch_size):
-            nms_boxes = non_max_suppression(
-                bboxes[idx],
-                iou_threshold=iou_threshold,  
-                threshold=confidence_threshold, 
-                box_format=box_format,
-            )
-
-            for nms_box in nms_boxes:
-                all_pred_boxes.append([train_idx] + nms_box)
-
-            train_idx += 1
-
-    model.train()
     return all_pred_boxes
 
 def cells_to_bboxes(predictions, anchors, S, is_preds=True):

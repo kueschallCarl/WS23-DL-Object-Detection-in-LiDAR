@@ -45,10 +45,15 @@ def main():
 
     # Inference loop
     print(f"Waiting for pcd files in {config.RAW_PCD_FOLDER}")
-    flag = 0
-    while True and flag <3:
+
+    """
+    Use this for profiling
+    #flag = 0
+    #while True and flag < 9:"""
+
+    while True:
         # Monitor the folder for new point cloud files
-        for file_name in os.listdir(config.INFERENCE_PCD_FOLDER):
+        for file_name in os.listdir(config.INFERENCE_PCD_FOLDER)[:3]:
             print(file_name)
             if file_name.endswith(".pcd"):
                 # Transform point cloud to BEV image
@@ -63,11 +68,11 @@ def main():
                 result_dict = {}
                 for idx in range(len(bboxes_pred)):
                     bbox_info = {
-                        "confidence": bboxes_pred[idx][2],
-                        "x": bboxes_pred[idx][3],
-                        "y": bboxes_pred[idx][4],
-                        "w": bboxes_pred[idx][5],
-                        "h": bboxes_pred[idx][6]
+                        "confidence": bboxes_pred[idx][1],
+                        "x": bboxes_pred[idx][2],
+                        "y": bboxes_pred[idx][3],
+                        "w": bboxes_pred[idx][4],
+                        "h": bboxes_pred[idx][5]
                     }
                     result_dict[idx] = bbox_info
 
@@ -95,9 +100,11 @@ def main():
                 os.rename(os.path.join(config.INFERENCE_PCD_FOLDER, file_name),
                           os.path.join(processed_pcd_folder, file_name))
 
-        # Sleep for a while before checking for new files again
-        time.sleep(0.01)
-        flag +=1
+            # Sleep for a while before checking for new files again
+            time.sleep(0.01)
+            #flag +=1
+            #print(f"flag after update: {flag}")
+    
 
 if __name__ == "__main__":
     main()
