@@ -1,0 +1,227 @@
+F:.
+│   .gitattributes
+│   .gitignore
+│   .labelCloud.log
+│   config.ini
+│   config.py
+│   evaluation.py
+│   my_checkpoint.pth.tar
+│   README.md
+│   start_run_inference.ipynb
+│   start_run_inference.py
+│   start_run_training.py
+│   start_training_data_preprocessing.py
+│   YOLO_BEV_APPROACH.ipynb
+│
+├───.vscode
+│       launch.json
+│
+├───label_cloud_project
+│   ├───datastore
+│   │   ├───images
+│   │   │   └───birds_eye_view_images
+│   │   │           000001.png
+│   │   │           ...
+│   │   │           000755.png
+│   │   │
+│   │   ├───labels
+│   │   │   ├───label_cloud_labels
+│   │   │   │       000001.json
+│   │   │   │       ...
+│   │   │   │       000200.json
+│   │   │   │       _classes.json
+│   │   │   │
+│   │   │   └───yolo_labels
+│   │   │           000001.txt
+│   │   │           ...
+│   │   │           000200.txt
+│   │   │
+│   │   └───pointclouds
+│   │       ├───cropped_pcds
+│   │       │       000001.pcd
+│   │       │       ...
+│   │       │       000755.pcd
+│   │       │
+│   │       └───raw_pcds
+│   │               000001.pcd
+│   │               ...
+│   │               000755.pcd
+│   │
+│   └───processed_data_batches
+│       └───batch_1
+│           ├───images
+│           │       000001.png
+│           │       
+│           │       000200.png
+│           │
+│           ├───labels
+│           │       000001.txt
+│           │       ...
+│           │       000200.txt
+│           │
+│           └───splits
+│                   test.csv
+│                   train.csv
+│
+├───model_inference_data
+│   ├───inference_results
+│   │   │
+│   │   ├───First_Test_Inference_2024-02-04_14-58-39_medium_size_model
+│   │   │       results_First_Test_Inference_2024-02-04_14-58-39.json
+│   │   │
+│   │   ├───First_Test_Inference_2024-02-04_15-51-39
+│   │   │       results_First_Test_Inference_2024-02-04_15-51-39.json
+│   │   │
+│   │   └───First_Test_Inference_2024-02-05_17-13-44
+│   │           results_First_Test_Inference_2024-02-05_17-13-44.json
+│   │
+│   ├───model
+│   │       inference_model_checkpoint.pth.tar
+│   │       my_checkpoint.pth.tar
+│   │
+│   ├───pcd
+│   │       000003.pcd
+│   │       000004.pcd
+│   │       000005.pcd
+│   │       000006.pcd
+│   │       000007.pcd
+│   │       000008.pcd
+│   │       000009.pcd
+│   │       000010.pcd
+│   │
+│   ├───processed_pcds
+│   │       000001.pcd
+│   │       000002.pcd
+│   │
+│   └───temp
+│       └───bev_images
+│               000001.png
+│               000002.png
+│               000003.png
+│               000004.png
+│               000005.png
+│               000006.png
+│               000007.png
+│               000008.png
+│               000009.png
+│               000010.png
+│
+├───model_training_data
+│   ├───checkpoint_storage
+│   │   └───Refactored_2024-02-04_16-00-47
+│   │           checkpoint_10.pth.tar
+│   │           checkpoint_15.pth.tar
+│   │           checkpoint_20.pth.tar
+│   │           checkpoint_25.pth.tar
+│   │           checkpoint_5.pth.tar
+│   │
+│   ├───datasets
+│   │   ├───BEV_BATCH1
+│   │   │   │   1examples.csv
+│   │   │   │   2examples.csv
+│   │   │   │   8examples.csv
+│   │   │   │   test.csv
+│   │   │   │   train.csv
+│   │   │   │
+│   │   │   ├───images
+│   │   │   │       000001.png
+│   │   │   │       ...
+│   │   │   │       000200.png
+│   │   │   │
+│   │   │   └───labels
+│   │   │           000001.txt
+│   │   │           ...
+│   │   │           000200.txt
+│   │   │
+│   │   ├───BEV_DATASET_PREPROCESSED
+│   │   │   │   test.csv
+│   │   │   │   train.csv
+│   │   │   │
+│   │   │   ├───images
+│   │   │   │       000001.png
+│   │   │   │       ...
+│   │   │   │       000200.png
+│   │   │   │
+│   │   │   └───labels
+│   │   │           000001.txt
+│   │   │           ...
+│   │   │           000200.txt
+│   │   │
+│   │   └───PASCAL_VOC
+│   │       │   1examples.csv
+│   │       │   2examples.csv
+│   │       │   8examples.csv
+│   │       │   test.csv
+│   │       │   train.csv
+│   │       │
+│   │       ├───images
+│   │       │       000001.jpg
+│   │       │       ...
+│   │       │       001000.jpg
+│   │       │
+│   │       └───labels
+│   │               000001.txt
+│   │               ...
+│   │               001000.txt
+│   │
+│   ├───logs
+│   │       First_Tests_2024-02-02_21-42-40.txt
+│   │       First_Tests_2024-02-04_15-59-46.txt
+│   │       Refactored_2024-02-04_16-00-47.txt
+│   │       Refactored_2024-02-05_17-13-27.txt
+│   │
+│   └───model_results
+│       │
+│       ├───First_Tests_2024-02-04_14-46-20_medium_size_model
+│       │       checkpoint_50.pth.tar
+│       │       config_values_First_Tests_2024-02-04_14-46-20.json
+│       │       First_Tests_2024-02-04_14-46-20_learning_curve_loss.png
+│       │
+│       └───Refactored_2024-02-04_16-00-47
+│               checkpoint_30.pth.tar
+│               config_values_Refactored_2024-02-04_16-00-47.json
+│               Refactored_2024-02-04_16-00-47_learning_curve_loss.png
+│
+├───src
+│   ├───inference
+│   │   │   plot_results.py
+│   │   │   single_image_inference.py
+│   │   │
+│   │   └───__pycache__
+│   │           plot_results.cpython-38.pyc
+│   │           single_image_inference.cpython-38.pyc
+│   │
+│   ├───model
+│   │   │   model.py
+│   │   │   model_large.py
+│   │   │
+│   │   └───__pycache__
+│   │           model.cpython-38.pyc
+│   │
+│   ├───preprocessing
+│   │   │   preprocess_data.py
+│   │   │
+│   │   └───__pycache__
+│   │           preprocess_data.cpython-38.pyc
+│   │
+│   ├───training
+│   │   │   dataset.py
+│   │   │   loss.py
+│   │   │
+│   │   └───__pycache__
+│   │           dataset.cpython-38.pyc
+│   │           loss.cpython-38.pyc
+│   │
+│   └───utils
+│       │   logger.py
+│       │   utils.py
+│       │
+│       └───__pycache__
+│               logger.cpython-38.pyc
+│               utils.cpython-38.pyc
+│
+├───temp
+│       live_result.png
+│
+└───__pycache__
+        config.cpython-38.pyc

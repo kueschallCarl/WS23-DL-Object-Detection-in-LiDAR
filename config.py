@@ -25,7 +25,7 @@ NMS_IOU_THRESH = 0.2
 S = [IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8]
 
 PIN_MEMORY = True
-LOAD_MODEL = False
+LOAD_MODEL = True
 SAVE_MODEL_RESULTS = True
 SAVE_CHECKPOINTS = True
 CHECKPOINT_SAVING_INTERVAL = 5
@@ -79,7 +79,7 @@ INFERENCE_TEMP_BEV_FOLDER = 'model_inference_data/temp/bev_images'
 INFERENCE_RESULTS_FOLDER = 'model_inference_data/inference_results/'
 INFERENCE_PROCESSED_PCD_FOLDER = 'model_inference_data/processed_pcds/'
 
-INFERENCE_SHOW_LIVE_RESULTS = True
+INFERENCE_SHOW_LIVE_RESULTS = False
 INFERENCE_CONFIDENCE_THRESHOLD = 0.7
 INFERENCE_IOU_THRESHOLD = 0.2
 #***********************************************************************************************************

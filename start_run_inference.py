@@ -45,7 +45,8 @@ def main():
 
     # Inference loop
     print(f"Waiting for pcd files in {config.RAW_PCD_FOLDER}")
-    while True:
+    flag = 0
+    while True and flag <3:
         # Monitor the folder for new point cloud files
         for file_name in os.listdir(config.INFERENCE_PCD_FOLDER):
             print(file_name)
@@ -96,6 +97,7 @@ def main():
 
         # Sleep for a while before checking for new files again
         time.sleep(0.01)
+        flag +=1
 
 if __name__ == "__main__":
     main()

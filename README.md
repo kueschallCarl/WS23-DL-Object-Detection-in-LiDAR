@@ -1,5 +1,4 @@
 # YOLOv3 in PyTorch
-A quite minimal implementation of YOLOv3 in PyTorch spanning only around 800 lines of code related to YOLOv3 (not counting plot image helper functions etc). The repository has support for training and evaluation and complete with helper functions for inference. There is currently pretrained weights for Pascal-VOC with MS COCO coming up. 
 
 ## Installation
 
@@ -10,33 +9,24 @@ $ cd ML/Pytorch/object_detection/YOLOv3/
 $ pip install requirements.txt
 ```
 
-### Download pretrained weights on Pascal-VOC
-Available on Kaggle: [link](https://www.kaggle.com/dataset/1cf520aba05e023f2f80099ef497a8f3668516c39e6f673531e3e47407c46694)
+## Preprocessing
 
-### Download Pascal VOC dataset
-Download the preprocessed dataset from [link](https://www.kaggle.com/aladdinpersson/pascal-voc-dataset-used-in-yolov3-video). Just unzip this in the main directory.
-
-### Download MS COCO dataset
-Download the preprocessed dataset from [link](https://www.kaggle.com/dataset/79abcc2659dc745fddfba1864438afb2fac3fabaa5f37daa8a51e36466db101e). Just unzip this in the main directory.
-
-### Training
+## Training
 Edit the config.py file to match the setup you want to use. Then run train.py
 
-### Results
-| Model                   | mAP @ 50 IoU |
-| ----------------------- |:-----------------:|
-| YOLOv3 (Pascal VOC) 	  | 78.2              |
-| YOLOv3 (MS-COCO)        | Will probably train on this at some point      |
+## Inference
 
-The model was evaluated with confidence 0.2 and IOU threshold 0.45 using NMS.
+### First Results
+| Model                   | mAP @ 20 IoU          |  Test.csv  | 
+| ----------------------- |:---------------------:|------------|
+| YOLOv3_custom_large (VeloDyne 16 PCD 0-200) 	  | 97.5       |
+| YOLOv3_custom_medium (VeloDyne 16 PCD 0-200)    | 83.5       |
 
-### Things I'm unsure of
-From my understanding YOLOv3 labeled targets to include an anchor on each of the three different scales. This leads to a problem where we will have multiple 
-predictions of the same object and I think the idea is that we rely more on NMS. The probability of an object in loss function should correspond to the IOU 
-with the ground truth box, this should also alleviate with multiple bounding boxes prediction for each ground truth (since obj score is lower). When loading the 
-original weights for YOLOv3 I good mAP results but the object score, no object score seems to be a bit different because the accuracy on those aren't great.
-This suggests there's something different with the original implementation, but not sure what it is exactly. The original YOLOv3 paper also used  BCE loss 
-for class labels since some datasets are multi-label, however I thought it was more natural to use CrossEntropy because both Pascal and COCO just have a single label. 
+The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS.
+
+
+## Sources
+
 
 ## YOLOv3 paper
 The implementation is based on the following paper:
