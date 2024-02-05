@@ -1,7 +1,3 @@
-"""
-Implementation of YOLOv3 architecture
-"""
-
 import torch
 import torch.nn as nn
 
@@ -42,6 +38,23 @@ config = [
 
 
 class CNNBlock(nn.Module):
+    """
+    CNN block consisting of convolution, batch normalization, and LeakyReLU.
+
+    Attributes:
+        in_channels (int): Number of input channels.
+        out_channels (int): Number of output channels.
+        bn_act (bool): Whether to apply batch normalization and LeakyReLU.
+
+    Methods:
+        forward(x): Forward pass of the CNN block.
+
+    Args:
+        in_channels (int): Number of input channels.
+        out_channels (int): Number of output channels.
+        bn_act (bool): Whether to apply batch normalization and LeakyReLU.
+        **kwargs: Additional keyword arguments for convolution layers.
+    """
     def __init__(self, in_channels, out_channels, bn_act=True, **kwargs):
         super().__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, bias=not bn_act, **kwargs)
@@ -57,6 +70,22 @@ class CNNBlock(nn.Module):
 
 
 class ResidualBlock(nn.Module):
+    """
+    Residual block with optional skip connection.
+
+    Attributes:
+        channels (int): Number of input and output channels.
+        use_residual (bool): Whether to use the residual connection.
+        num_repeats (int): Number of times to repeat the internal convolution blocks.
+
+    Methods:
+        forward(x): Forward pass of the residual block.
+
+    Args:
+        channels (int): Number of input and output channels.
+        use_residual (bool): Whether to use the residual connection.
+        num_repeats (int): Number of times to repeat the internal convolution blocks.
+    """
     def __init__(self, channels, use_residual=True, num_repeats=1):
         super().__init__()
         self.layers = nn.ModuleList()
@@ -82,6 +111,20 @@ class ResidualBlock(nn.Module):
 
 
 class ScalePrediction(nn.Module):
+    """
+    Scale prediction block for YOLO.
+
+    Attributes:
+        in_channels (int): Number of input channels.
+        num_classes (int): Number of object classes.
+
+    Methods:
+        forward(x): Forward pass of the scale prediction block.
+
+    Args:
+        in_channels (int): Number of input channels.
+        num_classes (int): Number of object classes.
+    """
     def __init__(self, in_channels, num_classes):
         super().__init__()
         self.pred = nn.Sequential(
@@ -101,6 +144,20 @@ class ScalePrediction(nn.Module):
 
 
 class YOLOv3(nn.Module):
+    """
+    YOLOv3 architecture.
+
+    Attributes:
+        in_channels (int): Number of input channels.
+        num_classes (int): Number of object classes.
+
+    Methods:
+        forward(x): Forward pass of the YOLOv3 model.
+
+    Args:
+        in_channels (int): Number of input channels (default: 3).
+        num_classes (int): Number of object classes (default: 80).
+    """
     def __init__(self, in_channels=3, num_classes=80):
         super().__init__()
         self.num_classes = num_classes
@@ -164,8 +221,11 @@ class YOLOv3(nn.Module):
         return layers
 
 
+"""
+Run this script for a foward pass test
+"""
 if __name__ == "__main__":
-    num_classes = 20
+    num_classes = 1
     IMAGE_SIZE = 416
     model = YOLOv3(num_classes=num_classes)
     x = torch.randn((2, 3, IMAGE_SIZE, IMAGE_SIZE))

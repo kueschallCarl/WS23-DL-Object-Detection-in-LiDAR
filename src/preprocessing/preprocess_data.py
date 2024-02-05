@@ -13,11 +13,19 @@ import json
 
 from PIL import Image
 
-
-
 #***********************************************************************************************************
 # PCD to BEV images
 def crop_point_cloud(pcd_path, distance_threshold=config.PCD_CROP_DISTANCE_THRESHOLD):
+    """
+    Crop a 3D point cloud based on a specified distance threshold from the origin.
+
+    Args:
+        pcd_path (str): Path to the input point cloud file (in PCD format).
+        distance_threshold (float): Distance threshold for cropping points (default: config.PCD_CROP_DISTANCE_THRESHOLD).
+
+    Returns:
+        np.ndarray: Cropped point cloud as a NumPy array.
+    """
     # Load pcd file
     point_cloud = o3d.io.read_point_cloud(pcd_path)
 
@@ -32,6 +40,18 @@ def crop_point_cloud(pcd_path, distance_threshold=config.PCD_CROP_DISTANCE_THRES
     return cropped_points
 
 def generate_and_save_birds_eye_view(points, filename, dpi=200, output_folder=None):
+    """
+    Generate and save a Bird's Eye View (BEV) image from a cropped 3D point cloud.
+
+    Args:
+        points (np.ndarray): Cropped point cloud as a NumPy array.
+        filename (str): Name of the output image file.
+        dpi (int): Dots per inch for the output image (default: 200).
+        output_folder (str): Folder to save the output image (default: None).
+
+    Returns:
+        np.ndarray: The generated BEV image as a NumPy array.
+    """
     x_bins = np.linspace(-5, 5, 250)
     y_bins = np.linspace(-5, 5, 250)
     x_range = [-5, 5]
@@ -79,20 +99,48 @@ def generate_and_save_birds_eye_view(points, filename, dpi=200, output_folder=No
         return np.array(img)
 
 def transform_to_bev_inference(filename):
+    """
+    Transform a point cloud file to a Bird's Eye View (BEV) image for inference.
+
+    Args:
+        filename (str): Name of the input point cloud file.
+
+    Returns:
+        np.ndarray: The generated BEV image as a NumPy array.
+    """
     cropped_pcd = crop_point_cloud(os.path.join(config.INFERENCE_PCD_FOLDER, filename))
-    bev_image = generate_and_save_birds_eye_view(cropped_pcd, filename, dpi = 200, output_folder= config.INFERENCE_TEMP_BEV_FOLDER)
+    bev_image = generate_and_save_birds_eye_view(cropped_pcd, filename, dpi=200, output_folder=config.INFERENCE_TEMP_BEV_FOLDER)
     return bev_image
 
 def transform_to_bev_training_data(filename):
+    """
+    Transform a point cloud file to a Bird's Eye View (BEV) image for training data.
+
+    Args:
+        filename (str): Name of the input point cloud file.
+    """
     cropped_pcd = crop_point_cloud(os.path.join(config.RAW_PCD_FOLDER, filename))
-    generate_and_save_birds_eye_view(cropped_pcd, filename, dpi = 200, output_folder= config.BEV_IMAGE_FOLDER)
+    generate_and_save_birds_eye_view(cropped_pcd, filename, dpi=200, output_folder=config.BEV_IMAGE_FOLDER)
 #***********************************************************************************************************
 
-
-
 #***********************************************************************************************************
-#LabelCloud labels to YOLO labels
+# LabelCloud labels to YOLO labels
 def labelCloud_to_YOLO(label_file, image_width, image_height, x_range, y_range, x_bins, y_bins):
+    """
+    Convert LabelCloud labels to YOLO format labels.
+
+    Args:
+        label_file (str): Path to the JSON label file.
+        image_width (int): Width of the image.
+        image_height (int): Height of the image.
+        x_range (list): Range of X-axis values.
+        y_range (list): Range of Y-axis values.
+        x_bins (int): Number of X-axis bins.
+        y_bins (int): Number of Y-axis bins.
+
+    Returns:
+        list: YOLO-formatted labels as a list of tuples.
+    """
     # Read the JSON label file
     with open(label_file, 'r') as f:
         labels = json.load(f)
@@ -131,7 +179,21 @@ def labelCloud_to_YOLO(label_file, image_width, image_height, x_range, y_range, 
     return yolo_labels
 
 def process_label_cloud_labels_to_yolo_format(image_width, image_height, x_range, y_range, x_bins, y_bins,
-                                               label_cloud_label_folder = config.LABEL_CLOUD_LABEL_FOLDER, yolo_label_foler = config.YOLO_LABEL_FOLDER):
+                                               label_cloud_label_folder=config.LABEL_CLOUD_LABEL_FOLDER,
+                                               yolo_label_foler=config.YOLO_LABEL_FOLDER):
+    """
+    Process LabelCloud labels and convert them to YOLO format labels, saving them to output files.
+
+    Args:
+        image_width (int): Width of the image.
+        image_height (int): Height of the image.
+        x_range (list): Range of X-axis values.
+        y_range (list): Range of Y-axis values.
+        x_bins (int): Number of X-axis bins.
+        y_bins (int): Number of Y-axis bins.
+        label_cloud_label_folder (str): Folder containing LabelCloud label files (default: config.LABEL_CLOUD_LABEL_FOLDER).
+        yolo_label_foler (str): Folder to save YOLO format label files (default: config.YOLO_LABEL_FOLDER).
+    """
     for filename in os.listdir(label_cloud_label_folder):
         if not '_classes' in filename:
             label_file = os.path.join(label_cloud_label_folder, filename)
@@ -150,9 +212,17 @@ def process_label_cloud_labels_to_yolo_format(image_width, image_height, x_range
                     f.write(' '.join(map(str, label)) + '\n')
 
 #***********************************************************************************************************
-#Creating new dataset from YOLO labels and BEV Images
-
+# Creating new dataset from YOLO labels and BEV Images
 def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
+    """
+    Create a new dataset by splitting images and labels into training and test sets, and save the split information as CSV files.
+
+    Args:
+        image_folder (str): Folder containing image files.
+        label_folder (str): Folder containing label files.
+        split_ratio (float): Ratio of data to split into training set (e.g., 0.8 for 80% training).
+        csv_dir (str): Directory to save the CSV files.
+    """
     # Get the list of image and label filenames
     image_filenames = os.listdir(image_folder)
     label_filenames = os.listdir(label_folder)
@@ -197,7 +267,6 @@ def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
                 writer.writerow([image_filename, label_filename])
 
 #***********************************************************************************************************
-
 
 def main():
     pass

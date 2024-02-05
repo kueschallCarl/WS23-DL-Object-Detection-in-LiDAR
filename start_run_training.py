@@ -1,14 +1,9 @@
-"""
-Main file for training Yolo model on Pascal VOC
-"""
-
 import config as config
 import torch
 import os
 import sys
 import torch.optim as optim
 import matplotlib.pyplot as plt
-
 from src.model.model import YOLOv3
 from tqdm import tqdm
 from datetime import datetime
@@ -26,12 +21,26 @@ from src.utils.utils import (
 )
 from src.training.loss import YoloLoss
 import warnings
+
 warnings.filterwarnings("ignore")
 
 torch.backends.cudnn.benchmark = True
 
-
 def train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors):
+    """
+    Train function for one epoch.
+
+    Args:
+        train_loader: DataLoader for training data.
+        model: YOLOv3 model.
+        optimizer: Optimizer for model parameters.
+        loss_fn: YOLO loss function.
+        scaler: GradScaler for mixed-precision training.
+        scaled_anchors: Anchors scaled to match the model's input size.
+
+    Returns:
+        mean_loss: Mean loss over the epoch.
+    """
     loop = tqdm(train_loader, leave=True)
     losses = []
     for batch_idx, (x, y) in enumerate(loop):
@@ -56,13 +65,16 @@ def train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors):
         scaler.step(optimizer)
         scaler.update()
 
-        # update progress bar
+        # Update progress bar
         mean_loss = sum(losses) / len(losses)
         loop.set_postfix(loss=mean_loss)
 
     return mean_loss
 
 def main():
+    """
+    Main function for training YOLO model on Pascal VOC dataset.
+    """
     model = YOLOv3(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     optimizer = optim.Adam(
         model.parameters(), lr=config.LEARNING_RATE, weight_decay=config.WEIGHT_DECAY
@@ -87,6 +99,7 @@ def main():
     device_name = "CPU" if config.DEVICE == "cpu" else f"GPU ({torch.cuda.get_device_name(0)})"
     print(f"Using {device_name} for training.")
     training_losses = []
+
     current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     run_id = f"{config.RUN_TITLE}_{current_datetime}"
     
@@ -100,7 +113,6 @@ def main():
     original_stdout = sys.stdout
     sys.stdout = Tee(sys.stdout, log_file)
     #******************************************************************************************************
-
 
     for epoch in range(config.NUM_EPOCHS):
         mean_loss = train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)

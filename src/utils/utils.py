@@ -16,11 +16,14 @@ from ..training.dataset import YOLODataset
 
 def iou_width_height(boxes1, boxes2):
     """
+    Calculate Intersection over Union (IoU) based on width and height.
+
     Parameters:
-        boxes1 (tensor): width and height of the first bounding boxes
-        boxes2 (tensor): width and height of the second bounding boxes
+        boxes1 (tensor): Width and height of the first bounding boxes.
+        boxes2 (tensor): Width and height of the second bounding boxes.
+
     Returns:
-        tensor: Intersection over union of the corresponding boxes
+        tensor: Intersection over union of the corresponding boxes.
     """
     intersection = torch.min(boxes1[..., 0], boxes2[..., 0]) * torch.min(
         boxes1[..., 1], boxes2[..., 1]
@@ -33,19 +36,15 @@ def iou_width_height(boxes1, boxes2):
 
 def intersection_over_union(boxes_preds, boxes_labels, box_format="midpoint"):
     """
-    Video explanation of this function:
-    https://youtu.be/XXYG5ZWtjj0
-
-    This function calculates intersection over union (iou) given pred boxes
-    and target boxes.
+    Calculate Intersection over Union (IoU) for predicted and ground truth bounding boxes.
 
     Parameters:
-        boxes_preds (tensor): Predictions of Bounding Boxes (BATCH_SIZE, 4)
-        boxes_labels (tensor): Correct labels of Bounding Boxes (BATCH_SIZE, 4)
-        box_format (str): midpoint/corners, if boxes (x,y,w,h) or (x1,y1,x2,y2)
+        boxes_preds (tensor): Predicted bounding boxes (BATCH_SIZE, 4).
+        boxes_labels (tensor): Ground truth bounding boxes (BATCH_SIZE, 4).
+        box_format (str): "midpoint" or "corners" specifying the format of the boxes.
 
     Returns:
-        tensor: Intersection over union for all examples
+        tensor: Intersection over union for all examples.
     """
 
     if box_format == "midpoint":
@@ -82,20 +81,16 @@ def intersection_over_union(boxes_preds, boxes_labels, box_format="midpoint"):
 
 def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     """
-    Video explanation of this function:
-    https://youtu.be/YDkjWEN8jNA
-
-    Does Non Max Suppression given bboxes
+    Apply Non-Maximum Suppression (NMS) to bounding boxes.
 
     Parameters:
-        bboxes (list): list of lists containing all bboxes with each bboxes
-        specified as [class_pred, prob_score, x1, y1, x2, y2]
-        iou_threshold (float): threshold where predicted bboxes is correct
-        threshold (float): threshold to remove predicted bboxes (independent of IoU)
-        box_format (str): "midpoint" or "corners" used to specify bboxes
+        bboxes (list): List of bounding boxes [class_pred, prob_score, x1, y1, x2, y2].
+        iou_threshold (float): IoU threshold for keeping predicted bounding boxes.
+        threshold (float): Confidence score threshold for filtering predictions.
+        box_format (str): "midpoint" or "corners" specifying the format of the boxes.
 
     Returns:
-        list: bboxes after performing NMS given a specific IoU threshold
+        list: Bounding boxes after performing NMS.
     """
     print("Starting NMS")
     assert type(bboxes) == list
@@ -129,21 +124,17 @@ def mean_average_precision(
     pred_boxes, true_boxes, iou_threshold=0.5, box_format="midpoint", num_classes=20
 ):
     """
-    Video explanation of this function:
-    https://youtu.be/FppOzcDvaDI
-
-    This function calculates mean average precision (mAP)
+    Calculate mean Average Precision (mAP) for object detection.
 
     Parameters:
-        pred_boxes (list): list of lists containing all bboxes with each bboxes
-        specified as [train_idx, class_prediction, prob_score, x1, y1, x2, y2]
-        true_boxes (list): Similar as pred_boxes except all the correct ones
-        iou_threshold (float): threshold where predicted bboxes is correct
-        box_format (str): "midpoint" or "corners" used to specify bboxes
-        num_classes (int): number of classes
+        pred_boxes (list): List of predicted bounding boxes.
+        true_boxes (list): List of ground truth bounding boxes.
+        iou_threshold (float): IoU threshold for correct predictions.
+        box_format (str): "midpoint" or "corners" specifying the format of the boxes.
+        num_classes (int): Number of classes.
 
     Returns:
-        float: mAP value across all classes given a specific IoU threshold
+        float: mAP value across all classes given a specific IoU threshold.
     """
 
     # list storing all AP for respective classes
@@ -236,61 +227,14 @@ def mean_average_precision(
     return sum(average_precisions) / len(average_precisions)
 
 
-def plot_image_for_pascal(image, boxes):
-    """Plots predicted bounding boxes on the image"""
-    cmap = plt.get_cmap("tab20b")
-    class_labels = config.BEV_BATCH1_CLASSES
-    im = np.array(image)
-    height, width, _ = im.shape
-
-    # Create figure and axes
-    fig, ax = plt.subplots(1)
-    # Display the image
-    ax.imshow(im)
-
-    print(f"Number of class labels: {len(class_labels)}")
-
-    # Ensure there's at least one color in the list
-    if len(class_labels) > 0:
-        colors = [cmap(i) for i in np.linspace(0, 1, len(class_labels))]
-    else:
-        colors = ['red']  # Use 'red' as a default color
-
-    print(f"Number of colors: {len(colors)}")
-
-    # box[0] is x midpoint, box[2] is width
-    # box[1] is y midpoint, box[3] is height
-
-    # Create a Rectangle patch
-    for box in boxes:
-        assert len(box) == 6, "box should contain class pred, confidence, x, y, width, height"
-        class_pred = box[0]
-        box = box[2:]
-        upper_left_x = box[0] - box[2] / 2
-        upper_left_y = box[1] - box[3] / 2
-        rect = patches.Rectangle(
-            (upper_left_x * width, upper_left_y * height),
-            box[2] * width,
-            box[3] * height,
-            linewidth=2,
-            edgecolor=colors[int(class_pred)],
-            facecolor="none",
-        )
-        # Add the patch to the Axes
-        ax.add_patch(rect)
-        plt.text(
-            upper_left_x * width,
-            upper_left_y * height,
-            s=class_labels[int(class_pred)] if len(class_labels) > 0 else 'Unknown',
-            color="white",
-            verticalalignment="top",
-            bbox={"color": colors[int(class_pred)], "pad": 0},
-        )
-
-    plt.show()
-
 def plot_image(image, boxes):
-    """Plots predicted bounding boxes on the image"""
+    """
+    Plot predicted bounding boxes on the image.
+
+    Parameters:
+        image: Image data.
+        boxes: Predicted bounding boxes.
+    """
     im = np.array(image)
     height, width, _ = im.shape
 
@@ -333,7 +277,6 @@ def plot_image(image, boxes):
 
     plt.show()
 
-
 def get_evaluation_bboxes(
     loader,
     model,
@@ -343,6 +286,21 @@ def get_evaluation_bboxes(
     box_format="midpoint",
     device="cuda",
 ):
+    """
+    Get evaluation bounding boxes using a trained model.
+
+    Parameters:
+        loader (DataLoader): DataLoader for the dataset.
+        model (nn.Module): Trained YOLO model.
+        iou_threshold (float): IoU threshold for NMS.
+        anchors (list): List of anchor boxes.
+        threshold (float): Confidence score threshold for filtering predictions.
+        box_format (str): "midpoint" or "corners" specifying the format of the boxes.
+        device (str): Device on which to run inference (default: "cuda").
+
+    Returns:
+        list: List of predicted and ground truth bounding boxes.
+    """
     # make sure model is in eval before get bboxes
     model.eval()
     train_idx = 0
@@ -391,6 +349,21 @@ def get_evaluation_bboxes(
     return all_pred_boxes, all_true_boxes
 
 def get_inference_bboxes(loader, model, iou_threshold, anchors, confidence_threshold, box_format="midpoint", device="cuda"):
+    """
+    Get inference bounding boxes using a trained model.
+
+    Parameters:
+        loader (DataLoader): DataLoader for the dataset.
+        model (nn.Module): Trained YOLO model.
+        iou_threshold (float): IoU threshold for NMS.
+        anchors (list): List of anchor boxes.
+        confidence_threshold (float): Confidence score threshold for filtering predictions.
+        box_format (str): "midpoint" or "corners" specifying the format of the boxes.
+        device (str): Device on which to run inference (default: "cuda").
+
+    Returns:
+        list: List of predicted bounding boxes.
+    """
     # Make sure the model is in evaluation mode
     model.eval()
     
@@ -432,17 +405,16 @@ def get_inference_bboxes(loader, model, iou_threshold, anchors, confidence_thres
 
 def cells_to_bboxes(predictions, anchors, S, is_preds=True):
     """
-    Scales the predictions coming from the model to
-    be relative to the entire image such that they for example later
-    can be plotted or.
-    INPUT:
-    predictions: tensor of size (N, 3, S, S, num_classes+5)
-    anchors: the anchors used for the predictions
-    S: the number of cells the image is divided in on the width (and height)
-    is_preds: whether the input is predictions or the true bounding boxes
-    OUTPUT:
-    converted_bboxes: the converted boxes of sizes (N, num_anchors, S, S, 1+5) with class index,
-                      object score, bounding box coordinates
+    Convert model predictions to bounding boxes.
+
+    Parameters:
+        predictions (tensor): Model predictions.
+        anchors (list): List of anchor boxes.
+        S (int): Number of cells the image is divided into.
+        is_preds (bool): Whether the input is predictions or true bounding boxes.
+
+    Returns:
+        list: List of converted bounding boxes.
     """
     BATCH_SIZE = predictions.shape[0]
     num_anchors = len(anchors)
@@ -470,6 +442,14 @@ def cells_to_bboxes(predictions, anchors, S, is_preds=True):
     return converted_bboxes.tolist()
 
 def check_class_accuracy(model, loader, threshold):
+    """
+    Calculate class accuracy for a YOLO model.
+
+    Parameters:
+        model (nn.Module): YOLO model.
+        loader (DataLoader): DataLoader for the dataset.
+        threshold (float): Confidence score threshold for filtering predictions.
+    """
     model.eval()
     tot_class_preds, correct_class = 0, 0
     tot_noobj, correct_noobj = 0, 0
@@ -503,6 +483,15 @@ def check_class_accuracy(model, loader, threshold):
 
 
 def get_mean_std(loader):
+    """
+    Calculate the mean and standard deviation of the dataset.
+
+    Parameters:
+        loader (DataLoader): DataLoader for the dataset.
+
+    Returns:
+        tuple: Mean and standard deviation of the dataset.
+    """
     # var[X] = E[X**2] - E[X]**2
     channels_sum, channels_sqrd_sum, num_batches = 0, 0, 0
 
@@ -518,6 +507,15 @@ def get_mean_std(loader):
 
 
 def save_checkpoint(model, optimizer, epochs, run_id):
+    """
+    Save a checkpoint of the model and optimizer.
+
+    Parameters:
+        model (nn.Module): YOLO model.
+        optimizer (Optimizer): Optimizer used for training.
+        epochs (int): Number of training epochs.
+        run_id (str): Unique identifier for the run.
+    """
     print("=> Saving checkpoint")
     folder_name = f"{run_id}"
     os.makedirs(os.path.join(config.TRAINING_CHECKPOINT_STORAGE_FOLDER, folder_name), exist_ok=True)
@@ -533,6 +531,14 @@ def save_checkpoint(model, optimizer, epochs, run_id):
     print(f"Checkpoint saved at: {checkpoint_path}")
 
 def save_plot(training_losses, folder_path, filename):
+    """
+    Save a training loss plot to a file.
+
+    Parameters:
+        training_losses (list): List of training losses.
+        folder_path (str): Folder path to save the plot.
+        filename (str): Filename of the plot.
+    """
     plt.plot(range(1, len(training_losses) + 1), training_losses, label='Training Loss')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
@@ -542,6 +548,16 @@ def save_plot(training_losses, folder_path, filename):
     plt.close()
 
 def save_training_results(model, optimizer, epochs, run_id, training_losses):
+    """
+    Save training results, model checkpoint, and configuration.
+
+    Parameters:
+        model (nn.Module): YOLO model.
+        optimizer (Optimizer): Optimizer used for training.
+        epochs (int): Number of training epochs.
+        run_id (str): Unique identifier for the run.
+        training_losses (list): List of training losses.
+    """
     print("=> Saving Model Results")
     folder_name = f"{run_id}"
     os.makedirs(os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name), exist_ok=True)
@@ -579,6 +595,15 @@ def save_training_results(model, optimizer, epochs, run_id, training_losses):
 
 
 def load_checkpoint(checkpoint_file, model, optimizer, lr):
+    """
+    Load a model checkpoint and optimizer state.
+
+    Parameters:
+        checkpoint_file (str): Path to the checkpoint file.
+        model (nn.Module): YOLO model.
+        optimizer (Optimizer): Optimizer used for training.
+        lr (float): Learning rate for the optimizer.
+    """
     print(f"=> Loading checkpoint: {checkpoint_file}")
     checkpoint = torch.load(checkpoint_file, map_location=config.DEVICE)
     model.load_state_dict(checkpoint["state_dict"])
@@ -593,7 +618,18 @@ def load_checkpoint(checkpoint_file, model, optimizer, lr):
 
 
 def get_loaders(train_csv_path, test_csv_path):
+    """
+    Get DataLoader instances for training and testing.
 
+    Parameters:
+        train_csv_path (str): Path to the training CSV file.
+        test_csv_path (str): Path to the testing CSV file.
+
+    Returns:
+        DataLoader: DataLoader for training dataset.
+        DataLoader: DataLoader for testing dataset.
+        DataLoader: DataLoader for evaluation during training.
+    """
     IMAGE_SIZE = config.IMAGE_SIZE
     train_dataset = YOLODataset(
         train_csv_path,
@@ -648,6 +684,20 @@ def get_loaders(train_csv_path, test_csv_path):
     return train_loader, test_loader, train_eval_loader
 
 def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes=6, ):
+    """
+    Calculate a dynamic confidence threshold for object detection.
+
+    Parameters:
+        model (nn.Module): YOLO model.
+        loader (DataLoader): DataLoader for the dataset.
+        iou_thresh (float): IoU threshold for NMS.
+        anchors (list): List of anchor boxes.
+        confidence_step (float): Confidence step for threshold adjustment.
+        desired_num_bboxes (int): Desired number of bounding boxes.
+
+    Returns:
+        float: Dynamic confidence threshold.
+    """
     print("Starting dynamic thresholding")
     model.eval()
     x, y = next(iter(loader))
@@ -679,6 +729,18 @@ def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desir
 
 
 def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=True, confidence_step = 0.05):
+    """
+    Plot examples with bounding boxes using a trained YOLO model.
+
+    Parameters:
+        model (nn.Module): Trained YOLO model.
+        loader (DataLoader): DataLoader for the dataset.
+        thresh (float): Confidence score threshold for filtering predictions.
+        iou_thresh (float): IoU threshold for NMS.
+        anchors (list): List of anchor boxes.
+        find_optimal_confidence_threshold (bool): Whether to dynamically find the confidence threshold.
+        confidence_step (float): Confidence step for threshold adjustment.
+    """
     print("Starting plotting of examples")
     model.eval()
     x, y = next(iter(loader))
@@ -711,11 +773,21 @@ def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optima
 
 
 def seed_everything(seed=42):
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+    """
+    Seed all random number generators for reproducibility.
+
+    This function sets the seed for various random number generators, including Python's random,
+    NumPy's random, and PyTorch's random number generators. It also ensures deterministic behavior
+    for CUDA operations using torch.backends.cudnn.
+
+    Parameters:
+        seed (int): Seed value for random number generators (default: 42).
+    """
+    os.environ['PYTHONHASHSEED'] = str(seed)  # Set Python's hash seed
+    random.seed(seed)  # Seed Python's random module
+    np.random.seed(seed)  # Seed NumPy's random module
+    torch.manual_seed(seed)  # Seed PyTorch's random module for CPU
+    torch.cuda.manual_seed(seed)  # Seed PyTorch's random module for a single GPU
+    torch.cuda.manual_seed_all(seed)  # Seed PyTorch's random module for all GPUs
+    torch.backends.cudnn.deterministic = True  # Ensure deterministic behavior for CUDA operations
+    torch.backends.cudnn.benchmark = False  # Disable CuDNN benchmark mode for deterministic results
