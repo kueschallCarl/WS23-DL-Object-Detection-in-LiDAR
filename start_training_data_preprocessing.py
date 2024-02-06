@@ -30,22 +30,23 @@ def main():
     os.makedirs(dataset_path_images, exist_ok=True)
 
     # Convert labelCloud labels to YOLO format
-    process_label_cloud_labels_to_yolo_format(
+    labeled_indices = process_label_cloud_labels_to_yolo_format(
         config.PREPROCESSING_IMAGE_WIDTH, config.PREPROCESSING_IMAGE_HEIGHT, 
         config.PREPROCESSING_X_RANGE, config.PREPROCESSING_Y_RANGE, 
         config.PREPROCESSING_X_BINS, config.PREPROCESSING_Y_BINS, 
         config.LABEL_CLOUD_LABEL_FOLDER, config.YOLO_LABEL_FOLDER
     )
-
+    # Transform PCD files to BEV training data
+    for filename in os.listdir(config.RAW_PCD_FOLDER):
+        transform_to_bev_training_data(filename, labeled_indices)
+        
     # Create a new dataset
     create_new_dataset(
         config.BEV_IMAGE_FOLDER, config.YOLO_LABEL_FOLDER, 
         config.PREPROCESSING_TRAIN_SPLIT_RATIO, dataset_path
     )
 
-    # Transform PCD files to BEV training data
-    for filename in os.listdir(config.RAW_PCD_FOLDER):
-        transform_to_bev_training_data(filename)
+    
 
 if __name__ == "__main__":
     main()

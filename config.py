@@ -8,28 +8,29 @@ from src.utils.utils import seed_everything
 
 #***********************************************************************************************************
 #Training Settings
-DATASET = 'BEV_BATCH1'
-RUN_TITLE = 'Refactored'
+DATASET = 'BEV_DATASET_MORE_CONES'
+RUN_TITLE = 'More_Cones'
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 # seed_everything()  # If you want deterministic behavior
-NUM_WORKERS = 1
+NUM_WORKERS = 4
 BATCH_SIZE = 32
 IMAGE_SIZE = 416
 NUM_CLASSES = 1
 LEARNING_RATE = 1e-4
 WEIGHT_DECAY = 1e-4
-NUM_EPOCHS = 30
+NUM_EPOCHS = 200
 CONF_THRESHOLD = 0.7
+
 MAP_IOU_THRESH = 0.2
 NMS_IOU_THRESH = 0.2
 S = [IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8]
 
 PIN_MEMORY = True
-LOAD_MODEL = True
+LOAD_MODEL = False
 SAVE_MODEL_RESULTS = True
 SAVE_CHECKPOINTS = True
 CHECKPOINT_SAVING_INTERVAL = 5
-EVALUATION_INTERVAL = 10
+EVALUATION_INTERVAL = 20
 
 CHECKPOINT_FILE = "my_checkpoint.pth.tar"
 IMG_DIR = "model_training_data/datasets/" + DATASET + "/images/"
@@ -49,13 +50,15 @@ ANCHORS = [
 #Preprocessing Settings
 PCD_CROP_DISTANCE_THRESHOLD = 5.0
 
-NEW_DATASET_NAME = 'BEV_DATASET_PREPROCESSED'
+NEW_DATASET_NAME = 'BEV_DATASET_MORE_CONES'
 
 RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds'
 LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels'
 
 YOLO_LABEL_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/labels'  
 BEV_IMAGE_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/images'  
+CROPPED_PCD_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/pcd' 
+STORE_CROPPED_PCD_FOR_LABELING = False
 
 PREPROCESSING_IMAGE_WIDTH = 250
 PREPROCESSING_IMAGE_HEIGHT = 250

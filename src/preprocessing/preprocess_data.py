@@ -10,6 +10,7 @@ import config
 import random
 import csv
 import json
+import open3d as o3d
 
 from PIL import Image
 
@@ -38,6 +39,26 @@ def crop_point_cloud(pcd_path, distance_threshold=config.PCD_CROP_DISTANCE_THRES
     cropped_points = points[distances <= distance_threshold]
 
     return cropped_points
+
+def save_point_cloud_as_pcd(point_cloud, output_pcd_path):
+    """
+    Save a point cloud as a .pcd file.
+
+    Args:
+        point_cloud (np.ndarray): The input point cloud as a NumPy array.
+        output_pcd_path (str): The path to save the .pcd file.
+    """
+    # Convert the NumPy array to a PointCloud object
+    pcd = o3d.geometry.PointCloud()
+    pcd.points = o3d.utility.Vector3dVector(point_cloud)
+
+    # Check if the folder specified in output_pcd_path exists, and create it if necessary
+    output_folder = os.path.dirname(output_pcd_path)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    # Save the PointCloud object as a .pcd file
+    o3d.io.write_point_cloud(output_pcd_path, pcd)
 
 def generate_and_save_birds_eye_view(points, filename, dpi=200, output_folder=None):
     """
@@ -112,15 +133,22 @@ def transform_to_bev_inference(filename):
     bev_image = generate_and_save_birds_eye_view(cropped_pcd, filename, dpi=200, output_folder=config.INFERENCE_TEMP_BEV_FOLDER)
     return bev_image
 
-def transform_to_bev_training_data(filename):
+def transform_to_bev_training_data(filename, labeled_indices):
     """
     Transform a point cloud file to a Bird's Eye View (BEV) image for training data.
 
     Args:
         filename (str): Name of the input point cloud file.
     """
-    cropped_pcd = crop_point_cloud(os.path.join(config.RAW_PCD_FOLDER, filename))
-    generate_and_save_birds_eye_view(cropped_pcd, filename, dpi=200, output_folder=config.BEV_IMAGE_FOLDER)
+    if filename.split('.')[0] in labeled_indices:
+        cropped_pcd = crop_point_cloud(os.path.join(config.RAW_PCD_FOLDER, filename))
+        if config.STORE_CROPPED_PCD_FOR_LABELING:
+            os.makedirs(config.CROPPED_PCD_FOLDER, exist_ok=True)    
+            cropped_pcd_path = os.path.join(config.CROPPED_PCD_FOLDER, filename)
+            save_point_cloud_as_pcd(cropped_pcd, cropped_pcd_path)
+        generate_and_save_birds_eye_view(cropped_pcd, filename, dpi=200, output_folder=config.BEV_IMAGE_FOLDER)
+    else:
+        pass
 #***********************************************************************************************************
 
 #***********************************************************************************************************
@@ -139,7 +167,7 @@ def labelCloud_to_YOLO(label_file, image_width, image_height, x_range, y_range, 
         y_bins (int): Number of Y-axis bins.
 
     Returns:
-        list: YOLO-formatted labels as a list of tuples.
+        tuple: A tuple containing YOLO-formatted labels as a list of tuples and a list of erroneous filenames.
     """
     # Read the JSON label file
     with open(label_file, 'r') as f:
@@ -173,8 +201,17 @@ def labelCloud_to_YOLO(label_file, image_width, image_height, x_range, y_range, 
         width_normalized = width_pixel / image_width
         height_normalized = height_pixel / image_height
 
-        # Append to list in YOLO format
-        yolo_labels.append((class_id, x_center_normalized, y_center_normalized, width_normalized, height_normalized))
+        # Check if any value is outside the [0, 1] range
+        if (
+            0 <= x_center_normalized <= 1 and
+            0 <= y_center_normalized <= 1 and
+            0 <= width_normalized <= 1 and
+            0 <= height_normalized <= 1
+        ):
+            # Append to list in YOLO format
+            yolo_labels.append((class_id, x_center_normalized, y_center_normalized, width_normalized, height_normalized))
+        else:
+            continue
 
     return yolo_labels
 
@@ -194,13 +231,17 @@ def process_label_cloud_labels_to_yolo_format(image_width, image_height, x_range
         label_cloud_label_folder (str): Folder containing LabelCloud label files (default: config.LABEL_CLOUD_LABEL_FOLDER).
         yolo_label_foler (str): Folder to save YOLO format label files (default: config.YOLO_LABEL_FOLDER).
     """
+    labeled_indices = []
     for filename in os.listdir(label_cloud_label_folder):
+        
+        idx = filename.split('.')[0]
         if not '_classes' in filename:
             label_file = os.path.join(label_cloud_label_folder, filename)
             yolo_labels_output_folder = yolo_label_foler
             os.makedirs(yolo_labels_output_folder, exist_ok=True)
             try:
                 yolo_labels = labelCloud_to_YOLO(label_file, image_width, image_height, x_range, y_range, x_bins, y_bins)
+                labeled_indices.append(idx)
             except Exception as e:
                 print(f"Error processing {label_file}: {e}")
                 continue
@@ -210,7 +251,8 @@ def process_label_cloud_labels_to_yolo_format(image_width, image_height, x_range
             with open(output_file, 'w') as f:
                 for label in yolo_labels:
                     f.write(' '.join(map(str, label)) + '\n')
-
+    print(f"Labeled Indices: {labeled_indices}")
+    return labeled_indices
 #***********************************************************************************************************
 # Creating new dataset from YOLO labels and BEV Images
 def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
@@ -233,6 +275,9 @@ def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
         base_name = label_file.split('.')[0]  # Assumes the common part is before the first dot
         label_file_map[base_name] = label_file
 
+    print(f"image_filenames: {image_filenames[:5]}")
+    print(f"label_filenames: {label_filenames[:5]}")
+
     # Shuffle the image filenames
     random.shuffle(image_filenames)
     
@@ -242,7 +287,9 @@ def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
     # Split the image filenames into train and test sets
     train_image_filenames = image_filenames[:split_index]
     test_image_filenames = image_filenames[split_index:]
-    
+
+    print(f"image_filenames after split: {train_image_filenames[:5]}")
+    print(f"test_image_filenames after split: {test_image_filenames[:5]}")
     # Function to find the corresponding label file
     def find_label_file(image_file):
         base_name = image_file.split('.')[0]  # Assumes the common part is before the first dot
@@ -255,6 +302,7 @@ def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
         for image_filename in train_image_filenames:
             label_filename = find_label_file(image_filename)
             if label_filename:
+                print(f"train.csv: label filename: {label_filename} found, now writing")
                 writer.writerow([image_filename, label_filename])
     
     # Create the test.csv file
@@ -264,6 +312,7 @@ def create_new_dataset(image_folder, label_folder, split_ratio, csv_dir):
         for image_filename in test_image_filenames:
             label_filename = find_label_file(image_filename)
             if label_filename:
+                print(f"test.csv: label filename: {label_filename} found, now writing")
                 writer.writerow([image_filename, label_filename])
 
 #***********************************************************************************************************

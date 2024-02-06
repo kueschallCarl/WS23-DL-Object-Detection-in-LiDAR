@@ -501,14 +501,16 @@ def save_checkpoint(model, optimizer, epochs, run_id):
     """
     print("=> Saving checkpoint")
     folder_name = f"{run_id}"
-    os.makedirs(os.path.join(config.TRAINING_CHECKPOINT_STORAGE_FOLDER, folder_name), exist_ok=True)
+    folder_path = os.path.join(config.TRAINING_CHECKPOINT_STORAGE_FOLDER, folder_name)
+    print(f"Checkpoint folder created at: {folder_path}")
+    os.makedirs(folder_path, exist_ok=True)
 
     checkpoint = {
         "state_dict": model.state_dict(),
         "optimizer": optimizer.state_dict(),
     }
 
-    checkpoint_path = os.path.join('checkpoint_storage', folder_name, f"checkpoint_{epochs}.pth.tar")
+    checkpoint_path = os.path.join(folder_path, f"checkpoint_{epochs}.pth.tar")
     torch.save(checkpoint, checkpoint_path)
 
     print(f"Checkpoint saved at: {checkpoint_path}")
@@ -543,14 +545,15 @@ def save_training_results(model, optimizer, epochs, run_id, training_losses):
     """
     print("=> Saving Model Results")
     folder_name = f"{run_id}"
-    os.makedirs(os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name), exist_ok=True)
+    folder_path = os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name)
+    os.makedirs(folder_path, exist_ok=True)
 
     checkpoint = {
         "state_dict": model.state_dict(),
         "optimizer": optimizer.state_dict(),
     }
 
-    checkpoint_path = os.path.join('model_results', folder_name, f"checkpoint_{epochs}.pth.tar")
+    checkpoint_path = os.path.join(folder_path, f"checkpoint_{epochs}.pth.tar")
     torch.save(checkpoint, checkpoint_path)
     torch.save(checkpoint, f"my_checkpoint.pth.tar")
 
@@ -566,7 +569,7 @@ def save_training_results(model, optimizer, epochs, run_id, training_losses):
     }
 
     json_filename = f"config_values_{run_id}.json"
-    json_path = os.path.join('model_results', folder_name, json_filename)
+    json_path = os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name, json_filename)
 
     with open(json_path, 'w') as json_file:
         json.dump(config_values, json_file, indent=4)
