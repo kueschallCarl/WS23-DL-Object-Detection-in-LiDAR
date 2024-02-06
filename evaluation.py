@@ -50,15 +50,15 @@ def main():
     print(f"Using {device_name} for plotting.")
 
     # Plot example results (comment this out if you wish to skip the visualization)
-    """plot_couple_examples(
+    plot_couple_examples(
         model,
         test_loader,
         iou_thresh=0.7,
-        confidence_thresh=0.2,
+        thresh=0.2,
         anchors=scaled_anchors,
         find_optimal_confidence_threshold=True,
         confidence_step=0.01
-    )"""
+    )
 
     print("Running get_evaluation_bboxes...")
     # Get evaluation bounding boxes
