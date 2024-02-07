@@ -11,7 +11,7 @@ from src.utils.utils import (
     get_loaders,
     plot_couple_examples,
 )
-from src.model.model import YOLOv3
+from model.model_medium import YOLOv3
 
 def main():
     # Initialize YOLOv3 model

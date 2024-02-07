@@ -575,7 +575,7 @@ def save_training_results(model, optimizer, epochs, run_id, training_losses):
         json.dump(config_values, json_file, indent=4)
 
     plot_filename = f"{run_id}_learning_curve_loss.png"
-    save_plot(training_losses, os.path.join('model_results', folder_name), plot_filename)
+    save_plot(training_losses, os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name, plot_filename), plot_filename)
 
     print(f"Model Results saved at: {checkpoint_path} and configuration saved at: {json_path}")
 

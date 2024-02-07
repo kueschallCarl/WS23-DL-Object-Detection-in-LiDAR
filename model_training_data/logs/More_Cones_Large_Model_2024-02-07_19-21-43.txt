@@ -1,0 +1,17 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+Currently epoch 4
+Currently epoch 5
+Currently epoch 6
+Currently epoch 7
+Currently epoch 8
+Currently epoch 9
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/More_Cones_Large_Model_2024-02-07_19-21-43
+Checkpoint saved at: model_training_data/checkpoint_storage/More_Cones_Large_Model_2024-02-07_19-21-43\checkpoint_10.pth.tar
+Currently epoch 10
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.4084677994251251

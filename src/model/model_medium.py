@@ -10,22 +10,17 @@ List is structured by "B" indicating a residual block followed by the number of 
 "U" is for upsampling the feature map and concatenating with a previous layer
 """
 config = [
-    (32, 3, 1),
+    (16, 3, 1),  # Reduced filters
+    (32, 3, 2),
+    ["B", 1],  # Less repeats
     (64, 3, 2),
-    ["B", 1],
+    ["B", 1],  # Less repeats
     (128, 3, 2),
-    ["B", 2],
+    ["B", 2],  # Significantly reduced the complexity here
     (256, 3, 2),
-    ["B", 8],
+    ["B", 2],  # And here
     (512, 3, 2),
-    ["B", 8],
-    (1024, 3, 2),
-    ["B", 4],  # To this point is Darknet-53
-    (512, 1, 1),
-    (1024, 3, 1),
-    "S",
-    (256, 1, 1),
-    "U",
+    ["B", 1],  # Reduced repeats for complexity
     (256, 1, 1),
     (512, 3, 1),
     "S",
@@ -34,12 +29,17 @@ config = [
     (128, 1, 1),
     (256, 3, 1),
     "S",
+    (64, 1, 1),
+    "U",
+    (64, 1, 1),
+    (128, 3, 1),
+    "S",
 ]
 
 
 class CNNBlock(nn.Module):
     """
-    CNN block consisting of convolution, batch normalization, and LeakyReLU.
+    Convolutional block with optional batch normalization and LeakyReLU.
 
     Attributes:
         in_channels (int): Number of input channels.
@@ -153,10 +153,11 @@ class YOLOv3(nn.Module):
 
     Methods:
         forward(x): Forward pass of the YOLOv3 model.
+        _create_conv_layers(): Create convolutional layers based on the configuration.
 
     Args:
-        in_channels (int): Number of input channels (default: 3).
-        num_classes (int): Number of object classes (default: 80).
+        in_channels (int): Number of input channels (default is 3 for RGB images).
+        num_classes (int): Number of object classes (default is 80 for COCO dataset).
     """
     def __init__(self, in_channels=3, num_classes=80):
         super().__init__()
@@ -174,10 +175,12 @@ class YOLOv3(nn.Module):
 
             x = layer(x)
 
-            if isinstance(layer, ResidualBlock) and layer.num_repeats == 8:
+            if isinstance(layer, ResidualBlock) and layer.num_repeats in [2, 8]:
                 route_connections.append(x)
 
             elif isinstance(layer, nn.Upsample):
+                if len(route_connections) == 0:
+                    raise ValueError("Trying to concatenate with an empty route_connections list.")
                 x = torch.cat([x, route_connections[-1]], dim=1)
                 route_connections.pop()
 
@@ -219,18 +222,29 @@ class YOLOv3(nn.Module):
                     in_channels = in_channels * 3
 
         return layers
+    
+    def count_parameters(self):
+        """
+        Count the total number of trainable parameters in the model.
+
+        Returns:
+            int: Total number of trainable parameters.
+        """
+        return sum(p.numel() for p in self.parameters() if p.requires_grad)
 
 
-"""
-Run this script for a foward pass test
-"""
 if __name__ == "__main__":
     num_classes = 1
     IMAGE_SIZE = 416
     model = YOLOv3(num_classes=num_classes)
     x = torch.randn((2, 3, IMAGE_SIZE, IMAGE_SIZE))
     out = model(x)
+
+    # Uncomment the lines below to print the total number of parameters in the model
+    # total_params = model.count_parameters()
+    # print("Total number of parameters in the model:", total_params)
+
     assert model(x)[0].shape == (2, 3, IMAGE_SIZE//32, IMAGE_SIZE//32, num_classes + 5)
     assert model(x)[1].shape == (2, 3, IMAGE_SIZE//16, IMAGE_SIZE//16, num_classes + 5)
     assert model(x)[2].shape == (2, 3, IMAGE_SIZE//8, IMAGE_SIZE//8, num_classes + 5)
-    print("Success!")
+    #print("Success!")

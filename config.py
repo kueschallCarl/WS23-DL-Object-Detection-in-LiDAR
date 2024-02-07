@@ -9,16 +9,16 @@ from src.utils.utils import seed_everything
 #***********************************************************************************************************
 #Training Settings
 DATASET = 'BEV_DATASET_MORE_CONES'
-RUN_TITLE = 'More_Cones'
+RUN_TITLE = 'More_Cones_Large_Model'
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 # seed_everything()  # If you want deterministic behavior
 NUM_WORKERS = 4
 BATCH_SIZE = 32
 IMAGE_SIZE = 416
 NUM_CLASSES = 1
-LEARNING_RATE = 1e-4
+LEARNING_RATE = 1e-5
 WEIGHT_DECAY = 1e-4
-NUM_EPOCHS = 200
+NUM_EPOCHS = 50
 CONF_THRESHOLD = 0.7
 
 MAP_IOU_THRESH = 0.2
@@ -29,8 +29,8 @@ PIN_MEMORY = True
 LOAD_MODEL = True
 SAVE_MODEL_RESULTS = True
 SAVE_CHECKPOINTS = True
-CHECKPOINT_SAVING_INTERVAL = 5
-EVALUATION_INTERVAL = 20
+CHECKPOINT_SAVING_INTERVAL = 10
+EVALUATION_INTERVAL = 10
 
 CHECKPOINT_FILE = "my_checkpoint.pth.tar"
 IMG_DIR = "model_training_data/datasets/" + DATASET + "/images/"
