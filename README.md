@@ -43,7 +43,9 @@ The coordinates and thus the location of each cone, relative to the lidar sensor
 $ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
 $ pip install requirements.txt
 ```
+<br>
 
+# Usage Guide
 ## Lidar Labeling
 To label lidar point-clouds, the labelCloud software can be utilized. It provides a simple user interface that works well for the purposes of this project. 
 
@@ -141,18 +143,27 @@ SAVE_CHECKPOINTS = True
 ```
 These are the most important settings and parameters to keep in mind. I reccomend reading through the in-line documentation in 'config.py' should other settings require modification.
 
-## Inference
+Now the script 'start_run_training.py' can be run to start the training process. Depending on the configuration, the script will save checkpoints, periodically print evaluation metrics and once finished store model results in the appropriate folder.
 
-### First Results
-| Model                   | mAP @ 20 IoU          |  Test.csv  | 
-| ----------------------- |:---------------------:|------------|
+## Evaluation
+The script 'evaluation.py' allows the evaluation of the performance of a trained model. To configure this process, the relevant constants in 'config.py' can be modified. This can be crucial, as the confidence- as well as the iou-threshold determine the output of post-processing and thus the evaluation metrics. If necessary the user can temporarily modify the test split to evaluate the model on a specific set of samples.
+
+In 'config.py', enable EVALUATION_PLOT_RESULTS to have the script visualize results as well.
+
+## Inference
+Once a model has been trained and the performance is deemed sufficient, the script 'start_run_inference.py' can be run to perform inference, or in other words, use the model in a real-world application. It will wait for new '.pcd' files inside the INFERENCE_PCD_FOLDER and upon their arrival, will immediately start processing them. Should the option INFERENCE_SHOW_LIVE_RESULTS be enabled, then the results will also be dynamically plotted in a separate window. The bounding box predictions will be stored in the corresponding folder defined by INFERENCE_RESULTS_FOLDER.
+
+# Results
+| Model                   | mAP @ 20 IoU          |  
+| ----------------------- |:---------------------:|
 | YOLOv3_custom_large (VeloDyne 16 PCD 0-200) 	  | 97.5       |
 | YOLOv3_custom_medium (VeloDyne 16 PCD 0-200)    | 83.5       |
 
 The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS.
 
-
-## Sources
+# Outlook
+In the future, this project can be used to train the YOLOv3 model on a much larger dataset, ideally exhibiting greater variance in the point-clouds themselves. Also, to enhance the range at which the model is able to detect traffic-cones, an improvement in the 
+# Sources
 [GitHub Repository YOLOv3 Implementation | Alladin Persson | https://github.com/aladdinpersson/Machine-Learning-Collection](https://github.com/aladdinpersson/Machine-Learning-Collection)
 
 [YOLOv3 Paper | Redmon, Joseph and Farhadi, Ali | https://arxiv.org/abs/1804.02767](https://arxiv.org/abs/1804.02767)

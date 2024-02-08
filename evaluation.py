@@ -49,16 +49,17 @@ def main():
     device_name = "CPU" if config.DEVICE == "cpu" else f"GPU ({torch.cuda.get_device_name(0)})"
     print(f"Using {device_name} for plotting.")
 
-    # Plot example results (comment this out if you wish to skip the visualization)
-    plot_couple_examples(
-        model,
-        test_loader,
-        iou_thresh=0.7,
-        thresh=0.2,
-        anchors=scaled_anchors,
-        find_optimal_confidence_threshold=True,
-        confidence_step=0.01
-    )
+
+    if config.EVALUATION_PLOT_RESULTS:
+        plot_couple_examples(
+            model,
+            test_loader,
+            iou_thresh=0.7,
+            thresh=0.2,
+            anchors=scaled_anchors,
+            find_optimal_confidence_threshold=True,
+            confidence_step=0.01
+        )
 
     print("Running get_evaluation_bboxes...")
     # Get evaluation bounding boxes
