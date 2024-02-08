@@ -65,6 +65,8 @@ CROPPED_PCD_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/pcd' #The
 
 STORE_CROPPED_PCD_FOR_LABELING = False #ENABLE THIS TO RECEIVE THE CROPPED PCDS NECESSARY FOR LABELING IN labelCloud!!! Not necessary in any other scenario.
 
+PREPROCESSING_TRAIN_SPLIT_RATIO = 0.7 #The split ratio n-test-samples / n-train-samples. A split of 0.7 would mean that 70% of all samples will be used for training and 30% for testing.
+
 #These settings configure the process that transforms point-clouds to BEV images
 PREPROCESSING_IMAGE_WIDTH = 250
 PREPROCESSING_IMAGE_HEIGHT = 250
@@ -72,8 +74,6 @@ PREPROCESSING_X_RANGE = [-5, 5]
 PREPROCESSING_Y_RANGE = [-5, 5]
 PREPROCESSING_X_BINS = 250
 PREPROCESSING_Y_BINS = 250
-
-PREPROCESSING_TRAIN_SPLIT_RATIO = 0.7 #The split ratio n-test-samples / n-train-samples. A split of 0.7 would mean that 70% of all samples will be used for training and 30% for testing.
 #***********************************************************************************************************
 
 
@@ -81,7 +81,7 @@ PREPROCESSING_TRAIN_SPLIT_RATIO = 0.7 #The split ratio n-test-samples / n-train-
 #Inference Settings
 INFERENCE_RUN_TITLE = 'First_Test_Inference' #This title is a convenience and logging measure, to easily identify output files and directories. Just for inference runs this time.
 
-INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/six_cones_large_model.pth.tar' #The checkpoint file to use for inference.
+INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/checkpoint_200.pth.tar' #The checkpoint file to use for inference.
 
 INFERENCE_PCD_FOLDER = 'model_inference_data/pcd/' #The folder in which the inference script will wait for '.pcd' files to arrive.
 INFERENCE_TEMP_BEV_FOLDER = 'model_inference_data/temp/bev_images' #A folder to store the BEV images that result from inference preprocessing (mainly for dev purposes)

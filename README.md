@@ -1,5 +1,4 @@
-# Entwicklung und Konstruktion eines Rennwagens f. die Formula Student (Nierhoff) | Projektarbeit Carl Kueschall | Deep-Learning Ansatz | Pylonenerkennung anhand von YOLOv3 in PyTorch
-## Abstract
+# Entwicklung und Konstruktion eines Rennwagens f. die Formula Student (Nierhoff) | Projektarbeit Carl Kueschall | Deep-Learning-Ansatz zur Erkennung und Lokalisierung von Pylonen in LiDAR-Punktwolken
 In this project, the objective was to create a robust deep-learning model capable of accurately detecting traffic cones within lidar point clouds. Object detection within unordered point-cloud data poses a significant challenge, particularly when aiming for low inference times suitable for real-time applications, such as autonomous driving tests. The focus was on developing a solution that not only achieves high accuracy but also ensures swift inference, crucial for seamless integration into live performance scenarios. <br> 
 
 This implementation extends and overhauls a solution developed by Alladin Persson, who has shared the core training loop code on his GitHub page. His implementation, in turn, is rooted in the original paper for YOLOv3. This project represents a significant enhancement of the original codebase, introducing an alternative medium-sized model architecture with approximately 8 million parameters instead of the original 60 million. Furthermore, it extends the functionality by providing easy-to-use preprocessing capabilities, enhanced model evaluation through logging and visualization, and a streamlined inference process, all of which are tailored to the purposes of cone detection in lidar point-clouds, for the 'Running Snail Autonomous Driving' team.
@@ -78,7 +77,7 @@ Make sure that the '.pcd' files follow the naming convention for this project. E
 
 #### Folder Structure
 Once the labelCloud service has been started inside the project directory, the folders for the input '.pcd' files can be configured inside the settings menu, as well as the output directory for the labels. <br>
-For the purposes of this project, a certain folder structure should be met, to simplify the setup process. If you wish to create your own structure for this process, then make sure to adjust the paths in the 'config.py' file. <br>
+For the purposes of this project, a certain folder structure should be met, to simplify the setup process. If you wish to create your own structure for this process, then make sure to adjust the paths in the **'config.py'** file. <br>
 
 ```txt
 Project Directory
@@ -94,7 +93,7 @@ Project Directory
 In the settings menu, set the 'Point Cloud Folder' to the 'raw_pcds' directory. Then, set the 'Label Folder' to the 'label_cloud_labels' directory. <br>
 Next, configure the rest of the settings. <br>
 
-**Reccomended Configuration:**
+**Recommended Configuration:**
 - Label Format: centroid_abs
 - Default Object Class: cone
 - Standard Bounding Box Length: 0.240
@@ -115,9 +114,27 @@ Having set up the default length, width and height of the bboxes, one can simply
 Make sure to stay within the bounds of the overlayed grid when placing the bboxes, as anything outside these bounds will be filtered out in preprocessing, meaning that the bbox won't be considered in training.
 
 ## Preprocessing
-Before starting the preprocessing script 'start_training_data_preprocessing.py', have a look at the relevant constants in the 'config.py' configuration file. Make sure the paths point to the right source directories and that you've set up a new dataset name, under which a folder will be created that will contain the dataset. <br>
-![Preprocessing Config](readme_images/preprocessing_config.png)
+Before starting the preprocessing script **'start_training_data_preprocessing.py'**, have a look at the relevant constants in the **'config.py'** configuration file. Make sure the paths point to the right source directories and that you've set up a new dataset name, under which a folder will be created that will contain the dataset. <br>
 
+**'config.py'** excerpt:
+```python
+PCD_CROP_DISTANCE_THRESHOLD = 5.0 
+
+NEW_DATASET_NAME = '<your_new_dataset_name>' 
+
+#input dirs
+RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds' 
+LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels' 
+
+#output dirs
+YOLO_LABEL_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/labels' 
+BEV_IMAGE_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/images' 
+CROPPED_PCD_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/pcd'
+
+STORE_CROPPED_PCD_FOR_LABELING = False 
+
+PREPROCESSING_TRAIN_SPLIT_RATIO = 0.7 
+```
 The script will first transform the labelCloud centroid labels into the YOLO label format. Then it will move on to cropping and transforming the point-clouds into 'birds-eye-view' images. The cropped point-clouds from the labeling process can be used as input as well, they won't be cropped further that is not an issue. Lastly it will create a train-test split and store the information in '.csv' files. Now the dataset is ready for model training.
 
 Example structure following preprocessing: <br>
@@ -125,8 +142,9 @@ Example structure following preprocessing: <br>
 
 
 ## Training
-First, make sure to edit the 'config.py' configuration file. <br>
-**Example for a fresh training run:**
+First, make sure to edit the **'config.py'** configuration file. <br>
+**Example for a fresh training run:**<br>
+**'config.py'** excerpt:
 ```python
 DATASET = '{MY_NEW_DATASET_NAME}'
 RUN_TITLE = '{FIRST_TEST}'
@@ -141,17 +159,17 @@ LOAD_MODEL = False
 SAVE_CHECKPOINTS = True
 ...
 ```
-These are the most important settings and parameters to keep in mind. I reccomend reading through the in-line documentation in 'config.py' should other settings require modification.
+These are the most important settings and parameters to keep in mind. I recommend reading through the in-line documentation in 'config.py' should other settings require modification.
 
-Now the script 'start_run_training.py' can be run to start the training process. Depending on the configuration, the script will save checkpoints, periodically print evaluation metrics and once finished store model results in the appropriate folder.
+Now the script **'start_run_training.py'** can be run to start the training process. Depending on the configuration, the script will save checkpoints, periodically print evaluation metrics and once finished store model results in the appropriate folder.
 
 ## Evaluation
-The script 'evaluation.py' allows the evaluation of the performance of a trained model. To configure this process, the relevant constants in 'config.py' can be modified. This can be crucial, as the confidence- as well as the iou-threshold determine the output of post-processing and thus the evaluation metrics. If necessary the user can temporarily modify the test split to evaluate the model on a specific set of samples.
+The script **'evaluation.py'** allows the evaluation of the performance of a trained model. To configure this process, the relevant constants in **'config.py'** can be modified. This can be crucial, as the confidence- as well as the iou-threshold determine the output of post-processing and thus the evaluation metrics. If necessary the user can temporarily modify the test split to evaluate the model on a specific set of samples.
 
-In 'config.py', enable EVALUATION_PLOT_RESULTS to have the script visualize results as well.
+In **'config.py'**, enable EVALUATION_PLOT_RESULTS to have the script visualize results as well.
 
 ## Inference
-Once a model has been trained and the performance is deemed sufficient, the script 'start_run_inference.py' can be run to perform inference, or in other words, use the model in a real-world application. It will wait for new '.pcd' files inside the INFERENCE_PCD_FOLDER and upon their arrival, will immediately start processing them. Should the option INFERENCE_SHOW_LIVE_RESULTS be enabled, then the results will also be dynamically plotted in a separate window. The bounding box predictions will be stored in the corresponding folder defined by INFERENCE_RESULTS_FOLDER.
+Once a model has been trained and the performance is deemed sufficient, the script **'start_run_inference.py'** can be run to perform inference, or in other words, use the model in a real-world application. It will wait for new '.pcd' files inside the INFERENCE_PCD_FOLDER and upon their arrival, will immediately start processing them. Should the option INFERENCE_SHOW_LIVE_RESULTS be enabled, then the results will also be dynamically plotted in a separate window. The bounding box predictions will be stored in the corresponding folder defined by INFERENCE_RESULTS_FOLDER.
 
 # Results
 | Model                   | mAP @ 20 IoU          |  
@@ -162,7 +180,8 @@ Once a model has been trained and the performance is deemed sufficient, the scri
 The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS.
 
 # Outlook
-In the future, this project can be used to train the YOLOv3 model on a much larger dataset, ideally exhibiting greater variance in the point-clouds themselves. Also, to enhance the range at which the model is able to detect traffic-cones, an improvement in the 
+In the future, this implementation could be utilized to train the YOLOv3 model on a significantly larger dataset, ideally showcasing greater variance in the point clouds themselves. Additionally, to enhance the model's ability to detect traffic cones at a wider range, I personally consider an improvement in the lidar capturing process to be necessary. The current resolution at which the sensor captures cones located farther than approximately five meters from the sensor is insufficient for the model to differentiate them from noise. <br>
+Should the format of lidar data arriving from the sensor in a live-capturing scenario differ from the '.pcd' format, adjustments will need to be made in preprocessing.
 # Sources
 [GitHub Repository YOLOv3 Implementation | Alladin Persson | https://github.com/aladdinpersson/Machine-Learning-Collection](https://github.com/aladdinpersson/Machine-Learning-Collection)
 
