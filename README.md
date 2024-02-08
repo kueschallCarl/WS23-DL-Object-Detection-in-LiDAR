@@ -1,21 +1,46 @@
 # Entwicklung und Konstruktion eines Rennwagens f. die Formula Student (Nierhoff) | Projektarbeit Carl Kueschall | Deep-Learning Ansatz | Pylonenerkennung anhand von YOLOv3 in PyTorch
-The task was to develop a deep-learning model that is able to perform object detection to determine the location of traffic cones inside lidar point clouds. In this project I provide everything necessary to move from raw sensor data, to a 'deployed' model that can accurately predict the location of traffic cones on continuously incoming '.pcd' point-cloud data.
+## Abstract
+In this project, the objective was to create a robust deep-learning model capable of accurately detecting traffic cones within lidar point clouds. Object detection within unordered point-cloud data poses a significant challenge, particularly when aiming for low inference times suitable for real-time applications, such as autonomous driving tests. The focus was on developing a solution that not only achieves high accuracy but also ensures swift inference, crucial for seamless integration into live performance scenarios. <br> 
 
-This package provides the means to complete the following steps in the Deep-Learning Lifecycle:
+This implementation extends and overhauls a solution developed by Alladin Persson, who has shared the core training loop code on his GitHub page. His implementation, in turn, is rooted in the original paper for YOLOv3. This project represents a significant enhancement of the original codebase, introducing an alternative medium-sized model architecture with approximately 8 million parameters instead of the original 60 million. Furthermore, it extends the functionality by providing easy-to-use preprocessing capabilities, enhanced model evaluation through logging and visualization, and a streamlined inference process, all of which are tailored to the purposes of cone detection in lidar point-clouds, for the 'Running Snail Autonomous Driving' team.
+
+In this project I provide everything necessary to move from continuously incoming '.pcd' point-cloud data, to a 'deployed' model that can accurately predict the location of traffic cones.
+
+The codebase provided here facilitates the completion of the following steps in the deep learning lifecycle:
 - **Lidar Labeling**
-  - Using the 'labelCloud' software, label lidar point-clouds
+  - Use the 'labelCloud' software to label lidar point-clouds
 - **Preprocessing**
   - Process labeled lidar data into a dataset fit for training a YOLOv3 model
 - **Model Training**
   - Train a YOLOv3 model on the preprocessed dataset
 - **Inference**
   - Use a trained model to predict bounding boxes for dynamically arriving point-clouds
+
+## Summary of Method
+To achieve the desired result, the approach presented in this project strikes a line between accuracy and speed. Although a model fit for processing point-clouds themselves, such as 'PointRCNN' would be capable of greater accuracy than the alternative, taking 'birds-eye-view' images of the point-clouds and using these representations as input for a YOLOv3 model results in a solution that is fast enough for real-time applications, sufficiently simple to implement and easier to interpret for the end-user.
+
+First, point-clouds are labeled in 3D-Space using the labelCloud software. <br>
+**Point-Cloud with its corresponding labelCloud Bounding Box Labels**
+![Point-Clouds with labelCloud Labels](readme_images/point_cloud_labelCloud_labels.png)
+
+Then, a birds-eye-view image of the point-cloud is extracted and the labelCloud labels are transformed to a format fit for training the YOLOv3 model. <br>
+**Birds-Eye-View (BEV) Image with its corresponding YOLO Bounding Box Labels | Format: {class_idx, x_center, y_center, width, height}**
+![Preprocessing Config](readme_images/bev_image_with_yolo_labels.png)
+
+Following this step the model is trained on the resulting dataset. It can then be evaluated and improved further. <br>
+Once model performance is sufficient, it can be used for inference. The script responsible for inference waits for '.pcd' files in a specific folder and will immediately start processing them. It will do so sequentially, as the point-cloud data is expected to arrive continuously, coming from the Velodyne lidar sensor. It will save the predictions to a 'json' file and if enabled, plot them dynamically on-top of the original image, as seen below. 
+
+**Inference Output Visualized**
+![Inference Output Visualized](readme_images/Inference_Output_Visualized.png)
+
+**Making Use of the Model Output** <br>
+The coordinates and thus the location of each cone, relative to the lidar sensor, can be extracted from the bounding box predictions and then further processed to determine the optimal trajectory for the Formula Student racecar.
+
 ## Installation
 
 ### Clone and install requirements
 ```bash
-$ git clone https://github.com/aladdinpersson/Machine-Learning-Collection
-$ cd ML/Pytorch/object_detection/YOLOv3/
+$ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
 $ pip install requirements.txt
 ```
 
@@ -98,7 +123,23 @@ Example structure following preprocessing: <br>
 
 
 ## Training
-Edit the config.py file to match the setup you want to use. Then run train.py
+First, make sure to edit the 'config.py' configuration file. <br>
+**Example for a fresh training run:**
+```python
+DATASET = '{MY_NEW_DATASET_NAME}'
+RUN_TITLE = '{FIRST_TEST}'
+...
+LEARNING_RATE = 1e-4
+WEIGHT_DECAY = 1e-4
+NUM_EPOCHS = 100
+CONF_THRESHOLD = 0.7
+...
+LOAD_MODEL = False
+...
+SAVE_CHECKPOINTS = True
+...
+```
+These are the most important settings and parameters to keep in mind. I reccomend reading through the in-line documentation in 'config.py' should other settings require modification.
 
 ## Inference
 
@@ -112,11 +153,13 @@ The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS.
 
 
 ## Sources
+[GitHub Repository YOLOv3 Implementation | Alladin Persson | https://github.com/aladdinpersson/Machine-Learning-Collection](https://github.com/aladdinpersson/Machine-Learning-Collection)
 
+[YOLOv3 Paper | Redmon, Joseph and Farhadi, Ali | https://arxiv.org/abs/1804.02767](https://arxiv.org/abs/1804.02767)
+
+[OpenAI | Chat-GPT 3.5 / 4.0 | https://chat.openai.com](https://chat.openai.com)
 
 ## YOLOv3 paper
-The implementation is based on the following paper:
-
 ### An Incremental Improvement 
 by Joseph Redmon, Ali Farhadi
 

@@ -1,30 +1,31 @@
-2024-02-07 19:41:59,989 - INFO    : Set export strategy to CentroidFormat.
-2024-02-07 19:41:59,989 - INFO    : Saving rotations absolutely to positve x-axis in degrees (0..360°).
-2024-02-07 19:42:01,708 - INFO    : Loading next point cloud...
-2024-02-07 19:42:01,709 - INFO    : Loading point cloud from label_cloud_project\datastore\pointclouds\cropped_pcds\000001.pcd using Open3DHandler.
-2024-02-07 19:42:01,880 - INFO    : ================================================== Loading 000001.pcd ==================================================
-2024-02-07 19:42:01,901 - INFO    : Generated colors for colorless point cloud based on height.
-2024-02-07 19:42:01,902 - INFO    : Successfully loaded point cloud from label_cloud_project\datastore\pointclouds\cropped_pcds\000001.pcd!
-2024-02-07 19:42:01,902 - INFO    : Number of Points:       7474           
-2024-02-07 19:42:01,902 - INFO    : Number of Colors:       7474           
-2024-02-07 19:42:01,902 - INFO    : Point Cloud Center:     [-0.04  0.16  0.  ]     
-2024-02-07 19:42:01,902 - INFO    : Point Cloud Minimums:   [-4.43 -4.81 -1.22]     
-2024-02-07 19:42:01,902 - INFO    : Point Cloud Maximums:   [4.92 4.87 0.43]        
-2024-02-07 19:42:01,903 - INFO    : Initial Translation:    [  0.04  -0.16 -13.56]  
-2024-02-07 19:42:01,903 - INFO    : ========================================================================================================================
-2024-02-07 19:42:01,903 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,903 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,903 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,903 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,903 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,903 - INFO    : Alignmode was changed to False!
-2024-02-07 19:42:01,907 - INFO    : Imported 9 labels from label_cloud_project\datastore\labels\label_cloud_labels\000001.json.
-2024-02-07 19:42:01,907 - INFO    : Loaded 9 bboxes!
-2024-02-07 19:42:01,907 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,907 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,907 - WARNING : There is currently no active bounding box to manipulate.
-2024-02-07 19:42:01,922 - INFO    : Intialized widget.
-2024-02-07 19:42:01,934 - INFO    : Resized widget.
-2024-02-07 19:42:01,984 - INFO    : Showing GUI...
-2024-02-07 19:42:01,988 - INFO    : Resized widget.
-2024-02-07 19:42:02,066 - INFO    : Resized widget.
+2024-02-08 11:33:32,049 - INFO    : Set export strategy to CentroidFormat.
+2024-02-08 11:33:32,049 - INFO    : Saving rotations absolutely to positve x-axis in degrees (0..360°).
+2024-02-08 11:33:35,819 - INFO    : Loading next point cloud...
+2024-02-08 11:33:35,819 - INFO    : Loading point cloud from label_cloud_project\datastore\pointclouds\cropped_pcds\000001.pcd using Open3DHandler.
+2024-02-08 11:33:35,826 - INFO    : ================================================== Loading 000001.pcd ==================================================
+2024-02-08 11:33:35,846 - INFO    : Generated colors for colorless point cloud based on height.
+2024-02-08 11:33:35,846 - INFO    : Successfully loaded point cloud from label_cloud_project\datastore\pointclouds\cropped_pcds\000001.pcd!
+2024-02-08 11:33:35,847 - INFO    : Number of Points:       7474           
+2024-02-08 11:33:35,847 - INFO    : Number of Colors:       7474           
+2024-02-08 11:33:35,847 - INFO    : Point Cloud Center:     [-0.04  0.16  0.  ]     
+2024-02-08 11:33:35,847 - INFO    : Point Cloud Minimums:   [-4.43 -4.81 -1.22]     
+2024-02-08 11:33:35,847 - INFO    : Point Cloud Maximums:   [4.92 4.87 0.43]        
+2024-02-08 11:33:35,847 - INFO    : Initial Translation:    [  0.04  -0.16 -13.56]  
+2024-02-08 11:33:35,847 - INFO    : ========================================================================================================================
+2024-02-08 11:33:35,847 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,848 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,848 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,848 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,848 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,848 - INFO    : Alignmode was changed to False!
+2024-02-08 11:33:35,848 - INFO    : Imported 9 labels from label_cloud_project\datastore\labels\label_cloud_labels\000001.json.
+2024-02-08 11:33:35,849 - INFO    : Loaded 9 bboxes!
+2024-02-08 11:33:35,849 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,849 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,849 - WARNING : There is currently no active bounding box to manipulate.
+2024-02-08 11:33:35,862 - INFO    : Intialized widget.
+2024-02-08 11:33:35,876 - INFO    : Resized widget.
+2024-02-08 11:33:35,949 - INFO    : Resized widget.
+2024-02-08 11:33:35,954 - INFO    : Showing GUI...
+2024-02-08 11:33:35,957 - INFO    : Resized widget.
+2024-02-08 11:33:36,035 - INFO    : Resized widget.

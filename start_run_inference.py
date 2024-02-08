@@ -12,7 +12,7 @@ import config
 import src.utils.utils as utils
 import src.inference.single_image_inference as inference
 import src.preprocessing.preprocess_data as preprocessing
-from model.model_medium import YOLOv3
+from src.model.model import YOLOv3
 from src.inference.plot_results import plot_bounding_boxes, plot_bounding_box_single_image, ImageDisplayApp
 
 global_app = None

@@ -11,7 +11,7 @@ from src.utils.utils import (
     get_loaders,
     plot_couple_examples,
 )
-from model.model_medium import YOLOv3
+from src.model.model import YOLOv3
 
 def main():
     # Initialize YOLOv3 model
@@ -82,7 +82,7 @@ def main():
 
     # Print mean average precision
     print(f"MAP: {mapval.item()}")
-    print(f"Pred Bboxes: {pred_boxes}")
+    #print(f"Pred Bboxes: {pred_boxes}")
 
 if __name__ == "__main__":
     main()
