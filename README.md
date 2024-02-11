@@ -159,25 +159,31 @@ LOAD_MODEL = False
 SAVE_CHECKPOINTS = True
 ...
 ```
-These are the most important settings and parameters to keep in mind. I recommend reading through the in-line documentation in 'config.py' should other settings require modification.
+These are the most important settings and parameters to keep in mind. I recommend reading through the in-line documentation in **'config.py'** should other settings require modification.
 
 Now the script **'start_run_training.py'** can be run to start the training process. Depending on the configuration, the script will save checkpoints, periodically print evaluation metrics and once finished store model results in the appropriate folder.
 
 ## Evaluation
-The script **'evaluation.py'** allows the evaluation of the performance of a trained model. To configure this process, the relevant constants in **'config.py'** can be modified. This can be crucial, as the confidence- as well as the iou-threshold determine the output of post-processing and thus the evaluation metrics. If necessary the user can temporarily modify the test split to evaluate the model on a specific set of samples.
+The script **'evaluation.py'** allows the evaluation of the performance of a trained model. To configure this process, the relevant constants in **'config.py'** can be modified. This can be crucial, as the confidence- as well as the IOU-threshold determine the output of post-processing and thus the evaluation metrics. There's an option to dynamically find a threshold that will result in a certain amount of bboxes. This is extremely useful to get an idea of the models' performance in experimental training sessions. If necessary the user can temporarily modify the test split to evaluate the model on a specific set of samples.
 
-In **'config.py'**, enable EVALUATION_PLOT_RESULTS to have the script visualize results as well.
+In **'config.py'**, enable EVALUATION_PLOT_RESULTS to have the script visualize results as well. Note that no class labels are shown in the visualization, which is due to the fact that this use-case only predicts bboxes for a single class, meaning that labels only clutter the screen and provide no information to the user.
 
 ## Inference
 Once a model has been trained and the performance is deemed sufficient, the script **'start_run_inference.py'** can be run to perform inference, or in other words, use the model in a real-world application. It will wait for new '.pcd' files inside the INFERENCE_PCD_FOLDER and upon their arrival, will immediately start processing them. Should the option INFERENCE_SHOW_LIVE_RESULTS be enabled, then the results will also be dynamically plotted in a separate window. The bounding box predictions will be stored in the corresponding folder defined by INFERENCE_RESULTS_FOLDER.
 
-# Results
-| Model                   | mAP @ 20 IoU          |  
-| ----------------------- |:---------------------:|
-| YOLOv3_custom_large (VeloDyne 16 PCD 0-200) 	  | 97.5       |
-| YOLOv3_custom_medium (VeloDyne 16 PCD 0-200)    | 83.5       |
+**Data-Source:** <br>
+PCD files from the "Velodyne Lidar_x2023_04_01_10_33_51_Velodyne_VLP_16Hi_Res_Data" capture, which can be found in the [Pyloneneerkenner3000](https://github.com/N0tAScooby/Pylonenerkenner3000/tree/carl_deep-learning/pcd_files)
+ repository.
 
-The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS.
+
+
+# Results
+| Model                   |        Training Dataset        |  mAP @ 20 IoU  |
+| ------------------------|-----------------------|----------------|
+| YOLOv3_custom_large 	  | PCD files 0-400                 |   0.8585       |
+| YOLOv3_custom_medium    | PCD files 0-400                  |                |
+
+The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS. For future training experiments it should be known that the 
 
 # Outlook
 In the future, this implementation could be utilized to train the YOLOv3 model on a significantly larger dataset, ideally showcasing greater variance in the point clouds themselves. Additionally, to enhance the model's ability to detect traffic cones at a wider range, I personally consider an improvement in the lidar capturing process to be necessary. The current resolution at which the sensor captures cones located farther than approximately five meters from the sensor is insufficient for the model to differentiate them from noise. <br>

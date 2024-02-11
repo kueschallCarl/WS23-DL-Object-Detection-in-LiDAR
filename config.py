@@ -46,7 +46,7 @@ ANCHORS = [
 
 #***********************************************************************************************************
 #Evaluation Settings
-EVALUATION_PLOT_RESULTS = True #Set True if you wish to plot results for the test set
+EVALUATION_PLOT_RESULTS = False #Set True if you wish to plot results for the test set
 
 FIND_OPTIMAL_CONFIDENCE_THRESHOLD = False #Set True if you wish to dynamically find a threshold that will result in DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD BBoxes in the visualization and MAP calculation
 DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD = 8 #The amount of bboxes that the dynamic thresholding should result in
