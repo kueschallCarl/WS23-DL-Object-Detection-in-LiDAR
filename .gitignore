@@ -15,6 +15,7 @@ temp/
 # Ignore archives
 *.tar
 *.pcap
+*.pcd
 
 # Keep specific files or directories
 !readme_images/

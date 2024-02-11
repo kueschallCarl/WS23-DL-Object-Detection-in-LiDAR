@@ -177,17 +177,41 @@ PCD files from the "Velodyne Lidar_x2023_04_01_10_33_51_Velodyne_VLP_16Hi_Res_Da
 
 
 # Results
-## Evaluation Results
+**Hardware:**
+- GPU
+  - NVIDIA GeForce RTX 4080
+- CPU
+  - AMD Ryzen 7 7800X3D 8-Core Processor
+- Memory
+  - 32 GB 6000Mhz DDR5
+- Storage
+  - Crucial BX500 1 TB SSD (Read: 540Mb/s | Write: 500Mb/s)
+
+## Model Performance
 Evaluating the large and medium model on a test set of 40 point-clouds picked randomly from a dataset of 400 resulted in the following scores:
 
 | Model                   |        Training Dataset         |Confidence Thresh| IOU Thresh    |Mean Average Precision (mAP)         |
 | ------------------------|---------------------------------|----------------|----------------|------------|
-| YOLOv3_custom_large 	  | PCD files 0-400                 |   0.7          |0.2             |   0.8585   |
-| YOLOv3_custom_medium    | PCD files 0-400                 |   0.65         |0.2             |   0.8034   |
+| YOLOv3_large (~60mil params)	  | PCD files 0-400                 |   0.7          |0.2             |   0.8585   |
+| YOLOv3_medium (~8mil params)   | PCD files 0-400                 |   0.65         |0.2             |   0.8034   |
 
-The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS. 
 
 ## Inference Speeds
+**Medium Model** <br>
+Profiling results when performing inference for 50 samples:
+![Inference Profiling Results Medium Model](readme_images/profiling_results_medium.png)
+
+The actual model inference time, translates to an average of **0.045 seconds per sample**.
+
+**Large Model** <br>
+Profiling results when performing inference for 10 samples:
+![Inference Profiling Results Large Model](readme_images/profiling_results_large.png)
+
+The actual model inference time, translates to an average of **0.053 seconds per sample**.
+
+In both cases most of the remaining time spent per sample is consumed by the preprocessing step of transforming the point clouds to BEV images, as expected. Some time is lost post-processing the output of the model, applying non-max-suppression etc.
+
+Note that for these tests the plotting of live-results, as well at the storing of BEV images was disabled in **'config.py'** to minimize computational load per sample.
 
 
 # Outlook

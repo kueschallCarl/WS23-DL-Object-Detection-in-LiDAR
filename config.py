@@ -9,7 +9,7 @@ from src.utils.utils import seed_everything
 #Training Settings
 #use 'start_run_training.py' to start this process
 DATASET = 'BENCHMARK_DATASET_400' #The name of the dataset in the dataset folder that should be used for training and evaluation.
-RUN_TITLE = 'BENCHMARK_RUN_400_medium_model' #This title is a convenience and logging measure, to easily identify output files and directories.
+RUN_TITLE = 'BENCHMARK_RUN_400' #This title is a convenience and logging measure, to easily identify output files and directories.
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu" #use GPU computing if possible.
 seed_everything()  # If you want deterministic behavior.
 NUM_WORKERS = 4 #The number of workers the Data Loader should use.
@@ -92,16 +92,16 @@ PREPROCESSING_Y_BINS = 250
 #***********************************************************************************************************
 #Inference Settings
 #use 'start_run_inference.py' to start this process
-INFERENCE_RUN_TITLE = 'BENCHMARK_400_MEDIUM_INFERENCE' #This title is a convenience and logging measure, to easily identify output files and directories. Just for inference runs this time.
+INFERENCE_RUN_TITLE = 'BENCHMARK_400_INFERENCE_MEDIUM' #This title is a convenience and logging measure, to easily identify output files and directories. Just for inference runs this time.
 
 INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/benchmark_400_medium.pth.tar' #The checkpoint file to use for inference.
 
 INFERENCE_PCD_FOLDER = 'model_inference_data/pcd/' #The folder in which the inference script will wait for '.pcd' files to arrive.
-INFERENCE_TEMP_BEV_FOLDER = 'model_inference_data/temp/bev_images' #A folder to store the BEV images that result from inference preprocessing (mainly for dev purposes)
+INFERENCE_TEMP_BEV_FOLDER = '' #SET TO EMPTY STRING FOR INFERENCE! COSTS TIME! A folder to store the BEV images that result from inference preprocessing (mainly for dev purposes)
 INFERENCE_RESULTS_FOLDER = 'model_inference_data/inference_results/' #The folder in which inference results are logged (contains Folders named by the INFERENCE_RUN_TITLE, which contain the json file with all predictions)
 INFERENCE_PROCESSED_PCD_FOLDER = 'model_inference_data/processed_pcds/' #A folder in which processed '.pcd' files will be moved, to avoid processing the same file more than once.
 
-INFERENCE_SHOW_LIVE_RESULTS = True #Set to true if you wish to visualize the inference output as it arrives, live.
+INFERENCE_SHOW_LIVE_RESULTS = False #Set to true if you wish to visualize the inference output as it arrives, live.
 INFERENCE_CONFIDENCE_THRESHOLD = 0.6 #Only predictions with confidence greater than this threshold will be kept.
 INFERENCE_IOU_THRESHOLD = 0.2 #Bboxes that overlap with a bbox, that has a higher confidence to a degree greater than this threshold, will be deleted.
 #***********************************************************************************************************
