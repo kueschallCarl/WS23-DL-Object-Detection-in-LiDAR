@@ -1,21 +1,21 @@
 # Ignore specific files and directories
-checkpoint_storage/*
+checkpoint_storage/
 label_cloud_project/
-model_inference_data/processed_pcds/*
-model_inference_data/pcds/*
+model_inference_data/processed_pcds/
+model_inference_data/pcds/
 .vscode/
 __pycache__/
+temp/
 
 # Ignore image files
-*.png
 *.jpeg
 *.jpg
-*.tar
-*.pcap
 *.log
 
-#keep readme data
-!readme_images/
+# Ignore archives
+*.tar
+*.pcap
 
-#keep the benchmark dataset
-!model_training_data/datasets/BENCHMARK_DATASET_400
+# Keep specific files or directories
+!readme_images/
+!model_training_data/datasets/BENCHMARK_DATASET_400/
