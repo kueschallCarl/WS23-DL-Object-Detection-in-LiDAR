@@ -1,0 +1,37 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+Currently epoch 4
+Currently epoch 5
+Currently epoch 6
+Currently epoch 7
+Currently epoch 8
+Currently epoch 9
+Currently epoch 10
+Currently epoch 11
+Currently epoch 12
+Currently epoch 13
+Currently epoch 14
+Currently epoch 15
+Currently epoch 16
+Currently epoch 17
+Currently epoch 18
+Currently epoch 19
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-48-24
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-48-24\checkpoint_20.pth.tar
+Currently epoch 20
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 21
+Currently epoch 22
+Currently epoch 23
+Currently epoch 24
+Currently epoch 25
+Currently epoch 26
+Currently epoch 27
+Currently epoch 28
+Currently epoch 29
+Currently epoch 30

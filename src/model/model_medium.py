@@ -9,7 +9,7 @@ List is structured by "B" indicating a residual block followed by the number of 
 "S" is for scale prediction block and computing the yolo loss
 "U" is for upsampling the feature map and concatenating with a previous layer
 """
-config = [
+config_medium = [
     (16, 3, 1),  # Reduced filters
     (32, 3, 2),
     ["B", 1],  # Less repeats
@@ -37,7 +37,7 @@ config = [
 ]
 
 
-class CNNBlock(nn.Module):
+class CNNBlock_medium(nn.Module):
     """
     Convolutional block with optional batch normalization and LeakyReLU.
 
@@ -69,7 +69,7 @@ class CNNBlock(nn.Module):
             return self.conv(x)
 
 
-class ResidualBlock(nn.Module):
+class ResidualBlock_medium(nn.Module):
     """
     Residual block with optional skip connection.
 
@@ -92,8 +92,8 @@ class ResidualBlock(nn.Module):
         for repeat in range(num_repeats):
             self.layers += [
                 nn.Sequential(
-                    CNNBlock(channels, channels // 2, kernel_size=1),
-                    CNNBlock(channels // 2, channels, kernel_size=3, padding=1),
+                    CNNBlock_medium(channels, channels // 2, kernel_size=1),
+                    CNNBlock_medium(channels // 2, channels, kernel_size=3, padding=1),
                 )
             ]
 
@@ -110,7 +110,7 @@ class ResidualBlock(nn.Module):
         return x
 
 
-class ScalePrediction(nn.Module):
+class ScalePrediction_medium(nn.Module):
     """
     Scale prediction block for YOLO.
 
@@ -128,8 +128,8 @@ class ScalePrediction(nn.Module):
     def __init__(self, in_channels, num_classes):
         super().__init__()
         self.pred = nn.Sequential(
-            CNNBlock(in_channels, 2 * in_channels, kernel_size=3, padding=1),
-            CNNBlock(
+            CNNBlock_medium(in_channels, 2 * in_channels, kernel_size=3, padding=1),
+            CNNBlock_medium(
                 2 * in_channels, (num_classes + 5) * 3, bn_act=False, kernel_size=1
             ),
         )
@@ -143,7 +143,7 @@ class ScalePrediction(nn.Module):
         )
 
 
-class YOLOv3(nn.Module):
+class YOLOv3_medium(nn.Module):
     """
     YOLOv3 architecture.
 
@@ -169,13 +169,13 @@ class YOLOv3(nn.Module):
         outputs = []  # for each scale
         route_connections = []
         for layer in self.layers:
-            if isinstance(layer, ScalePrediction):
+            if isinstance(layer, ScalePrediction_medium):
                 outputs.append(layer(x))
                 continue
 
             x = layer(x)
 
-            if isinstance(layer, ResidualBlock) and layer.num_repeats in [2, 8]:
+            if isinstance(layer, ResidualBlock_medium) and layer.num_repeats in [2, 8]:
                 route_connections.append(x)
 
             elif isinstance(layer, nn.Upsample):
@@ -190,11 +190,11 @@ class YOLOv3(nn.Module):
         layers = nn.ModuleList()
         in_channels = self.in_channels
 
-        for module in config:
+        for module in config_medium:
             if isinstance(module, tuple):
                 out_channels, kernel_size, stride = module
                 layers.append(
-                    CNNBlock(
+                    CNNBlock_medium(
                         in_channels,
                         out_channels,
                         kernel_size=kernel_size,
@@ -206,14 +206,14 @@ class YOLOv3(nn.Module):
 
             elif isinstance(module, list):
                 num_repeats = module[1]
-                layers.append(ResidualBlock(in_channels, num_repeats=num_repeats,))
+                layers.append(ResidualBlock_medium(in_channels, num_repeats=num_repeats,))
 
             elif isinstance(module, str):
                 if module == "S":
                     layers += [
-                        ResidualBlock(in_channels, use_residual=False, num_repeats=1),
-                        CNNBlock(in_channels, in_channels // 2, kernel_size=1),
-                        ScalePrediction(in_channels // 2, num_classes=self.num_classes),
+                        ResidualBlock_medium(in_channels, use_residual=False, num_repeats=1),
+                        CNNBlock_medium(in_channels, in_channels // 2, kernel_size=1),
+                        ScalePrediction_medium(in_channels // 2, num_classes=self.num_classes),
                     ]
                     in_channels = in_channels // 2
 
@@ -236,7 +236,7 @@ class YOLOv3(nn.Module):
 if __name__ == "__main__":
     num_classes = 1
     IMAGE_SIZE = 416
-    model = YOLOv3(num_classes=num_classes)
+    model = YOLOv3_medium(num_classes=num_classes)
     x = torch.randn((2, 3, IMAGE_SIZE, IMAGE_SIZE))
     out = model(x)
 

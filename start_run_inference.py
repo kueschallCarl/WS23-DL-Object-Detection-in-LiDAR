@@ -12,7 +12,10 @@ import config
 import src.utils.utils as utils
 import src.inference.single_image_inference as inference
 import src.preprocessing.preprocess_data as preprocessing
-from src.model.model import YOLOv3
+if config.USE_MEDIUM_MODEL:
+    from src.model.model import YOLOv3_medium as YOLOv3
+else:
+    from src.model.model import YOLOv3
 from src.inference.plot_results import plot_bounding_boxes, plot_bounding_box_single_image, ImageDisplayApp
 
 global_app = None
@@ -63,7 +66,7 @@ def main():
                 bboxes_pred = inference.inference_single_image(model, bev_image)
 
                 # Print results to console
-                print(f"File: {file_name}, bboxes: {bboxes_pred}")
+                print(f"File: {file_name}, bboxes: {len(bboxes_pred)}")
 
                 result_dict = {}
                 for idx in range(len(bboxes_pred)):

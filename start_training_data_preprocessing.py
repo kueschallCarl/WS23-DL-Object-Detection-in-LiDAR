@@ -4,7 +4,6 @@ import os
 import sys
 import torch.optim as optim
 import matplotlib.pyplot as plt
-from src.model.model_medium import YOLOv3
 from tqdm import tqdm
 from datetime import datetime
 from src.utils.logger import Tee

@@ -11,7 +11,10 @@ from src.utils.utils import (
     get_loaders,
     plot_couple_examples,
 )
-from src.model.model import YOLOv3
+if config.USE_MEDIUM_MODEL:
+    from src.model.model import YOLOv3_medium as YOLOv3
+else:
+    from src.model.model import YOLOv3
 
 def main():
     # Initialize YOLOv3 model

@@ -18,18 +18,18 @@ Currently epoch 16
 Currently epoch 17
 Currently epoch 18
 Currently epoch 19
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_19-22-51
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_19-22-51\checkpoint_20.pth.tar
 Currently epoch 20
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.8033478856086731
 Currently epoch 21
 Currently epoch 22
 Currently epoch 23
 Currently epoch 24
-=> Saving checkpoint
-Checkpoint folder created at: model_training_data/checkpoint_storage/More_Cones_2024-02-07_18-58-13
-Checkpoint saved at: model_training_data/checkpoint_storage/More_Cones_2024-02-07_18-58-13\checkpoint_25.pth.tar
 Currently epoch 25
-Running get_evaluation_bboxes...
-Running mean_average_precision...
-MAP: 0.5624778866767883
 Currently epoch 26
 Currently epoch 27
 Currently epoch 28
@@ -44,7 +44,13 @@ Currently epoch 36
 Currently epoch 37
 Currently epoch 38
 Currently epoch 39
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_19-22-51
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_19-22-51\checkpoint_40.pth.tar
 Currently epoch 40
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.795512855052948
 Currently epoch 41
 Currently epoch 42
 Currently epoch 43

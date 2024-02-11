@@ -1,0 +1,161 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+Currently epoch 4
+Currently epoch 5
+Currently epoch 6
+Currently epoch 7
+Currently epoch 8
+Currently epoch 9
+Currently epoch 10
+Currently epoch 11
+Currently epoch 12
+Currently epoch 13
+Currently epoch 14
+Currently epoch 15
+Currently epoch 16
+Currently epoch 17
+Currently epoch 18
+Currently epoch 19
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34\checkpoint_20.pth.tar
+Currently epoch 20
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.0
+Currently epoch 21
+Currently epoch 22
+Currently epoch 23
+Currently epoch 24
+Currently epoch 25
+Currently epoch 26
+Currently epoch 27
+Currently epoch 28
+Currently epoch 29
+Currently epoch 30
+Currently epoch 31
+Currently epoch 32
+Currently epoch 33
+Currently epoch 34
+Currently epoch 35
+Currently epoch 36
+Currently epoch 37
+Currently epoch 38
+Currently epoch 39
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34\checkpoint_40.pth.tar
+Currently epoch 40
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.09466448426246643
+Currently epoch 41
+Currently epoch 42
+Currently epoch 43
+Currently epoch 44
+Currently epoch 45
+Currently epoch 46
+Currently epoch 47
+Currently epoch 48
+Currently epoch 49
+Currently epoch 50
+Currently epoch 51
+Currently epoch 52
+Currently epoch 53
+Currently epoch 54
+Currently epoch 55
+Currently epoch 56
+Currently epoch 57
+Currently epoch 58
+Currently epoch 59
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34\checkpoint_60.pth.tar
+Currently epoch 60
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.19183394312858582
+Currently epoch 61
+Currently epoch 62
+Currently epoch 63
+Currently epoch 64
+Currently epoch 65
+Currently epoch 66
+Currently epoch 67
+Currently epoch 68
+Currently epoch 69
+Currently epoch 70
+Currently epoch 71
+Currently epoch 72
+Currently epoch 73
+Currently epoch 74
+Currently epoch 75
+Currently epoch 76
+Currently epoch 77
+Currently epoch 78
+Currently epoch 79
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34\checkpoint_80.pth.tar
+Currently epoch 80
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.435479998588562
+Currently epoch 81
+Currently epoch 82
+Currently epoch 83
+Currently epoch 84
+Currently epoch 85
+Currently epoch 86
+Currently epoch 87
+Currently epoch 88
+Currently epoch 89
+Currently epoch 90
+Currently epoch 91
+Currently epoch 92
+Currently epoch 93
+Currently epoch 94
+Currently epoch 95
+Currently epoch 96
+Currently epoch 97
+Currently epoch 98
+Currently epoch 99
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34\checkpoint_100.pth.tar
+Currently epoch 100
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.6008191108703613
+Currently epoch 101
+Currently epoch 102
+Currently epoch 103
+Currently epoch 104
+Currently epoch 105
+Currently epoch 106
+Currently epoch 107
+Currently epoch 108
+Currently epoch 109
+Currently epoch 110
+Currently epoch 111
+Currently epoch 112
+Currently epoch 113
+Currently epoch 114
+Currently epoch 115
+Currently epoch 116
+Currently epoch 117
+Currently epoch 118
+Currently epoch 119
+=> Saving checkpoint
+Checkpoint folder created at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34
+Checkpoint saved at: model_training_data/checkpoint_storage/BENCHMARK_RUN_400_medium_model_2024-02-11_18-53-34\checkpoint_120.pth.tar
+Currently epoch 120
+Running get_evaluation_bboxes...
+Running mean_average_precision...
+MAP: 0.7143204808235168
+Currently epoch 121
+Currently epoch 122
+Currently epoch 123
+=> Saving Model Results

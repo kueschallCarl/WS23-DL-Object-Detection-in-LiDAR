@@ -1,0 +1,17 @@
+Currently epoch 0
+Currently epoch 1
+Currently epoch 2
+Currently epoch 3
+Currently epoch 4
+Currently epoch 5
+Currently epoch 6
+Currently epoch 7
+Currently epoch 8
+Currently epoch 9
+Currently epoch 10
+Currently epoch 11
+Currently epoch 12
+Currently epoch 13
+Currently epoch 14
+Currently epoch 15
+Currently epoch 16

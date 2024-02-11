@@ -515,7 +515,7 @@ def save_checkpoint(model, optimizer, epochs, run_id):
 
     print(f"Checkpoint saved at: {checkpoint_path}")
 
-def save_plot(training_losses, folder_path):
+def save_plot(training_losses, folder_path, plot_filename):
     """
     Save a training loss plot to a file.
 
@@ -529,7 +529,7 @@ def save_plot(training_losses, folder_path):
     plt.ylabel('Loss')
     plt.title('Training Curve')
     plt.legend()
-    plt.savefig(os.path.join(folder_path))
+    plt.savefig(os.path.join(folder_path, plot_filename))
     plt.close()
 
 def save_training_results(model, optimizer, epochs, run_id, training_losses):
@@ -575,7 +575,7 @@ def save_training_results(model, optimizer, epochs, run_id, training_losses):
         json.dump(config_values, json_file, indent=4)
 
     plot_filename = f"{run_id}_learning_curve_loss.png"
-    save_plot(training_losses, os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name, plot_filename), plot_filename)
+    save_plot(training_losses, os.path.join(config.TRAINING_RESULTS_FOLDER, folder_name), plot_filename)
 
     print(f"Model Results saved at: {checkpoint_path} and configuration saved at: {json_path}")
 
@@ -638,6 +638,7 @@ def get_loaders(train_csv_path, test_csv_path):
         batch_size=config.BATCH_SIZE,
         num_workers=config.NUM_WORKERS,
         pin_memory=config.PIN_MEMORY,
+        persistent_workers= True,
         shuffle=True,
         drop_last=False,
     )
@@ -646,6 +647,7 @@ def get_loaders(train_csv_path, test_csv_path):
         batch_size=config.BATCH_SIZE,
         num_workers=config.NUM_WORKERS,
         pin_memory=config.PIN_MEMORY,
+        persistent_workers= True,
         shuffle=False,
         drop_last=False,
     )
@@ -663,6 +665,7 @@ def get_loaders(train_csv_path, test_csv_path):
         batch_size=config.BATCH_SIZE,
         num_workers=config.NUM_WORKERS,
         pin_memory=config.PIN_MEMORY,
+        persistent_workers= True,
         shuffle=False,
         drop_last=False,
     )

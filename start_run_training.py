@@ -4,7 +4,6 @@ import os
 import sys
 import torch.optim as optim
 import matplotlib.pyplot as plt
-from src.model.model import YOLOv3
 from tqdm import tqdm
 from datetime import datetime
 from src.utils.logger import Tee
@@ -20,6 +19,10 @@ from src.utils.utils import (
     save_training_results
 )
 from src.training.loss import YoloLoss
+if config.USE_MEDIUM_MODEL:
+    from src.model.model import YOLOv3_medium as YOLOv3
+else:
+    from src.model.model import YOLOv3
 import warnings
 
 warnings.filterwarnings("ignore")
