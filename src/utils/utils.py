@@ -241,7 +241,7 @@ def plot_image(image, boxes):
     ax.imshow(im)
 
     # Use a single color for all boxes
-    color = 'blue'  # You can choose any color you prefer
+    color = 'yellow'  # You can choose any color you prefer
 
     # box[0] is x midpoint, box[2] is width
     # box[1] is y midpoint, box[3] is height
@@ -263,14 +263,14 @@ def plot_image(image, boxes):
         )
         # Add the patch to the Axes
         ax.add_patch(rect)
-        plt.text(
+        """plt.text(
             upper_left_x * width,
             upper_left_y * height,
             s=f"Class {int(class_pred)}",
             color="white",
             verticalalignment="top",
             bbox={"color": color, "pad": 0},
-        )
+        )"""
 
     plt.show()
 
@@ -669,7 +669,7 @@ def get_loaders(train_csv_path, test_csv_path):
 
     return train_loader, test_loader, train_eval_loader
 
-def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes=6, ):
+def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes=config.DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD):
     """
     Calculate a dynamic confidence threshold for object detection.
 
@@ -714,7 +714,7 @@ def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desir
     return confidence_threshold
 
 
-def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=True, confidence_step = 0.05):
+def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=False, confidence_step = 0.05):
     """
     Plot examples with bounding boxes using a trained YOLO model.
 
@@ -753,7 +753,7 @@ def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optima
         nms_boxes = non_max_suppression(
             bboxes[i], iou_threshold=iou_thresh, threshold=threshold, box_format="midpoint",
         )
-        print(f"nms_boxes at {i}: {len(nms_boxes)}")
+        print(f"nms_boxes at {i}: {len(nms_boxes)} over confidence: {threshold} and under IOU threshold: {iou_thresh}")
 
         plot_image(x[i].permute(1, 2, 0).detach().cpu(), nms_boxes)
 

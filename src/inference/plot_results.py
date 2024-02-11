@@ -108,6 +108,7 @@ def plot_bounding_box_single_image(bboxes_data, image_folder, filename, app):
     # Update the tkinter window
     app.root.update()
 
+
 def plot_bounding_boxes(json_file_path, image_folder):
     """
     Plot bounding boxes on multiple images using matplotlib.
@@ -143,14 +144,3 @@ def plot_bounding_boxes(json_file_path, image_folder):
 
         plt.title(f"Bounding Boxes for {file_name}")
         plt.show()
-
-def main():
-    """
-    The main function that runs the script.
-    """
-    json_file_path = r"inference_results\First_Test_Inference_2024-02-03_19-14-48\results_First_Test_Inference_2024-02-03_19-14-48.json"
-    image_folder = r"temp/bev_images"
-    plot_bounding_boxes(json_file_path, image_folder)
-
-if __name__ == "__main__":
-    main()

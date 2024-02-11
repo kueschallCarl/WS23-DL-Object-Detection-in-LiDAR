@@ -3,24 +3,23 @@ import cv2
 import torch
 
 from albumentations.pytorch import ToTensorV2
-from src.utils.utils import seed_everything
-
+#from src.utils.utils import seed_everything
 
 #***********************************************************************************************************
 #Training Settings
-DATASET = 'BEV_BATCH1' #The name of the dataset in the dataset folder that should be used for training and evaluation.
-RUN_TITLE = 'First_Tests' #This title is a convenience and logging measure, to easily identify output files and directories.
+DATASET = 'BENCHMARK_DATASET_400' #The name of the dataset in the dataset folder that should be used for training and evaluation.
+RUN_TITLE = 'BENCHMARK_RUN_400' #This title is a convenience and logging measure, to easily identify output files and directories.
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu" #use GPU computing if possible.
 # seed_everything()  # If you want deterministic behavior.
 NUM_WORKERS = 4 #The number of workers the Data Loader should use.
 BATCH_SIZE = 32 #The amount of samples that are input to the model at a time.
 IMAGE_SIZE = 416 #The image size.
 NUM_CLASSES = 1 #The total amount of classes in the Dataset (1 for cone detection).
-LEARNING_RATE = 1e-5 #The rate at which the model performs backpropagation (adjusts parameters after forward pass) (Very high learning rates can lead to overshooting, very low learning rates result in a lengthy training run, or in the worst case the model not learning at all).
+LEARNING_RATE = 1e-4 #The rate at which the model performs backpropagation (adjusts parameters after forward pass) (Very high learning rates can lead to overshooting, very low learning rates result in a lengthy training run, or in the worst case the model not learning at all).
 WEIGHT_DECAY = 1e-4 #The rate at which the learning rate decays during training (As the model improves, a lower learning rate is required to carefully extract the last bit of potential performance).
-NUM_EPOCHS = 50 #The number of epochs, the model should be trained for.
-CONF_THRESHOLD = 0.7 #In evaluation and during inference, only bounding boxes (bboxes) that the model predicted with a confidence higher than this threshold will be kept.
+NUM_EPOCHS = 200 #The number of epochs, the model should be trained for.
 
+CONF_THRESHOLD = 0.7 #In evaluation and during inference, only bounding boxes (bboxes) that the model predicted with a confidence higher than this threshold will be kept.
 MAP_IOU_THRESH = 0.2 #The intersection over union threshold to be used when computing the MAP (Mean Average Precision) metric.
 NMS_IOU_THRESH = 0.2 #The intersection over union threshold to be used when running Non-Maximum-Suppression. (Filtering out low-confidence bboxes that overlap with others more than this threshold)
 S = [IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8] #The three Scales (Resolutions) at which YOLOv3 attempts to find bboxes.
@@ -29,10 +28,10 @@ PIN_MEMORY = True #Enables faster data transfer from the CPU to the GPU
 LOAD_MODEL = True #Will load a model from the checkpoint file specified at CHECKPOINT_FILE. Always set true for evaluation and inference. Set false for a fresh training run. Set true to fine-tune a model, training it further.
 SAVE_MODEL_RESULTS = True #Set true if you wish to store training metadata, plots, and the last model checkpoint after training.
 SAVE_CHECKPOINTS = True #Set true if you wish to store checkpoints at the interval specified at CHECKPOINT_SAVING_INTERVAL.
-CHECKPOINT_SAVING_INTERVAL = 10 #The interval at which checkpoints should be stored at the location specified at CHECKPOINT_FILE.
-EVALUATION_INTERVAL = 10 #The interval at which the script should run evaluation during training (Will print the MAE etc.)
+CHECKPOINT_SAVING_INTERVAL = 25 #The interval at which checkpoints should be stored at the location specified at CHECKPOINT_FILE.
+EVALUATION_INTERVAL = 25 #The interval at which the script should run evaluation during training (Will print the MAE etc.)
 
-CHECKPOINT_FILE = 'model_inference_data/model/six_cones_large_model.pth.tar' #The file from which a model should be loaded!!! Use INFERENCE_CHECKPOINT_FILE to define which checkpoint to load at inference time.
+CHECKPOINT_FILE = 'model_inference_data/model/benchmark_400_checkpoint_125.pth.tar' #The file from which a model should be loaded!!! Use INFERENCE_CHECKPOINT_FILE to define which checkpoint to load at inference time.
 IMG_DIR = "model_training_data/datasets/" + DATASET + "/images/" #The directory containing BEV images of the dataset specified at DATASET.
 LABEL_DIR = "model_training_data/datasets/" + DATASET + "/labels/" #The directory containing YOLO labels of the dataset specified at DATASET.
 TRAINING_RESULTS_FOLDER = "model_training_data/model_results/" #The folder in which training results will be stored, should they be enabled at SAVE_MODEL_RESULTS.
@@ -47,14 +46,21 @@ ANCHORS = [
 
 #***********************************************************************************************************
 #Evaluation Settings
-EVALUATION_PLOT_RESULTS = False
+EVALUATION_PLOT_RESULTS = True #Set True if you wish to plot results for the test set
+
+FIND_OPTIMAL_CONFIDENCE_THRESHOLD = False #Set True if you wish to dynamically find a threshold that will result in DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD BBoxes in the visualization and MAP calculation
+DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD = 8 #The amount of bboxes that the dynamic thresholding should result in
+CONFIDENCE_STEP = 0.05 #The step the dynamic thresholding takes in each iteration
+
+EVALUATION_CONFIDENCE_THRESHOLD = 0.7 #The confidence threshold in evaluation. Use this when not running dynamic thresholding
+EVALUATION_IOU_THRESHOLD = 0.2 #The IOU (overlapping) threshold in evaluation. THIS IS INDEPENDENT OF DYNAMIC THRESHOLDING
 #***********************************************************************************************************
 
 #***********************************************************************************************************
 #Preprocessing Settings
 PCD_CROP_DISTANCE_THRESHOLD = 5.0 #The maximum distance at which point-cloud points will be kept during cropping in preprocessing.
 
-NEW_DATASET_NAME = 'BEV_DATASET_MORE_CONES' #The name given to the new Dataset, that will be created in preprocessing.
+NEW_DATASET_NAME = 'BENCHMARK_DATASET_400' #The name given to the new Dataset, that will be created in preprocessing.
 
 RAW_PCD_FOLDER = 'label_cloud_project/datastore/pointclouds/raw_pcds' #The folder containing the '.pcd' files for preprocessing.
 LABEL_CLOUD_LABEL_FOLDER = 'label_cloud_project/datastore/labels/label_cloud_labels' #The folder containing the labelCloud labels for preprocessing.
@@ -65,7 +71,7 @@ CROPPED_PCD_FOLDER = f'model_training_data/datasets/{NEW_DATASET_NAME}/pcd' #The
 
 STORE_CROPPED_PCD_FOR_LABELING = False #ENABLE THIS TO RECEIVE THE CROPPED PCDS NECESSARY FOR LABELING IN labelCloud!!! Not necessary in any other scenario.
 
-PREPROCESSING_TRAIN_SPLIT_RATIO = 0.7 #The split ratio n-test-samples / n-train-samples. A split of 0.7 would mean that 70% of all samples will be used for training and 30% for testing.
+PREPROCESSING_TRAIN_SPLIT_RATIO = 0.9 #The split ratio n-test-samples / n-train-samples. A split of 0.7 would mean that 70% of all samples will be used for training and 30% for testing.
 
 #These settings configure the process that transforms point-clouds to BEV images
 PREPROCESSING_IMAGE_WIDTH = 250
@@ -81,7 +87,7 @@ PREPROCESSING_Y_BINS = 250
 #Inference Settings
 INFERENCE_RUN_TITLE = 'First_Test_Inference' #This title is a convenience and logging measure, to easily identify output files and directories. Just for inference runs this time.
 
-INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/checkpoint_200.pth.tar' #The checkpoint file to use for inference.
+INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/benchmark_400_checkpoint_125.pth.tar' #The checkpoint file to use for inference.
 
 INFERENCE_PCD_FOLDER = 'model_inference_data/pcd/' #The folder in which the inference script will wait for '.pcd' files to arrive.
 INFERENCE_TEMP_BEV_FOLDER = 'model_inference_data/temp/bev_images' #A folder to store the BEV images that result from inference preprocessing (mainly for dev purposes)

@@ -54,11 +54,11 @@ def main():
         plot_couple_examples(
             model,
             test_loader,
-            iou_thresh=0.7,
-            thresh=0.2,
+            thresh=config.EVALUATION_CONFIDENCE_THRESHOLD,
+            iou_thresh=config.EVALUATION_IOU_THRESHOLD,
             anchors=scaled_anchors,
-            find_optimal_confidence_threshold=True,
-            confidence_step=0.01
+            find_optimal_confidence_threshold=config.FIND_OPTIMAL_CONFIDENCE_THRESHOLD,
+            confidence_step=config.CONFIDENCE_STEP
         )
 
     print("Running get_evaluation_bboxes...")
