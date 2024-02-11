@@ -97,11 +97,11 @@ INFERENCE_RUN_TITLE = 'BENCHMARK_400_INFERENCE_MEDIUM' #This title is a convenie
 INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/benchmark_400_medium.pth.tar' #The checkpoint file to use for inference.
 
 INFERENCE_PCD_FOLDER = 'model_inference_data/pcd/' #The folder in which the inference script will wait for '.pcd' files to arrive.
-INFERENCE_TEMP_BEV_FOLDER = '' #SET TO EMPTY STRING FOR INFERENCE! COSTS TIME! A folder to store the BEV images that result from inference preprocessing (mainly for dev purposes)
+INFERENCE_TEMP_BEV_FOLDER = 'model_inference_data/temp/bev_images/' #REQUIRED FOR PLOTTING LIVE RESULTS! SET TO EMPTY STRING FOR INFERENCE! COSTS TIME! A folder to store the BEV images that result from inference preprocessing (mainly for dev purposes)
 INFERENCE_RESULTS_FOLDER = 'model_inference_data/inference_results/' #The folder in which inference results are logged (contains Folders named by the INFERENCE_RUN_TITLE, which contain the json file with all predictions)
 INFERENCE_PROCESSED_PCD_FOLDER = 'model_inference_data/processed_pcds/' #A folder in which processed '.pcd' files will be moved, to avoid processing the same file more than once.
 
-INFERENCE_SHOW_LIVE_RESULTS = False #Set to true if you wish to visualize the inference output as it arrives, live.
+INFERENCE_SHOW_LIVE_RESULTS = True #Set to true if you wish to visualize the inference output as it arrives, live.
 INFERENCE_CONFIDENCE_THRESHOLD = 0.6 #Only predictions with confidence greater than this threshold will be kept.
 INFERENCE_IOU_THRESHOLD = 0.2 #Bboxes that overlap with a bbox, that has a higher confidence to a degree greater than this threshold, will be deleted.
 #***********************************************************************************************************
