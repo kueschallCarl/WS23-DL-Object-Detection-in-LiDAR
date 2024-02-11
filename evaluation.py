@@ -3,11 +3,8 @@ import torch
 import torch.optim as optim
 from src.utils.utils import (
     mean_average_precision,
-    cells_to_bboxes,
     get_evaluation_bboxes,
-    save_checkpoint,
     load_checkpoint,
-    check_class_accuracy,
     get_loaders,
     plot_couple_examples,
 )
@@ -61,7 +58,8 @@ def main():
             iou_thresh=config.EVALUATION_IOU_THRESHOLD,
             anchors=scaled_anchors,
             find_optimal_confidence_threshold=config.FIND_OPTIMAL_CONFIDENCE_THRESHOLD,
-            confidence_step=config.CONFIDENCE_STEP
+            confidence_step=config.CONFIDENCE_STEP,
+            desired_num_bboxes=config.DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD
         )
 
     print("Running get_evaluation_bboxes...")

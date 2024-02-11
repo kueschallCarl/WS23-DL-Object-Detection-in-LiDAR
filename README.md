@@ -176,18 +176,27 @@ PCD files from the "Velodyne Lidar_x2023_04_01_10_33_51_Velodyne_VLP_16Hi_Res_Da
  repository.
 
 
-
 # Results
-| Model                   |        Training Dataset        |  mAP @ 20 IoU  |
-| ------------------------|-----------------------|----------------|
-| YOLOv3_custom_large 	  | PCD files 0-400                 |   0.8585       |
-| YOLOv3_custom_medium    | PCD files 0-400                  |                |
+## Evaluation Results
+Evaluating the large and medium model on a test set of 40 point-clouds picked randomly from a dataset of 400 resulted in the following scores:
 
-The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS. For future training experiments it should be known that the 
+| Model                   |        Training Dataset         |Confidence Thresh| IOU Thresh    |Mean Average Precision (mAP)         |
+| ------------------------|---------------------------------|----------------|----------------|------------|
+| YOLOv3_custom_large 	  | PCD files 0-400                 |   0.7          |0.2             |   0.8585   |
+| YOLOv3_custom_medium    | PCD files 0-400                 |   0.65         |0.2             |   0.8034   |
+
+The models were evaluated with confidence 0.7 and IOU threshold 0.2 using NMS. 
+
+## Inference Speeds
+
 
 # Outlook
 In the future, this implementation could be utilized to train the YOLOv3 model on a significantly larger dataset, ideally showcasing greater variance in the point clouds themselves. Additionally, to enhance the model's ability to detect traffic cones at a wider range, I personally consider an improvement in the lidar capturing process to be necessary. The current resolution at which the sensor captures cones located farther than approximately five meters from the sensor is insufficient for the model to differentiate them from noise. <br>
 Should the format of lidar data arriving from the sensor in a live-capturing scenario differ from the '.pcd' format, adjustments will need to be made in preprocessing.
+
+Currently this project operates on three anchors, which are, as documented in **'config.py'**, starting points for bounding boxes, which the YOLOv3 model adjusts in training. They aid the model in learning to detect objects of different shapes and sizes. For detecting equally-shaped and -sized traffic-cones however, this is not required. They remain in this project for future-proofing and simplification, but aren't absolutely necessary. 
+
+One method that could be of interest to future contributors to this project, is that of considering past results for future predictions. More specifically, utilizing the positions of traffic-cones in the past couple of frames in training. For instance, the positions of point clouds 400, 401 and 402 could be fed as a second input to the model for the number 403 point cloud.
 # Sources
 [GitHub Repository YOLOv3 Implementation | Alladin Persson | https://github.com/aladdinpersson/Machine-Learning-Collection](https://github.com/aladdinpersson/Machine-Learning-Collection)
 

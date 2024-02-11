@@ -3,14 +3,15 @@ import cv2
 import torch
 
 from albumentations.pytorch import ToTensorV2
-#from src.utils.utils import seed_everything
+from src.utils.utils import seed_everything
 
 #***********************************************************************************************************
 #Training Settings
+#use 'start_run_training.py' to start this process
 DATASET = 'BENCHMARK_DATASET_400' #The name of the dataset in the dataset folder that should be used for training and evaluation.
 RUN_TITLE = 'BENCHMARK_RUN_400_medium_model' #This title is a convenience and logging measure, to easily identify output files and directories.
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu" #use GPU computing if possible.
-# seed_everything()  # If you want deterministic behavior.
+seed_everything()  # If you want deterministic behavior.
 NUM_WORKERS = 4 #The number of workers the Data Loader should use.
 BATCH_SIZE = 32 #The amount of samples that are input to the model at a time.
 IMAGE_SIZE = 416 #The image size.
@@ -19,7 +20,8 @@ LEARNING_RATE = 1e-5 #The rate at which the model performs backpropagation (adju
 WEIGHT_DECAY = 1e-4 #The rate at which the learning rate decays during training (As the model improves, a lower learning rate is required to carefully extract the last bit of potential performance).
 NUM_EPOCHS = 50 #The number of epochs, the model should be trained for.
 
-USE_MEDIUM_MODEL = True
+USE_MEDIUM_MODEL = True #Set True if you wish to use the smaller YOLOv3 model, with approx. 8mil params compared to the 60+mil params of the original.
+PLOT_EXAMPLES_DURING_TRAINING = False #set true if you wish to plot examples during training at the interval of EVALUATION_INTERVAL
 
 CONF_THRESHOLD = 0.7 #In evaluation and during inference, only bounding boxes (bboxes) that the model predicted with a confidence higher than this threshold will be kept.
 MAP_IOU_THRESH = 0.2 #The intersection over union threshold to be used when computing the MAP (Mean Average Precision) metric.
@@ -33,7 +35,7 @@ SAVE_CHECKPOINTS = True #Set true if you wish to store checkpoints at the interv
 CHECKPOINT_SAVING_INTERVAL = 20 #The interval at which checkpoints should be stored at the location specified at CHECKPOINT_FILE.
 EVALUATION_INTERVAL = 20 #The interval at which the script should run evaluation during training (Will print the MAE etc.)
 
-CHECKPOINT_FILE = 'my_checkpoint.pth.tar' #The file from which a model should be loaded!!! Use INFERENCE_CHECKPOINT_FILE to define which checkpoint to load at inference time.
+CHECKPOINT_FILE = 'model_inference_data/model/benchmark_400_medium.pth.tar' #The file from which a model should be loaded!!! Use INFERENCE_CHECKPOINT_FILE to define which checkpoint to load at inference time.
 IMG_DIR = "model_training_data/datasets/" + DATASET + "/images/" #The directory containing BEV images of the dataset specified at DATASET.
 LABEL_DIR = "model_training_data/datasets/" + DATASET + "/labels/" #The directory containing YOLO labels of the dataset specified at DATASET.
 TRAINING_RESULTS_FOLDER = "model_training_data/model_results/" #The folder in which training results will be stored, should they be enabled at SAVE_MODEL_RESULTS.
@@ -48,18 +50,20 @@ ANCHORS = [
 
 #***********************************************************************************************************
 #Evaluation Settings
-EVALUATION_PLOT_RESULTS = False #Set True if you wish to plot results for the test set
+#use 'evaluation.py' to start this process
+EVALUATION_PLOT_RESULTS = True #Set True if you wish to plot results for the test set
 
 FIND_OPTIMAL_CONFIDENCE_THRESHOLD = False #Set True if you wish to dynamically find a threshold that will result in DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD BBoxes in the visualization and MAP calculation
 DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD = 8 #The amount of bboxes that the dynamic thresholding should result in
 CONFIDENCE_STEP = 0.05 #The step the dynamic thresholding takes in each iteration
 
-EVALUATION_CONFIDENCE_THRESHOLD = 0.7 #The confidence threshold in evaluation. Use this when not running dynamic thresholding
+EVALUATION_CONFIDENCE_THRESHOLD = 0.65 #The confidence threshold in evaluation. Use this when not running dynamic thresholding
 EVALUATION_IOU_THRESHOLD = 0.2 #The IOU (overlapping) threshold in evaluation. THIS IS INDEPENDENT OF DYNAMIC THRESHOLDING
 #***********************************************************************************************************
 
 #***********************************************************************************************************
 #Preprocessing Settings
+#use 'start_training_data_preprocessing.py' to start this process
 PCD_CROP_DISTANCE_THRESHOLD = 5.0 #The maximum distance at which point-cloud points will be kept during cropping in preprocessing.
 
 NEW_DATASET_NAME = 'BENCHMARK_DATASET_400' #The name given to the new Dataset, that will be created in preprocessing.
@@ -87,6 +91,7 @@ PREPROCESSING_Y_BINS = 250
 
 #***********************************************************************************************************
 #Inference Settings
+#use 'start_run_inference.py' to start this process
 INFERENCE_RUN_TITLE = 'BENCHMARK_400_MEDIUM_INFERENCE' #This title is a convenience and logging measure, to easily identify output files and directories. Just for inference runs this time.
 
 INFERENCE_CHECKPOINT_FILE = 'model_inference_data/model/benchmark_400_medium.pth.tar' #The checkpoint file to use for inference.

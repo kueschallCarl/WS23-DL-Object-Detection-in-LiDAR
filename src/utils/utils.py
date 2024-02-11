@@ -79,7 +79,7 @@ def intersection_over_union(boxes_preds, boxes_labels, box_format="midpoint"):
     return intersection / (box1_area + box2_area - intersection + 1e-6)
 
 
-def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
+def non_max_suppression(bboxes, iou_threshold, threshold, box_format="midpoint"):
     """
     Apply Non-Maximum Suppression (NMS) to bounding boxes.
 
@@ -95,6 +95,7 @@ def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     assert type(bboxes) == list
     bboxes = [box for box in bboxes if box[1] > threshold]
     bboxes = sorted(bboxes, key=lambda x: x[1], reverse=True)
+    print(f"bboxes after confidence thresholding in NMS: {len(bboxes)}")
     bboxes_after_nms = []
 
     while bboxes:
@@ -113,9 +114,52 @@ def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
         ]
 
         bboxes_after_nms.append(chosen_box)
-
+    
     return bboxes_after_nms
 
+def get_inference_bboxes(predictions, model, iou_threshold, anchors, confidence_threshold, device="cuda"):
+    """
+    Process model predictions to obtain inference bounding boxes, applying NMS twice to remove overlaps
+    across anchors.
+
+    Parameters:
+        predictions (torch.Tensor): Model predictions for a single image.
+        model (torch.nn.Module): Trained YOLO model, not used in this function but kept for interface compatibility.
+        iou_threshold (float): IoU threshold for NMS.
+        anchors (list): List of anchor boxes.
+        confidence_threshold (float): Confidence score threshold for filtering predictions.
+        device (str): Device on which to run inference (default: "cuda").
+
+    Returns:
+        list: List of predicted bounding boxes after applying NMS twice.
+    """
+    all_pred_boxes = []
+
+    # First pass: NMS for each scale and anchor
+    for i in range(len(predictions)):
+        S = predictions[i].shape[2]
+        anchor = torch.tensor(anchors[i], device=device) * S
+        boxes_scale_i = cells_to_bboxes(predictions[i], anchor, S=S, is_preds=True)
+        
+        bboxes = [box for sublist in boxes_scale_i for box in sublist]
+
+        nms_boxes = non_max_suppression(
+            bboxes,
+            iou_threshold=iou_threshold,
+            threshold=confidence_threshold
+        )
+
+        all_pred_boxes.extend(nms_boxes)
+
+    # Second pass: NMS across all anchors
+    final_boxes = non_max_suppression(
+        all_pred_boxes,
+        iou_threshold=iou_threshold,
+        threshold=confidence_threshold,
+        box_format="midpoint"  # Ensure this matches your bbox format
+    )
+    print(f"Final Bboxes: {len(final_boxes)}")
+    return final_boxes
 
 def mean_average_precision(
     pred_boxes, true_boxes, iou_threshold=0.5, box_format="midpoint", num_classes=20
@@ -345,46 +389,7 @@ def get_evaluation_bboxes(
     model.train()
     return all_pred_boxes, all_true_boxes
 
-def get_inference_bboxes(predictions, model, iou_threshold, anchors, confidence_threshold, device="cuda"):
-    """
-    Process model predictions to obtain inference bounding boxes.
 
-    Parameters:
-        predictions (torch.Tensor): Model predictions for a single image.
-        model (torch.nn.Module): Trained YOLO model, not used in this function but kept for interface compatibility.
-        iou_threshold (float): IoU threshold for NMS.
-        anchors (list): List of anchor boxes.
-        confidence_threshold (float): Confidence score threshold for filtering predictions.
-        device (str): Device on which to run inference (default: "cuda").
-
-    Returns:
-        list: List of predicted bounding boxes after applying NMS.
-    """
-    # Ensure model is not explicitly used inside this function as predictions are directly passed
-    # model.eval()  # Assuming model is already in evaluation mode outside this function
-
-    all_pred_boxes = []
-
-    # Assuming predictions is a list of tensors for each scale
-    for i in range(len(predictions)):
-        S = predictions[i].shape[2]
-        anchor = torch.tensor(anchors[i], device=device) * S
-        boxes_scale_i = cells_to_bboxes(predictions[i], anchor, S=S, is_preds=True)
-
-        # Flatten the list of bboxes from different scales into a single list
-        bboxes = [box for sublist in boxes_scale_i for box in sublist]
-
-        nms_boxes = non_max_suppression(
-            bboxes,
-            iou_threshold=iou_threshold,
-            threshold=confidence_threshold
-        )
-
-        all_pred_boxes.extend(nms_boxes)
-
-    # model.train()  # No need to toggle back to train mode here if the model state is managed outside
-
-    return all_pred_boxes
 
 def cells_to_bboxes(predictions, anchors, S, is_preds=True):
     """
@@ -672,7 +677,7 @@ def get_loaders(train_csv_path, test_csv_path):
 
     return train_loader, test_loader, train_eval_loader
 
-def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes=config.DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD):
+def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes):
     """
     Calculate a dynamic confidence threshold for object detection.
 
@@ -717,7 +722,7 @@ def dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desir
     return confidence_threshold
 
 
-def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optimal_confidence_threshold=False, confidence_step = 0.05):
+def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, desired_num_bboxes, find_optimal_confidence_threshold=False, confidence_step = 0.05):
     """
     Plot examples with bounding boxes using a trained YOLO model.
 
@@ -747,7 +752,7 @@ def plot_couple_examples(model, loader, thresh, iou_thresh, anchors, find_optima
         model.train()
 
     if find_optimal_confidence_threshold:
-        threshold = dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step)
+        threshold = dynamic_threshold(model, loader, iou_thresh, anchors, confidence_step, desired_num_bboxes= desired_num_bboxes)
     else:
         threshold = thresh  # Set a default threshold if not using dynamic thresholding
 
@@ -772,6 +777,7 @@ def seed_everything(seed=42):
     Parameters:
         seed (int): Seed value for random number generators (default: 42).
     """
+    print(f"Seeding everything")
     os.environ['PYTHONHASHSEED'] = str(seed)  # Set Python's hash seed
     random.seed(seed)  # Seed Python's random module
     np.random.seed(seed)  # Seed NumPy's random module

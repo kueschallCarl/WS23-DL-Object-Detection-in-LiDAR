@@ -133,7 +133,17 @@ def main():
         #check_class_accuracy(model, train_loader, threshold=config.CONF_THRESHOLD)
 
         if epoch > 0 and epoch % config.EVALUATION_INTERVAL == 0:
-            #plot_couple_examples(model, test_loader, 0.7, 0.5, scaled_anchors, find_optimal_confidence_threshold = True, confidence_step = 0.05)
+            if config.PLOT_EXAMPLES_DURING_TRAINING:
+                plot_couple_examples(
+                model,
+                test_loader,
+                thresh=config.EVALUATION_CONFIDENCE_THRESHOLD,
+                iou_thresh=config.EVALUATION_IOU_THRESHOLD,
+                anchors=scaled_anchors,
+                find_optimal_confidence_threshold=config.FIND_OPTIMAL_CONFIDENCE_THRESHOLD,
+                confidence_step=config.CONFIDENCE_STEP,
+                desired_num_bboxes=config.DESIRED_N_BBOXES_IN_DYNAMIC_THRESHOLD
+                )
             #check_class_accuracy(model, test_loader, threshold=config.CONF_THRESHOLD)
 
             print("Running get_evaluation_bboxes...")
