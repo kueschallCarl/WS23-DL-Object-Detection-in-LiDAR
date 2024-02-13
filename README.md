@@ -45,14 +45,22 @@ The coordinates and thus the location of each cone, relative to the lidar sensor
 **Source Code Only**
 ```bash
 $ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
-$ pip install requirements.txt
+Next, in root, run setup_env to set up a python environment and automatically install required packages
+$ ./setup_env.bat
+Then activate the environment
+$ ./myenv/Scripts/activate.bat
+Now scripts can be run inside the environment
 ```
 <br>
 
 **Source Code + Benchmark Models**
 ```bash
 $ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
-$ pip install requirements.txt
+Next, in root, run setup_env to set up a python environment and automatically install required packages
+$ ./setup_env.bat
+Then activate the environment
+$ ./myenv/Scripts/activate.bat
+Now scripts can be run inside the environment
 ```
 Download the benchmark model of your choice from [GoFile_Link_to_benchmark_models](https://gofile.io/d/9bO6yz), then place the '.tar' file in the 'model_inference_data/models/' folder.
 <br>
@@ -61,7 +69,19 @@ Download the benchmark model of your choice from [GoFile_Link_to_benchmark_model
 ```bash
 $ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
 #Switch branch to branch_with_raw_data and pull the additional files on that branch
-$ pip install requirements.txt
+Next, in root, run setup_env to set up a python environment and automatically install required packages
+$ ./setup_env.bat
+Then activate the environment
+$ ./myenv/Scripts/activate.bat
+Now scripts can be run inside the environment
+```
+
+**Scripts that can be run:**
+```bash
+$ python start_training_data_preprocessing.py
+$ python start_run_training.py
+$ python evaluation.py
+$ python start_run_inference.py
 ```
 <br>
 
@@ -79,6 +99,7 @@ $ pip install requirements.txt
 To label lidar point-clouds, the labelCloud software can be utilized. It provides a simple user interface that works well for the purposes of this project. 
 
 ### Installation and Setup
+**!!!labelCloud is installed with the rest of the requirements when running setup_env.bat!!!**
 #### Via pip
 ```bash
 $ pip install labelCloud
