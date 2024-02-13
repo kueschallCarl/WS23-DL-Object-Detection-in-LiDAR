@@ -1,9 +1,13 @@
 # Entwicklung und Konstruktion eines Rennwagens f. die Formula Student (Nierhoff) | Projektarbeit Carl Kueschall | Deep-Learning-Ansatz zur Erkennung und Lokalisierung von Pylonen in LiDAR-Punktwolken
 In this project, the objective was to create a robust deep-learning model capable of accurately detecting traffic cones within lidar point clouds. Object detection within unordered point-cloud data poses a significant challenge, particularly when aiming for low inference times suitable for real-time applications, such as autonomous driving tests. The focus was on developing a solution that not only achieves high accuracy but also ensures swift inference, crucial for seamless integration into live performance scenarios. <br> 
 
+Running Snail Wiki Link: [Deep-Learning-Ansatz zur Erkennung und Lokalisierung von Pylonen in LiDAR-Punktwolken
+](http://rs-server/wiki/index.php/Deep-Learning-Ansatz_zur_Erkennung_und_Lokalisierung_von_Pylonen_in_LiDAR-Punktwolken#Walkthrough_Videos) <br>
 This implementation extends and overhauls a solution developed by Alladin Persson, who has shared the core training loop code on his GitHub page. His implementation, in turn, is rooted in the original paper for YOLOv3. This project represents a significant enhancement of the original codebase, introducing an alternative medium-sized model architecture with approximately 8 million parameters instead of the original 60 million. Furthermore, it extends the functionality by providing easy-to-use preprocessing capabilities, enhanced model evaluation through logging and visualization, and a streamlined inference process, all of which are tailored to the purposes of cone detection in lidar point-clouds, for the 'Running Snail Autonomous Driving' team.
 
 In this project I provide everything necessary to move from continuously incoming '.pcd' point-cloud data, to a 'deployed' model that can accurately predict the location of traffic cones.
+The repository can be found at [carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3](https://chat.openai.com). It facilitates the completion of the following steps in the deep learning lifecycle:
+
 
 The codebase provided here facilitates the completion of the following steps in the deep learning lifecycle:
 - **Lidar Labeling**
@@ -38,13 +42,39 @@ The coordinates and thus the location of each cone, relative to the lidar sensor
 ## Installation
 
 ### Clone and install requirements
+**Source Code Only**
 ```bash
 $ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
 $ pip install requirements.txt
 ```
 <br>
 
+**Source Code + Benchmark Models**
+```bash
+$ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
+$ pip install requirements.txt
+```
+Download the benchmark model of your choice from [GoFile_Link_to_benchmark_models](https://gofile.io/d/9bO6yz), then place the '.tar' file in the 'model_inference_data/models/' folder.
+<br>
+
+**Source Code + Raw Data + Benchmark Models and Checkpoints**
+```bash
+$ git clone https://carl_kueschall@bitbucket.org/running-snail-as/carl_kueschall_pylonenerkennung_deeplearning_ansatz_yolov3.git
+#Switch branch to branch_with_raw_data and pull the additional files on that branch
+$ pip install requirements.txt
+```
+<br>
+
 # Usage Guide
+## Walkthrough Videos
+- [Installation](https://www.youtube.com/watch?v=RgfRjD5T8-Y&list=PLofTTqZ4U3N8GGxASKon2VdBmM2mLhjm_&index=2)
+- [Labeling](https://www.youtube.com/watch?v=m-87qb92dm4&list=PLofTTqZ4U3N8GGxASKon2VdBmM2mLhjm_&index=2)
+- [Preprocessing](https://www.youtube.com/watch?v=MeQ3IQ_tH6E&list=PLofTTqZ4U3N8GGxASKon2VdBmM2mLhjm_&index=3)
+- [Training](https://www.youtube.com/watch?v=xqBYDEYFD04&list=PLofTTqZ4U3N8GGxASKon2VdBmM2mLhjm_&index=4)
+- [Evaluation](https://www.youtube.com/watch?v=s1US76yQ8ss&list=PLofTTqZ4U3N8GGxASKon2VdBmM2mLhjm_&index=5)
+- [Inference](https://www.youtube.com/watch?v=oaEEmvA3XnE&list=PLofTTqZ4U3N8GGxASKon2VdBmM2mLhjm_&index=6)
+
+
 ## Lidar Labeling
 To label lidar point-clouds, the labelCloud software can be utilized. It provides a simple user interface that works well for the purposes of this project. 
 
@@ -86,7 +116,8 @@ Project Directory
 │   │   ├───labels
 │   │   │   ├───label_cloud_labels
 │   │   └───pointclouds
-│   │       └───raw_pcds
+│   │       |───raw_pcds
+|   |       |___cropped_pcds
 ```
 
 #### Settings
